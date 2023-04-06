@@ -198,6 +198,9 @@ code {
 }
 
 @media only screen and (max-width: 600px) {
+  * {
+    cursor: auto;
+  }
   .home-container {
     flex-direction: column;
   }
