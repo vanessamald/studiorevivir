@@ -1,9 +1,9 @@
 * {
   background-color:#242222;
   color: #EDECE7;
-  cursor: none;
-  
-  
+  cursor: none;  
+  --light-font-color: #edece7;  
+  --dark-font-color: #242222;
 }
 
 body {
@@ -88,9 +88,110 @@ code {
 
 .logo {
   /*margin-left: -200px;*/
-  
-  
+  position: relative;
+  left: 0;
+  right: 0;
+  height: 50vw;
+  width: auto;
+  bottom: 0;
 }
+
+/* Navigation Styling */
+.menu-button {
+  border: 1px solid red;
+  left: 25px;
+  top: 10px;
+}
+
+.open-menu-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 25px;
+  border: none;
+}
+
+.close-menu-button .nav-line1 {
+  transform: translate(0, 10px) rotate(-45deg);
+  background-color: var(--dark-font-color);
+  position: absolute;
+  z-index: 999999;
+  left: 25px;
+  top: 10px;
+  transition: 0.5s;
+}
+
+.close-menu-button .nav-line2 {
+  opacity: 0;
+}
+
+.close-menu-button .nav-line3 {
+  transform: translate(0, 10px) rotate(45deg);
+  background-color: var(--dark-font-color);
+  position: absolute;
+  z-index: 999999;
+  left: 25px;
+  top: 10px;
+  transition: 2s;
+}
+
+.nav-line1, .nav-line2, .nav-line3 {
+  position: relative;
+  left: 25px;
+  top: 10px;
+  width: 35px;
+  height: 1px;
+  background-color: var(--light-font-color);
+  margin: 6px 0;
+  transition: 1s;
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--light-font-color);
+}
+
+.hidden-menu {
+  display: none;
+}
+
+.menu-container {
+  transition: 1s;
+  height: 80%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: #EDECE7;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: 1s;
+}
+
+.menu-content {
+  background-color: var(--light-font-color);
+  position: relative;
+  top: 25%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.menu-link {
+  text-decoration: none;
+  background-color: var(--light-font-color);
+  color: var(--dark-font-color);
+  margin-top: 50px;
+}
+
+.menu-link:hover {
+  opacity: 0.5;
+}
+/* Navigation Styling Ends */
 
 /* Contact Styling */
 .hidden-contact, .hidden-form {
