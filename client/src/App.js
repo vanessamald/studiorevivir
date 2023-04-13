@@ -6,9 +6,10 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import {ReactComponent as RevivirLogo } from '../src/assets/images/revivirlogo.svg';
 import Cursor from './components/cursor';
 import useCursor from './components/cursor';
+import useTheme from './components/useTheme';
 
 function App() {
-
+  const [theme, toggleTheme, cursor, componentMounted] = useTheme();
   {/*const [cursorVariant, setCursorVariant] = useState("default");
 
   
@@ -46,12 +47,15 @@ function App() {
 
   const textEnter = () => setCursorVariant('text');
 const textLeave = () => setCursorVariant('default');*/}
+  if (!componentMounted) {
+    return <div/>
+  }
 
   return (
-    <div>
+    <div className={theme}>
     {/*<motion.div className='cursor' variants={variants} animate={cursorVariant} style={{translateX: cursorX, translateY: cursorY}}/>*/}
     <Cursor/>
-      <main>
+      <main className={theme}>
       {/*<h1 onMouseEnter={textEnter} onMouseLeave={textLeave}>Hello</h1>*/}
        
         <BrowserRouter>

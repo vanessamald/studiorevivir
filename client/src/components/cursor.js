@@ -7,11 +7,15 @@ function Cursor() {
 
     const cursorX = useMotionValue(-100);
     const cursorY = useMotionValue(-100);
+
+    const springConfig = { damping: 100, stiffness: 700 };
+    const cursorXSpring = useSpring(cursorX, springConfig);
+    const cursorYSpring = useSpring(cursorY, springConfig);
   
     useEffect(() => {
       const moveCursor = (e) => {
-        cursorX.set(e.clientX - 16);
-        cursorY.set(e.clientY - 16);
+        cursorX.set(e.clientX - 8);
+        cursorY.set(e.clientY - 8);
         //cursorRef.current.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`
     };
     
@@ -20,7 +24,7 @@ function Cursor() {
     return () => {
       window.removeEventListener("mousemove", moveCursor);
     };
-    }, []);
+    }, [cursorX, cursorY]);
   
     const variants = {
       default: {
@@ -29,9 +33,9 @@ function Cursor() {
         position: 'fixed',
         left: '0',
         top: '0',
-        width: 30,
-        height: 30,
-        borderRadius: '16px',
+        width: 16,
+        height: 16,
+        borderRadius: '50%',
         border: '2px solid white',
         backgroundColor: 'transparent',
         mixBlendMode: 'difference',
@@ -56,7 +60,7 @@ function Cursor() {
     [])
 
     return (
-        <motion.div className={cursorVariant} variants={variants} animate={cursorVariant} style={{translateX: cursorX, translateY: cursorY}}
+        <motion.div className={cursorVariant} variants={variants} animate={cursorVariant} style={{translateX: cursorXSpring, translateY: cursorYSpring}}
         />
     )
 }

@@ -1,9 +1,8 @@
 * {
-  background-color:#242222;
-  color: #EDECE7;
+  background-color: var(--body-bg-color);
+  color: var(--font-color);
   cursor: none;  
-  --light-font-color: #edece7;  
-  --dark-font-color: #242222;
+  
 }
 
 body {
@@ -77,26 +76,38 @@ code {
 
 /* Logo Styling */
 .logo-container {
-  display: flex;
-  flex-direction: column;
-  /*
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;*/
-  
+ height: 100vw;
 }
 
 .logo {
-  /*margin-left: -200px;*/
-  position: relative;
-  left: 0;
-  right: 0;
-  height: 50vw;
-  width: auto;
-  bottom: 0;
+  height: auto;
+  width: 100%;
+  margin-top: -75px;
+  z-index: 1;
 }
 
 /* Navigation Styling */
+
+.hidden-a {
+  opacity: 0;
+}
+
+.reveal-a {
+  display: block;
+}
+
+.menu-link span {
+  background-color: var(--font-color);
+}
+
+a span span {
+  position: relative;
+  opacity: 0;
+  animation: move-text 1s forwards;
+  /* animation: move-text 1s forwards;*/
+  animation-iteration-count: 1;
+}
+
 .menu-button {
   border: 1px solid red;
   left: 25px;
@@ -113,7 +124,7 @@ code {
 
 .close-menu-button .nav-line1 {
   transform: translate(0, 10px) rotate(-45deg);
-  background-color: var(--dark-font-color);
+  background-color: var(--body-bg-color);
   position: absolute;
   z-index: 999999;
   left: 25px;
@@ -127,7 +138,7 @@ code {
 
 .close-menu-button .nav-line3 {
   transform: translate(0, 10px) rotate(45deg);
-  background-color: var(--dark-font-color);
+  background-color: var(--body-bg-color);
   position: absolute;
   z-index: 999999;
   left: 25px;
@@ -141,13 +152,14 @@ code {
   top: 10px;
   width: 35px;
   height: 1px;
-  background-color: var(--light-font-color);
+  background-color: var(--font-color);
   margin: 6px 0;
   transition: 1s;
 }
 
 .border-bottom {
-  border-bottom: 1px solid var(--light-font-color);
+  border-bottom: 1px solid var(--font-color);
+  width: 100%;
 }
 
 .hidden-menu {
@@ -156,35 +168,38 @@ code {
 
 .menu-container {
   transition: 1s;
-  height: 80%;
+  height: 75%;
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   left: 0;
   top: 0;
-  background-color: #EDECE7;
+  background-color: var(--font-color);
   overflow-x: hidden;
   overflow-y: hidden;
   transition: 1s;
 }
 
 .menu-content {
-  background-color: var(--light-font-color);
+  background-color: var(--font-color);
   position: relative;
-  top: 25%;
+  top: 25px;
+  left: 25px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   text-align: center;
   margin-top: 30px;
+  font-size: 5vw;
+  font-weight: 100;
 }
 
 .menu-link {
   text-decoration: none;
-  background-color: var(--light-font-color);
-  color: var(--dark-font-color);
+  background-color: var(--font-color);
+  color: var(--body-bg-color);
   margin-top: 50px;
 }
 
@@ -192,6 +207,83 @@ code {
   opacity: 0.5;
 }
 /* Navigation Styling Ends */
+
+/* Toggle and Theme Styling */
+.dark {
+  --font-color: #edece7;
+  --body-bg-color: #242222;
+}
+
+.light {
+  --font-color: #242222;
+  --body-bg-color: #edece7;
+}
+
+.home-nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--font-color);
+  position: relative;
+  z-index: 2;
+}
+
+.theme-togg-container {
+  padding-top: 20px;
+  padding-right: 25px;
+  
+}
+
+.toggle-container {
+  height: 40px;
+  width: 80px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 5px;
+  cursor: pointer;
+  transition: all .3s;
+  animation: fadeIn 8s linear;
+}
+
+.handle {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+}
+
+.toggleDark, .toggleLight {
+  align-items: center;
+  -webkit-animation: fadeIn 8s linear;
+  animation: fadeIn 8s linear;
+  border-radius: 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  height: 25px;
+  padding: 0 5px;
+  transition: all .3s;
+  width: 45px;
+  background-color: var(--font-color);
+}
+
+.toggleLight {
+  justify-content: flex-end;
+}
+
+.toggleLight .handle {
+  background-color: var(--body-bg-color);
+}
+
+.toggleDark {
+  justify-content: flex-start;
+}
+/*Theme and Toggle Styling Ends */
 
 /* Contact Styling */
 .hidden-contact, .hidden-form {
@@ -286,7 +378,7 @@ code {
   height: 2px;
   margin: 10px 0;
   width: 35px;
-  background-color: white;
+  background-color: var(--font-color);
 }
 
 .close-line2 {
@@ -298,6 +390,107 @@ code {
   transform: translateY(12px) rotate(45deg);
 }
 
+/* About Styling */
+
+
+.about-i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%; 
+  margin-top: -200px;
+}
+
+.about-i-title {
+  padding: 50px;
+}
+
+.about-i-container {
+  margin-top: 150px;
+  align-items: center;
+}
+
+.about-i-content {
+  margin-left: -250px;
+  font-size: 36px;
+  font-weight: 100;
+  margin-top: -50px;
+}
+/* About Styling Ends */
+
+/* Work Styling */
+.work-container {
+  margin-top: 100px;
+  padding: 100px;
+}
+
+.work-content {
+  margin-top: 100px;
+}
+
+.work-img {
+  opacity: 0;
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  box-sizing: border-box;
+  transition: ease .2s;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  object-fit: cover;
+}
+
+.work-img1 {
+  
+}
+
+.work-img1-container {
+  background-color: white;
+  border-radius: 50%;
+  object-fit: cover;
+  max-width: 200px;
+  max-height: 200px;
+  box-sizing: border-box;
+  
+}
+/* Work Styling Ends */
+
+/* Flex Styling */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* Colors */
+.bkg-transparent {
+  background-color: transparent;
+}
+
+/* Animations */
+@keyframes move-text {
+  0% { bottom: -0.5em; opacity: 1; }
+  50% { bottom: 0em; }
+  100% { bottom: 0; opacity: 1; }
+}
+
+@keyframes move-text2 {
+  0% { bottom: 0; opacity: 1; }
+  50% { bottom: 0em; }
+  100% { bottom: -0.2em; opacity: 1; }
+}
+
+/* Animations End */
+
 @media only screen and (max-width: 600px) {
   * {
     cursor: auto;
@@ -305,9 +498,12 @@ code {
   .home-container {
     flex-direction: column;
   }
+  .logo-container {
+    height: 200vw;
+  }
   .logo {
-    width: 150vw;
-    margin-left: 0px;
+    margin-top: 500px;
+    padding-bottom: 100%;
   }
   .contact-form-container {
     padding: 50px;
@@ -317,6 +513,9 @@ code {
   }
   .form-input {
     width: 90%;
+  }
+  .about-i {
+    width: 100%;
   }
  
 }
