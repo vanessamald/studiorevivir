@@ -29,7 +29,7 @@ app.post('/register', (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
 
-    db.query("INSERT INTO mail (name, email VALUES (?,?)", [name, email], (err, result) => {
+    db.query("INSERT INTO list (name, email) VALUES (?,?)", [name, email], (err, result) => {
         if(err) {
             console.log(err)
         }
