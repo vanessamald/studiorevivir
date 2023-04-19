@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const mysql = require("mysql2");
+const cors = require("cors");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -18,11 +19,12 @@ const db = mysql.createConnection({
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors());
 
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 // route to add email 
-app.post('api/create', (req, res) => {
+app.post('/register', (req, res) => {
 
     const name = req.body.name;
     const email = req.body.email;
