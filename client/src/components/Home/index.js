@@ -9,6 +9,7 @@ import Navigation from '../Navigation';
 import useTheme from '../useTheme';
 import About from '../About';
 import Work from '../Work';
+import Register from '../Register';
 
 
 function Home() {
@@ -33,7 +34,7 @@ function Home() {
             </div>
             <About/>
             <Work/>
-            
+            <Register/>
       </div>
     )
 }
