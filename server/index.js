@@ -2,19 +2,22 @@ const express = require('express');
 const path = require('path');
 const mysql = require("mysql2");
 const cors = require("cors");
+//import EmailContent from '../client/src/components/Newsletter';
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+app.use(express.json());
 
 const transporter = require('./config');
 const dotenv = require('dotenv');
 dotenv.config();
 
 const db = mysql.createConnection({
-    user: "root",
-    host: "localhost",
-    password: process.env.dbpassword,
-    database: "mail"
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME,
+    //port: process.env.DB_PORT
 });
 
 app.use(express.urlencoded({ extended: false }));
@@ -22,6 +25,51 @@ app.use(express.json());
 app.use(cors());
 
 app.use(express.static(path.resolve(__dirname, '../client/build')));
+
+
+app.get('/newsletter', (req, res) => {
+    const query = "SELECT * FROM mail";
+    db.query(query, (error, results) => {
+        if (error){
+            res.status(500).send(error);
+        } else {
+            const newsletter = results[0];
+            res.send(newsletter.content);
+        }   
+    })
+})
+
+
+// route to send out newsletter
+app.post('/newsletter/send', (req, res) => {
+    const query = "SELECT email FROM list";
+    db.query(query, (error, results) => {
+
+        if (error) {
+            res.status(500).send(error);
+        } else {
+            const emails = results.map(result => result.email);
+            
+                const mail = {
+                    from: process.env.email,
+                    to: emails.join(', '),
+                    subject: 'Our Latest Newsletter',
+                    html: `<p>OUR FIRST NEWSLETTER!</p>`,
+                }
+                
+                transporter.sendMail(mail, (error, info) => {
+                if (error) {
+                    console.log(error);
+                    res.status(500).send(error);
+                } else {
+                    console.log('Newsletter sent successfully!');
+                    res.send('Newsletter sent to all users');
+                }
+            })
+        }
+    });
+})
+
 
 // route to add email 
 app.post('/register', (req, res) => {
