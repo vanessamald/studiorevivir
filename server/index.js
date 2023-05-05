@@ -2,12 +2,13 @@ const express = require('express');
 const path = require('path');
 const mysql = require("mysql2");
 const cors = require("cors");
-//import EmailContent from '../client/src/components/Newsletter';
+const emailContent = require('../client/src/components/Newsletter') ;
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(express.json());
 
+const { htmlToText } = require('html-to-text');
 const transporter = require('./config');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -49,12 +50,16 @@ app.post('/newsletter/send', (req, res) => {
             res.status(500).send(error);
         } else {
             const emails = results.map(result => result.email);
+            //const content = <EmailContent/>
+           
+            
             
                 const mail = {
-                    from: process.env.email,
+                    from: process.env.newsletter_email,
                     to: emails.join(', '),
-                    subject: 'Our Latest Newsletter',
-                    html: `<p>OUR FIRST NEWSLETTER!</p>`,
+                    subject: 'Newsletter',
+                    html: emailContent({ body: emailContent.body}) 
+                    
                 }
                 
                 transporter.sendMail(mail, (error, info) => {

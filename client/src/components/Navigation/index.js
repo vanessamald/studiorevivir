@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import About from '../About';
 import Contact from '../Contact';
+import Register from '../Register';
 
 
 function Navigation() {
@@ -33,7 +35,7 @@ function Navigation() {
     }
 
     // title animation
-    const aboutText = 'bout';
+    const aboutText = 'About';
     const SplitText = () => {
         return (
             <span >
@@ -46,7 +48,7 @@ function Navigation() {
                     );
                 }
 
-    const workText = 'ork';
+    const workText = 'Work';
     const SplitText2 = () => {
         return (
             <span >
@@ -59,7 +61,7 @@ function Navigation() {
                     );
                 }
 
-    const contactText = 'ontact';
+    const contactText = 'Contact';
     const SplitText3 = () => {
         return (
             <span>
@@ -119,11 +121,20 @@ function Navigation() {
             </button>
             <div className={menu}>
                 <div className='menu-content'>
-                    <a className='menu-link' href='#about' onMouseEnter={showText} onMouseLeave={closeText}>A{isText && (<SplitText className={about}/>)}</a>
-                    <a className='menu-link' href='' onMouseEnter={showText2} onMouseLeave={closeText2}>W{isText2 && (<SplitText2 className={about}/>)}</a>
-                    <a className='menu-button' href='' onMouseEnter={showText3} onMouseLeave={closeText3}>C{isText3 && (<SplitText3 className={about}/>)}</a>
+                    <a className='menu-link' href='#about'><SplitText className={about}/></a>
+                    <a className='menu-link' href='#about'><SplitText2 className={about}/></a>
+                   {/*} <a className='menu-link' href='#about' onMouseEnter={showText} onMouseLeave={closeText}>{isText && (<SplitText className={about}/>)}About</a>
+                    <a className='menu-link' href='' onMouseEnter={showText2} onMouseLeave={closeText2}>{isText2 && (<SplitText2 className={about}/>)}Work</a>*/}
+                    {/*<a className='menu-button' href='' onMouseEnter={showText3} onMouseLeave={closeText3}>{isText3 && (<SplitText3 className={about}/>)}Contact</a>*/} 
+                    <Contact/>
                 </div>
+               
+                <div>
+                <Register/>
+                </div>
+                
             </div>
+            
         </div>
     )
 }

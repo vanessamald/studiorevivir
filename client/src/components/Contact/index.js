@@ -74,7 +74,7 @@ function Contact() {
             <div className={show2}>
             
             <div className='close-btn-container'>
-            <h3>Contact Form</h3>
+            <h3 className='contact-form-title'>Contact Form</h3>
                 <button className='close-btn' onClick={handleClose}>
                     <div className='close-container'>
                         <div className='close-line1'></div>
@@ -144,15 +144,15 @@ function Contact() {
             </Form>
             </div>
         </div>
-       <div className='contact-button-container' style={{textAlign: 'center'}}>
-            <Button 
+       <div className='contact-button-container'>
+            <button 
                 id={'contact'} 
                 className='contact-button'
                 style={{
                    
                 }}
-                onClick={handleClick}>Send Message
-            </Button>
+                onClick={handleClick}>Contact
+            </button>
        </div>
           
        

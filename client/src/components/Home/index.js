@@ -11,7 +11,6 @@ import About from '../About';
 import Work from '../Work';
 import Register from '../Register';
 
-
 function Home() {
     const [ theme, themeToggler, componentMounted, isOn, setIsOn, logo] = useTheme();
     
@@ -32,10 +31,6 @@ function Home() {
             <div className='logo-container'>
                 <img className='logo' src={theme === 'dark' ? studioRevivir : studioRevivirDark} alt='Revivir Studio'></img>
             </div>
-            <Contact/>
-            <About/>
-            <Work/>
-            <Register/>
       </div>
     )
 }

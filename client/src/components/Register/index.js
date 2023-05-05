@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import useTheme from '../useTheme';
 
 function Register() {
+    const [ theme ] = useTheme();
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [ status, setStatus ] = useState('Subscribe to our Newsletter');
+    const [ status, setStatus ] = useState('Subscribe to our Newsletter!');
 
     const submitForm = async (e) => {
         e.preventDefault();
@@ -15,10 +18,10 @@ function Register() {
             email: email,
         } 
         if ( registerEmail === '') {
-           // setResult({
-               // message: 'Please fill out all fields'
-               console.log('ERROR')
-            
+          // setResult({
+            //   message: 'Please fill out all fields';
+            //   console.log('ERROR')
+        
         } else {
 
     let response = await fetch("/register", {
@@ -34,14 +37,15 @@ function Register() {
     }
 }
     return (
-        <div>
-            <h2>{status}</h2>
-            <form onSubmit={submitForm}>
-                <input type='text' placeholder='Name'onChange={(e) => setName(e.target.value)}></input>
-                <input type='text' placeholder='email@example.com' onChange={(e) => setEmail(e.target.value)} ></input>
-                <button type='submit'>Submit</button>
+        <div className='register-container'>
+            <h2 className='register-title'>{status}</h2>
+            <form onSubmit={submitForm} className='register-form'>
+                <input className='register-input' type='text' placeholder='Name'onChange={(e) => setName(e.target.value)}></input>
+                <input className='register-input' type='text' placeholder='email@example.com' onChange={(e) => setEmail(e.target.value)} ></input>
+                <button className='register-input' type='submit'>Submit</button>
             </form>
         </div>
+        
     )
 }
 
