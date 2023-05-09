@@ -3,6 +3,20 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 function Contact() {
+    const [ about, setAbout ] = useState('hidden-a');
+
+    const contactText = 'Contact';
+    const SplitText3 = () => {
+        return (
+            <span>
+                {contactText.split("").map(function(char, index){
+                    const style = {"animationDelay": (0.5 + index / 10) + "s", "backgroundColor": 'var(--font-color)', "color": "var(--body-bg-color)", "opacity": "0"};
+                        return <span key={index} id={index} className='nav-link' style={style}>{char}</span>
+                        ;
+                        })}
+                        </span>
+                    );
+                }
 
     // set state for contact form open/close 
     const [ show, setShow] = useState('hidden-contact');
@@ -11,6 +25,7 @@ function Contact() {
     const handleClick = () => {
         setShow('contact-show')
         setShow2('contact-form-container')
+        console.log('HELLO CONTACT')
     }
     const handleClose = () => {
         setShow('hidden-contact');
@@ -144,7 +159,7 @@ function Contact() {
             </Form>
             </div>
         </div>
-       <div className='contact-button-container'>
+      {/* <div className='contact-button-container'>
             <button 
                 id={'contact'} 
                 className='contact-button'
@@ -153,7 +168,13 @@ function Contact() {
                 }}
                 onClick={handleClick}>Contact
             </button>
-       </div>
+            </div>*/}
+        <div className='contact-button-container'>
+            <a className='menu-link' onClick={handleClick}><SplitText3 className={about}/></a>
+        </div>
+            
+       
+       
           
        
        

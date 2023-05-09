@@ -6,8 +6,6 @@ import Register from '../Register';
 
 function Navigation() {
     
-    
-
     const [ menu, setMenu ] = useState('hidden-menu');
     const [ button, setButton ] =useState('open-menu-button');
     const [ toggle, setToggle ] = useState(false);
@@ -103,14 +101,6 @@ function Navigation() {
         setText3(false)
     }
 
-    const showContact = () => {
-        console.log('contact button works')
-        return (
-            <Contact/>
-        )
-    }
-
-
 
     return (
         <div>
@@ -123,10 +113,12 @@ function Navigation() {
                 <div className='menu-content'>
                     <a className='menu-link' href='#about'><SplitText className={about}/></a>
                     <a className='menu-link' href='#about'><SplitText2 className={about}/></a>
+                    
+                    <Contact/>
                    {/*} <a className='menu-link' href='#about' onMouseEnter={showText} onMouseLeave={closeText}>{isText && (<SplitText className={about}/>)}About</a>
                     <a className='menu-link' href='' onMouseEnter={showText2} onMouseLeave={closeText2}>{isText2 && (<SplitText2 className={about}/>)}Work</a>*/}
                     {/*<a className='menu-button' href='' onMouseEnter={showText3} onMouseLeave={closeText3}>{isText3 && (<SplitText3 className={about}/>)}Contact</a>*/} 
-                    <Contact/>
+                    
                 </div>
                
                 <div>

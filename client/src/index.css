@@ -1,7 +1,8 @@
 * {
   background-color: var(--body-bg-color);
   color: var(--font-color);
-  cursor: none;  
+  cursor: none;
+  
 }
 
 body {
@@ -168,7 +169,6 @@ a span span {
 .menu-container {
   transition: 1s;
   /*height: 75%;*/
-  height: 100vw;
   width: 100%;
   position: absolute;
   z-index: 3;
@@ -201,6 +201,7 @@ a span span {
   background-color: var(--font-color);
   color: var(--body-bg-color);
   margin-top: 50px;
+  border: none;
 }
 
 .menu-link:hover {
@@ -297,8 +298,8 @@ a span span {
   top: 0;
   left: 0;
   width: 100%;
-  /*height: 100%;*/
-  position: absolute;
+  height: 100%;
+  position: fixed;
   z-index: 9;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -312,7 +313,8 @@ a span span {
 
 .contact-button-container {
   background-color: var(--font-color);
-  padding-top: 25px;
+  padding-top: 50px;
+  padding-bottom: 4rem;
 }
 
 .contact-button {
@@ -330,12 +332,12 @@ a span span {
 }
 
 .contact-form-container {
-  padding: 100px;
+  padding: 4rem;
   opacity: 1;
 }
 
 .contact-form-title {
-  font-size: 3vw;
+  font-size: 3.5vw;
 }
 
 .form-content {
@@ -482,6 +484,8 @@ a span span {
 
 .register-form {
   background-color: var(--font-color);
+  display: flex;
+  flex-direction: column;
 }
 
 .register-input {
@@ -499,8 +503,6 @@ a span span {
 
 .register-container {
   padding: 25px;
-  border-top: 1px solid var(--body-bg-color);
-  margin-top: 2rem;
   background-color: var(--font-color);
 }
 /* Register Ends */
@@ -555,7 +557,7 @@ a span span {
     padding-bottom: 100%;
   }
   .contact-form-container {
-    padding: 50px;
+    /*padding: 50px;*/
   }
   .form-button {
     padding: 10px 100px;
