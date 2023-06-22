@@ -20,8 +20,9 @@ function Work() {
     }
 
     return (
-        <div className='work-container'>
+        <div className='work-container' id='work'>
             <div className='flex-row work-content' onMouseEnter={showDiv} onMouseLeave={closeDiv} style={{padding: ''}}>
+
                 
                 <span className='border-bottom'></span>
                 <span>01/</span>
@@ -29,7 +30,10 @@ function Work() {
                 <span className='border-bottom'></span>
                 {isDiv && (<img className='work-img1-container' src={evokeDesktop} style={{left: x + window.scrollX - (200/2), top: y + window.scrollY - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}></img>)}
                 
+
             </div>
+
+            {/*
             <div className='flex-row work-content'>
                 <span className='border-bottom'></span>
                 <span>02/</span>
@@ -42,6 +46,7 @@ function Work() {
                 <p><em>Coming Soon</em></p>
                 <span className='border-bottom'></span>
             </div>
+    */}
         </div>
         
     )

@@ -40,7 +40,6 @@ app.get('/newsletter', (req, res) => {
     })
 })
 
-
 // route to send out newsletter
 app.post('/newsletter/send', (req, res) => {
     const query = "SELECT email FROM list";
@@ -52,8 +51,6 @@ app.post('/newsletter/send', (req, res) => {
             const emails = results.map(result => result.email);
             //const content = <EmailContent/>
            
-            
-            
                 const mail = {
                     from: process.env.newsletter_email,
                     to: emails.join(', '),
@@ -74,7 +71,6 @@ app.post('/newsletter/send', (req, res) => {
         }
     });
 })
-
 
 // route to add email 
 app.post('/register', (req, res) => {

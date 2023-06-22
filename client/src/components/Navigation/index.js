@@ -3,7 +3,6 @@ import About from '../About';
 import Contact from '../Contact';
 import Register from '../Register';
 
-
 function Navigation() {
     
     const [ menu, setMenu ] = useState('hidden-menu');
@@ -17,7 +16,8 @@ function Navigation() {
             setButton('close-menu-button')
 
             if (typeof window != 'undefined' && window.document) {
-                document.body.style.overflow = 'hidden';
+               // document.body.style.overflow = 'hidden';
+               
             }
         }
         if (toggle) {
@@ -71,37 +71,6 @@ function Navigation() {
                         </span>
                     );
                 }
-
-    // hidden text
-    const [ isText, setText ] = useState(false);
-    const [ isText2, setText2 ] = useState(false);
-    const [ isText3, setText3 ] = useState(false);
-    
-    const showText = () => {
-        setText(true);
-    }
-
-    const closeText = () => {
-        setText(false)
-    }
-
-    const showText2 = () => {
-        setText2(true);
-    }
-
-    const closeText2 = () => {
-        setText2(false)
-    }
-
-    const showText3 = () => {
-        setText3(true);
-    }
-
-    const closeText3 = () => {
-        setText3(false)
-    }
-
-
     return (
         <div>
             <button className={button} onClick={handleClick}>
@@ -112,19 +81,16 @@ function Navigation() {
             <div className={menu}>
                 <div className='menu-content'>
                     <a className='menu-link' href='#about'><SplitText className={about}/></a>
-                    <a className='menu-link' href='#about'><SplitText2 className={about}/></a>
-                    
+                    <a className='menu-link' href='#work'><SplitText2 className={about}/></a>
                     <Contact/>
                    {/*} <a className='menu-link' href='#about' onMouseEnter={showText} onMouseLeave={closeText}>{isText && (<SplitText className={about}/>)}About</a>
                     <a className='menu-link' href='' onMouseEnter={showText2} onMouseLeave={closeText2}>{isText2 && (<SplitText2 className={about}/>)}Work</a>*/}
-                    {/*<a className='menu-button' href='' onMouseEnter={showText3} onMouseLeave={closeText3}>{isText3 && (<SplitText3 className={about}/>)}Contact</a>*/} 
-                    
+                    {/*<a className='menu-button' href='' onMouseEnter={showText3} onMouseLeave={closeText3}>{isText3 && (<SplitText3 className={about}/>)}Contact</a>*/}  
                 </div>
-               
                 <div>
-                <Register/>
+                    <div className='border'></div>
+                    <Register/>
                 </div>
-                
             </div>
             
         </div>

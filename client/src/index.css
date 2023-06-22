@@ -183,7 +183,6 @@ a span span {
 .menu-content {
   background-color: var(--font-color);
   position: relative;
-  top: 25px;
   left: 25px;
   width: 100%;
   display: flex;
@@ -191,9 +190,7 @@ a span span {
   justify-content: space-between;
   align-items: flex-start;
   /*text-align: center;*/
-  margin-top: 30px;
-  font-size: 5vw;
-  font-weight: 100;
+  margin-top: 25px;
 }
 
 .menu-link {
@@ -202,6 +199,8 @@ a span span {
   color: var(--body-bg-color);
   margin-top: 50px;
   border: none;
+  font-size: 3rem;
+  font-weight: 100;
 }
 
 .menu-link:hover {
@@ -213,11 +212,14 @@ a span span {
 .dark {
   --font-color: #edece7;
   --body-bg-color: #242222;
+  --alt-font-color: rgba(237, 236, 231, 0.75);
+  
 }
 
 .light {
   --font-color: #242222;
   --body-bg-color: #edece7;
+  --alt-font-color: rgba(36, 34, 34, 0.75);
 }
 
 .home-nav-container {
@@ -294,7 +296,8 @@ a span span {
 }
 
 .contact-show {
-  background-color: rgb(237, 236, 231, 0.75);
+
+  background-color: var(--alt-font-color);
   top: 0;
   left: 0;
   width: 100%;
@@ -314,7 +317,7 @@ a span span {
 .contact-button-container {
   background-color: var(--font-color);
   padding-top: 50px;
-  padding-bottom: 4rem;
+  padding-bottom: 50px;
 }
 
 .contact-button {
@@ -410,30 +413,32 @@ a span span {
   align-items: center;
   justify-content: center;
   width: 50%; 
-  margin-top: -200px;
+  margin-top: -650px;
 }
 
 .about-i-title {
   padding: 50px;
+  margin-left: 400px;
+  font-size: 6vw;
 }
 
 .about-i-container {
-  margin-top: 150px;
+ 
   align-items: center;
 }
 
 .about-i-content {
-  margin-left: -250px;
+  margin-left: -200px;
   font-size: 36px;
   font-weight: 100;
-  margin-top: -50px;
+  margin-top: -100px;
 }
 /* About Styling Ends */
 
 /* Work Styling */
 .work-container {
   margin-top: 100px;
-  padding: 100px;
+
 }
 
 .work-content {
@@ -477,6 +482,10 @@ a span span {
 }
 
 /* Register Styling */
+.border {
+  border: 1px solid var(--body-bg-color);
+}
+
 .register-title {
   background-color: var(--font-color);
   color: var(--body-bg-color);
@@ -484,8 +493,7 @@ a span span {
 
 .register-form {
   background-color: var(--font-color);
-  display: flex;
-  flex-direction: column;
+ 
 }
 
 .register-input {
@@ -553,7 +561,7 @@ a span span {
     height: 200vw;
   }
   .logo {
-    margin-top: 500px;
+    margin-top: 25rem;
     padding-bottom: 100%;
   }
   .contact-form-container {
@@ -567,6 +575,10 @@ a span span {
   }
   .about-i {
     width: 100%;
+  }
+  .register-form {
+    display: flex;
+  flex-direction: column;
   }
  
 }

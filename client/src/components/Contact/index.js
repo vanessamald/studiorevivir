@@ -159,25 +159,9 @@ function Contact() {
             </Form>
             </div>
         </div>
-      {/* <div className='contact-button-container'>
-            <button 
-                id={'contact'} 
-                className='contact-button'
-                style={{
-                   
-                }}
-                onClick={handleClick}>Contact
-            </button>
-            </div>*/}
         <div className='contact-button-container'>
             <a className='menu-link' onClick={handleClick}><SplitText3 className={about}/></a>
-        </div>
-            
-       
-       
-          
-       
-       
+        </div>  
     </div>
     )
 }
