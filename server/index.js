@@ -13,6 +13,7 @@ const transporter = require('./config');
 const dotenv = require('dotenv');
 dotenv.config();
 
+/*
 const db = mysql.createConnection({
     user: process.env.DB_USER,
     host: process.env.DB_HOST,
@@ -20,8 +21,8 @@ const db = mysql.createConnection({
     database: process.env.DB_NAME,
     //port: process.env.DB_PORT
 });
+*/
 
-// Configure database connection using JawsDB URL
 const connection = mysql.createConnection(process.env.JAWSDB_URL);
 
 // Connect to the database
