@@ -20,7 +20,7 @@ function Home() {
                     <div 
                         data-darkmode={isOn}
                         onClick={themeToggler}
-                        className={isOn}
+                        className={theme === 'dark' ? 'toggleDark' : 'toggleLight' }
                         >
                         <motion.div layout className='handle'></motion.div>
                     </div>

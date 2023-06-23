@@ -213,13 +213,13 @@ a span span {
 /* Toggle and Theme Styling */
 .dark {
   --font-color: #edece7;
-  --body-bg-color: #242222;
+  --body-bg-color: black;/* #242222;*/
   --alt-font-color: rgba(237, 236, 231, 0.75);
   
 }
 
 .light {
-  --font-color: #242222;
+  --font-color: black;/* #242222;*/
   --body-bg-color: #edece7;
   --alt-font-color: rgba(36, 34, 34, 0.75);
 }
@@ -236,7 +236,6 @@ a span span {
 .theme-togg-container {
   padding-top: 20px;
   padding-right: 25px;
-  
 }
 
 .toggle-container {
@@ -281,12 +280,18 @@ a span span {
   justify-content: flex-end;
 }
 
+
 .toggleLight .handle {
   background-color: var(--body-bg-color);
 }
 
 .toggleDark {
   justify-content: flex-start;
+}
+
+
+.toggleDark .handle {
+  background-color: var(--body-bg-color);
 }
 /*Theme and Toggle Styling Ends */
 
