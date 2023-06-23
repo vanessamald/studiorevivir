@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import useTheme from '../useTheme';
 
 function Register() {
-    const [ theme ] = useTheme();
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -36,6 +34,7 @@ function Register() {
     }
     }
 }
+
     return (
         <div className='register-container'>
             <h2 className='register-title'>{status}</h2>

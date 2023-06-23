@@ -1,5 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import React, { useState } from 'react';
 import evokeDesktop from '../../assets/images/evoke-desktop1.png';
 import useCursorPosition from '../useCursorPosition';
 

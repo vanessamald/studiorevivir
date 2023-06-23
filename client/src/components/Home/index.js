@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import {ReactComponent as RevivirLogo } from '../../assets/images/revivirlogo.svg';
 import Contact from '../Contact';
-import homeLogo from '../../assets/images/Home copy.png';
 import studioRevivir from '../../assets/images/studiorevivir-light.png'
 import studioRevivirDark from '../../assets/images/studiorevivir-dark.png'
 import Navigation from '../Navigation';
@@ -12,7 +10,7 @@ import Work from '../Work';
 import Register from '../Register';
 
 function Home() {
-    const [ theme, themeToggler, componentMounted, isOn, setIsOn, logo] = useTheme();
+    const [ theme, themeToggler, isOn] = useTheme();
     
     return (
         <div className={theme}>
