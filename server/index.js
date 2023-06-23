@@ -21,6 +21,18 @@ const db = mysql.createConnection({
     //port: process.env.DB_PORT
 });
 
+// Configure database connection using JawsDB URL
+const connection = mysql.createConnection(process.env.JAWSDB_URL);
+
+// Connect to the database
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to the database: ', err);
+  } else {
+    console.log('Connected to the database!');
+  }
+});
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
@@ -30,7 +42,7 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 app.get('/newsletter', (req, res) => {
     const query = "SELECT * FROM mail";
-    db.query(query, (error, results) => {
+    connection.query(query, (error, results) => {
         if (error){
             res.status(500).send(error);
         } else {
@@ -43,7 +55,7 @@ app.get('/newsletter', (req, res) => {
 // route to send out newsletter
 app.post('/newsletter/send', (req, res) => {
     const query = "SELECT email FROM list";
-    db.query(query, (error, results) => {
+    connection.query(query, (error, results) => {
 
         if (error) {
             res.status(500).send(error);
@@ -78,7 +90,7 @@ app.post('/register', (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
 
-    db.query("INSERT INTO list (name, email) VALUES (?,?)", [name, email], (err, result) => {
+    connection.query("INSERT INTO list (name, email) VALUES (?,?)", [name, email], (err, result) => {
         if(err) {
             console.log(err)
         }
@@ -88,7 +100,7 @@ app.post('/register', (req, res) => {
     const query = "SELECT email FROM list WHERE email = ?";
     const newsletterEmail = [email];
 
-    db.query(query, newsletterEmail, (error, results) => {
+    connection.query(query, newsletterEmail, (error, results) => {
 
         if (error) {
             res.status(500).send(error);
@@ -102,7 +114,7 @@ app.post('/register', (req, res) => {
                     from: process.env.newsletter_email,
                     to: userEmail,
                     subject: 'Newsletter',
-                    html: '<p>Thanks for signing up! <br/> Amazing content coming soon!</p>' 
+                    html: '<p>Thanks for signing up! <br/> content coming soon!</p>' 
                 }
                 
                 transporter.sendMail(mail, (error, info) => {
