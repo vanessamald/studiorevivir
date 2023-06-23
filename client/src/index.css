@@ -2,7 +2,6 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
-  
 }
 
 body {
@@ -98,6 +97,7 @@ code {
 
 .menu-link span {
   background-color: var(--font-color);
+  
 }
 
 a span span {
@@ -105,6 +105,7 @@ a span span {
   opacity: 0;
   animation: move-text 1s forwards;
   /* animation: move-text 1s forwards;*/
+  
   animation-iteration-count: 1;
 }
 
@@ -391,7 +392,7 @@ a span span {
 
 .close-line1, .close-line2 {
   height: 2px;
-  margin: 10px 0;
+  margin: 8px 0;
   width: 35px;
   background-color: var(--font-color);
 }
@@ -443,6 +444,7 @@ a span span {
 
 .work-content {
   margin-top: 100px;
+  padding: 100px;
 }
 
 .work-img {

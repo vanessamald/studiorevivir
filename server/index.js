@@ -72,7 +72,7 @@ app.post('/newsletter/send', (req, res) => {
     });
 })
 
-// route to add email 
+// route to add email and send a Welcome Email
 app.post('/register', (req, res) => {
 
     const name = req.body.name;
@@ -83,6 +83,38 @@ app.post('/register', (req, res) => {
             console.log(err)
         }
         console.log(result)
+    });
+
+    const query = "SELECT email FROM list WHERE email = ?";
+    const newsletterEmail = [email];
+
+    db.query(query, newsletterEmail, (error, results) => {
+
+        if (error) {
+            res.status(500).send(error);
+        } else {
+            if (results.length === 0) {
+                res.status(404).send('User not found');
+            } else {
+                const userEmail = results[0].email;
+            
+                const mail = {
+                    from: process.env.newsletter_email,
+                    to: userEmail,
+                    subject: 'Newsletter',
+                    html: '<p>Thanks for signing up! <br/> Amazing content coming soon!</p>' 
+                }
+                
+                transporter.sendMail(mail, (error, info) => {
+                if (error) {
+                    console.log(error);
+                    res.status(500).send(error);
+                } else {
+                    console.log('Newsletter sent successfully!');
+                    res.send('Newsletter sent to the client');
+                }
+            })
+        }}
     });
 })
 

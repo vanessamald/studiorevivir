@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import evokeDesktop from '../../assets/images/evoke-desktop1.png';
 import useCursorPosition from '../useCursorPosition';
 
 function Work() {
-    const [ position ] = useCursorPosition();
+    
+    const [ position, setPosition] = useCursorPosition();
+
+    console.log(position);
 
     var x = position.clientX;
     var y = position.clientY;
@@ -19,18 +22,19 @@ function Work() {
         setDiv(false)
     }
 
+
     return (
         <div className='work-container' id='work'>
-            <div className='flex-row work-content' onMouseEnter={showDiv} onMouseLeave={closeDiv} style={{padding: ''}}>
-
-                
+            <div className='flex-row work-content' 
+                onMouseEnter={showDiv} 
+                onMouseLeave={closeDiv}
+                style={{padding: ''}}
+            >
                 <span className='border-bottom'></span>
                 <span>01/</span>
                 <p><em>Evoke Neurodiagnostics</em></p>
                 <span className='border-bottom'></span>
-                {isDiv && (<img className='work-img1-container' src={evokeDesktop} style={{left: x + window.scrollX - (200/2), top: y + window.scrollY - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}></img>)}
-                
-
+                {isDiv && (<img className='work-img1-container' src={evokeDesktop} style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}></img>)}
             </div>
 
             {/*

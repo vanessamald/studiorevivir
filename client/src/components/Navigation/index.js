@@ -16,7 +16,7 @@ function Navigation() {
             setButton('close-menu-button')
 
             if (typeof window != 'undefined' && window.document) {
-               // document.body.style.overflow = 'hidden';
+               //document.body.style.overflow = 'hidden';
                
             }
         }
@@ -80,8 +80,9 @@ function Navigation() {
             </button>
             <div className={menu}>
                 <div className='menu-content'>
-                    <a className='menu-link' href='#about'><SplitText className={about}/></a>
-                    <a className='menu-link' href='#work'><SplitText2 className={about}/></a>
+                    {/*<a className='menu-link' href='#about'><SplitText className={about}/></a>
+                    <a className='menu-link' href='#work'><SplitText2 className={about}/></a>*/}
+                    <p className='menu-link' style={{fontSize: '8vw', marginBottom: '25px'}}>Coming Soon!</p>
                     <Contact/>
                    {/*} <a className='menu-link' href='#about' onMouseEnter={showText} onMouseLeave={closeText}>{isText && (<SplitText className={about}/>)}About</a>
                     <a className='menu-link' href='' onMouseEnter={showText2} onMouseLeave={closeText2}>{isText2 && (<SplitText2 className={about}/>)}Work</a>*/}
