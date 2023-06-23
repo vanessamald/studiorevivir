@@ -398,8 +398,8 @@ a span span {
 }
 
 .close-line2 {
-  -webkit-transform: translateY(0px) rotate(-45deg);
-  transform: translateY(0px) rotate(-45deg);
+  -webkit-transform: translateY(2px) rotate(-45deg);
+  transform: translateY(2px) rotate(-45deg);
 }
 
 .close-line1 {
