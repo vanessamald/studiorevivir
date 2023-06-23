@@ -2,7 +2,6 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
-  border: 1px solid red;
 }
 
 body {
