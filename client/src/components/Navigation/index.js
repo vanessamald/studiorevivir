@@ -80,7 +80,7 @@ function Navigation() {
             </button>
             <div className={menu}>
                 <div className='menu-content'>
-                    <div className='border'></div>
+                   
                     {/*<a className='menu-link' href='#about'><SplitText className={about}/></a>
                     <a className='menu-link' href='#work'><SplitText2 className={about}/></a>*/}
                     
@@ -90,7 +90,7 @@ function Navigation() {
                     {/*<a className='menu-button' href='' onMouseEnter={showText3} onMouseLeave={closeText3}>{isText3 && (<SplitText3 className={about}/>)}Contact</a>*/}  
                 </div>
                 <div>
-                    
+                    <div className='border'></div>
                     <Register/>
                 </div>
             </div>
