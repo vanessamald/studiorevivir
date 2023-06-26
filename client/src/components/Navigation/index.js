@@ -80,16 +80,17 @@ function Navigation() {
             </button>
             <div className={menu}>
                 <div className='menu-content'>
+                    <div className='border'></div>
                     {/*<a className='menu-link' href='#about'><SplitText className={about}/></a>
                     <a className='menu-link' href='#work'><SplitText2 className={about}/></a>*/}
-                    <p className='menu-link' style={{fontSize: '8vw', marginBottom: '25px'}}>Coming Soon!</p>
+                    
                     <Contact/>
                    {/*} <a className='menu-link' href='#about' onMouseEnter={showText} onMouseLeave={closeText}>{isText && (<SplitText className={about}/>)}About</a>
                     <a className='menu-link' href='' onMouseEnter={showText2} onMouseLeave={closeText2}>{isText2 && (<SplitText2 className={about}/>)}Work</a>*/}
                     {/*<a className='menu-button' href='' onMouseEnter={showText3} onMouseLeave={closeText3}>{isText3 && (<SplitText3 className={about}/>)}Contact</a>*/}  
                 </div>
                 <div>
-                    <div className='border'></div>
+                    
                     <Register/>
                 </div>
             </div>

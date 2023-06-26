@@ -75,7 +75,7 @@ code {
 
 /* Logo Styling */
 .logo-container {
- height: 100vw;
+ height: 90rem;
 }
 
 .logo {
@@ -121,6 +121,8 @@ a span span {
   justify-content: space-between;
   padding-bottom: 25px;
   border: none;
+  position: relative;
+  left:25px;
 }
 
 .close-menu-button .nav-line1 {
@@ -149,7 +151,6 @@ a span span {
 
 .nav-line1, .nav-line2, .nav-line3 {
   position: relative;
-  left: 25px;
   top: 10px;
   width: 35px;
   height: 1px;
@@ -398,7 +399,7 @@ a span span {
 
 .close-line1, .close-line2 {
   height: 2px;
-  margin: 8px 0;
+  margin: 10px 0;
   width: 35px;
   background-color: var(--font-color);
 }
@@ -491,7 +492,7 @@ a span span {
 
 /* Register Styling */
 .border {
-  border: 1px solid var(--body-bg-color);
+  border: 0.5px solid var(--body-bg-color);
 }
 
 .register-title {
@@ -589,5 +590,16 @@ a span span {
   flex-direction: column;
   }
  
+}
+
+@media only screen and (device-width: 768px) {
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+  /* For portrait layouts only */
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+  /* For landscape layouts only */
 }
 
