@@ -13,7 +13,7 @@ function Home() {
     const [ theme, themeToggler, isOn] = useTheme();
     
     return (
-        <div className={theme}>
+        <div className={`${theme} home-container`}>
             <div className='home-nav-container'>
                 <Navigation/>
                 <div className="theme-togg-container">

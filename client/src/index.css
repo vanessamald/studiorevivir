@@ -47,17 +47,8 @@ code {
 }
 
 .home-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
+  height: 100vh;
   overflow-y: hidden;
-  position: relative;
-  background-color: transparent;
-  z-index: 1;
 }
 
 .coming-soon-text {
