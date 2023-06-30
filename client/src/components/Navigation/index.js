@@ -82,7 +82,7 @@ function Navigation() {
                 <div className='menu-content'>
                     <a className='menu-link' href='/'>Home</a>
                     <a className='menu-link' href='/about'><SplitText className={about}/></a>
-                    <a className='menu-link' href='#work'><SplitText2 className={about}/></a>
+                    <a className='menu-link' href='/work'><SplitText2 className={about}/></a>
                     
                     <Contact/>
                     {/*<a className='menu-link' href='#about' onMouseEnter={showText} onMouseLeave={closeText}>{isText && (<SplitText className={about}/>)}About</a>*/}
