@@ -183,16 +183,15 @@ a span span {
   justify-content: space-between;
   align-items: flex-start;
   /*text-align: center;*/
-  margin-top: 25px;
+  margin-top: 50px;
 }
 
 .menu-link {
   text-decoration: none;
   background-color: var(--font-color);
   color: var(--body-bg-color);
-  margin-top: 50px;
   border: none;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 100;
   border: none;
 }
@@ -315,8 +314,6 @@ a span span {
 
 .contact-button-container {
   background-color: var(--font-color);
-  padding-top: 50px;
-  padding-bottom: 50px;
 }
 
 .contact-button {
@@ -571,7 +568,7 @@ a span span {
     height: 200vw;
   }
   .logo {
-    margin-top: 25rem;
+    margin-top: 20rem;
     padding-bottom: 100%;
   }
   .contact-form-container {
@@ -597,13 +594,22 @@ a span span {
 }
 
 @media only screen and (device-width: 768px) {
+  .logo-container {
+    
+  }
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
   /* For portrait layouts only */
+  .logo-container {
+  
+  }
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
   /* For landscape layouts only */
+  .logo-container {
+  
+  }
 }
 
