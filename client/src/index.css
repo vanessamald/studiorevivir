@@ -440,13 +440,19 @@ a span span {
 
 /* Work Styling */
 .work-container {
-  margin-top: 100px;
+  height: 100vh;
 
 }
 
 .work-content {
-  margin-top: 100px;
-  padding: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+}
+
+.work-content-container {
+  height: 90vh;
+  justify-content: center;
 }
 
 .work-img {
@@ -583,6 +589,9 @@ a span span {
   .register-form {
     display: flex;
   flex-direction: column;
+  }
+  .work-content {
+    padding: 50px;
   }
  
 }
