@@ -2,6 +2,7 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
+  
 }
 
 body {
@@ -424,14 +425,14 @@ a span span {
 }
 
 .about-i-container {
-  align-items: center;
   margin-top: 100px;
 }
 
 .about-i-content {
+  font-weight: 200;
   margin-left: -200px;
-  font-size: 36px;
-  margin-top: -100px;
+  font-size: 2rem;
+  margin-top: -25px;
 }
 /* About Styling Ends */
 
@@ -553,6 +554,25 @@ a span span {
   0% { bottom: 0; opacity: 1; }
   50% { bottom: 0em; }
   100% { bottom: -0.2em; opacity: 1; }
+}
+
+@keyframes textAnimation {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.text-animation {
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  animation: textAnimation 2s forwards;
+  animation-delay: 1s;
 }
 
 /* Animations End */
