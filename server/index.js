@@ -25,14 +25,23 @@ const db = mysql.createConnection({
 
 const connection = mysql.createConnection(process.env.JAWSDB_URL);
 
-// Connect to the database
+
+
 connection.connect((err) => {
-  if (err) {
-    console.error('Error connecting to the database: ', err);
-  } else {
-    console.log('Connected to the database!');
-  }
-});
+    if (err) {
+      console.error('Error connecting to the database:', err);
+    } else {
+      console.log('Connected to the database!');
+      // Execute your database commands here
+      connection.query('SELECT * FROM table', (error, results) => {
+        if (error) {
+          console.error('Error executing query:', error);
+        } else {
+          console.log('Query results:', results);
+        }
+      });
+    }
+  });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -55,7 +64,7 @@ app.get('/newsletter', (req, res) => {
 
 // route to send out newsletter
 app.post('/newsletter/send', (req, res) => {
-    const query = "SELECT email FROM list";
+    const query = "SELECT email FROM email_list";
     connection.query(query, (error, results) => {
 
         if (error) {
@@ -85,6 +94,7 @@ app.post('/newsletter/send', (req, res) => {
     });
 })
 
+/*
 // route to add email and send a Welcome Email
 app.post('/register', (req, res) => {
 
@@ -130,6 +140,45 @@ app.post('/register', (req, res) => {
         }}
     });
 })
+*/
+
+// route to add email and send a Welcome Email
+app.post('/register', (req, res) => {
+    const name = req.body.name;
+    const email = req.body.email;
+
+    // create table schema
+    const createTableQuery = `
+    CREATE TABLE IF NOT EXISTS email_list (
+      id INT PRIMARY KEY AUTO_INCREMENT,
+      name VARCHAR(255) NOT NULL,
+      email VARCHAR(255) NOT NULL
+    )
+  `;
+  
+    // queries to insert email into db
+    const insertQuery = 'INSERT INTO email_list (name, email) VALUES (?, ?)';
+    const selectQuery = 'SELECT email FROM email_list WHERE email = ?';
+  
+    // Create the table (if it doesn't exist) before inserting data
+    connection.query(createTableQuery, (createErr) => {
+        if (createErr) {
+            console.error('Error creating table:', createErr);
+            res.status(500).send('Error creating table');
+        } else {
+        // Insert data into the table
+        connection.query(insertQuery, [name, email], (insertErr, result) => {
+        if (insertErr) {
+            console.error('Error inserting data into the database:', insertErr);
+            res.status(500).send('Error inserting data into the database');
+        } else {
+            console.log('Data inserted successfully:', result);
+            res.send('Data inserted into the database');
+        }
+      });
+    }
+  });
+});
 
 app.post('/contact', (req, res) => {
     const name = req.body.name;
