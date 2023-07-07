@@ -94,54 +94,6 @@ app.post('/newsletter/send', (req, res) => {
     });
 })
 
-/*
-// route to add email and send a Welcome Email
-app.post('/register', (req, res) => {
-
-    const name = req.body.name;
-    const email = req.body.email;
-
-    connection.query("INSERT INTO list (name, email) VALUES (?,?)", [name, email], (err, result) => {
-        if(err) {
-            console.log(err)
-        }
-        console.log(result)
-    });
-
-    const query = "SELECT email FROM list WHERE email = ?";
-    const newsletterEmail = [email];
-
-    connection.query(query, newsletterEmail, (error, results) => {
-
-        if (error) {
-            res.status(500).send(error);
-        } else {
-            if (results.length === 0) {
-                res.status(404).send('User not found');
-            } else {
-                const userEmail = results[0].email;
-            
-                const mail = {
-                    from: process.env.newsletter_email,
-                    to: userEmail,
-                    subject: 'Newsletter',
-                    html: '<p>Thanks for signing up! <br/> content coming soon!</p>' 
-                }
-                
-                transporter.sendMail(mail, (error, info) => {
-                if (error) {
-                    console.log(error);
-                    res.status(500).send(error);
-                } else {
-                    console.log('Newsletter sent successfully!');
-                    res.send('Newsletter sent to the client');
-                }
-            })
-        }}
-    });
-})
-*/
-
 // route to add email and send a Welcome Email
 app.post('/register', (req, res) => {
     const name = req.body.name;
@@ -159,26 +111,57 @@ app.post('/register', (req, res) => {
     // queries to insert email into db
     const insertQuery = 'INSERT INTO email_list (name, email) VALUES (?, ?)';
     const selectQuery = 'SELECT email FROM email_list WHERE email = ?';
-  
+    
     // Create the table (if it doesn't exist) before inserting data
     connection.query(createTableQuery, (createErr) => {
         if (createErr) {
             console.error('Error creating table:', createErr);
             res.status(500).send('Error creating table');
         } else {
-        // Insert data into the table
-        connection.query(insertQuery, [name, email], (insertErr, result) => {
-        if (insertErr) {
-            console.error('Error inserting data into the database:', insertErr);
-            res.status(500).send('Error inserting data into the database');
-        } else {
-            console.log('Data inserted successfully:', result);
-            res.send('Data inserted into the database');
+            // check if user exists in the db
+            connection.query(selectQuery, [email], (selectErr, results) => {
+                if (selectErr) {
+                    console.error('Error selecting data from the database:', selectErr);
+                    res.status(500).send('Error selecting data from the database');
+                } else {
+                    if (results.length > 0) {
+                        res.status(400).send('Email already registered');
+                    } else {
+                        // Insert data into the table if the user does not exist
+                        connection.query(insertQuery, [name, email], (insertErr, result) => {
+                            if (insertErr) {
+                                console.error('Error inserting data into the database:', insertErr);
+                                res.status(500).send('Error inserting data into the database');
+                            } else {
+                                console.log('Data inserted successfully:', result);
+
+                                // welcome email
+                                const mail = {
+                                    from: process.env.newsletter_email,
+                                    to: email,
+                                    subject: 'Newsletter',
+                                    html: '<p>Thanks for signing up! <br/> content coming soon!</p>'
+                                };
+
+                                // send welcome email to new user
+                                transporter.sendMail(mail, (mailErr, info) => {
+                                        if (mailErr) {
+                                        console.error('Error sending email:', mailErr);
+                                        res.status(500).send('Error sending email');
+                                    } else {
+                                        console.log('Newsletter sent successfully!');
+                                        res.send('Newsletter sent to the client');
+                                    }
+                                });
+                            }
+                        });
+                    }
+                }
+            });
         }
-      });
-    }
-  });
+    });
 });
+
 
 app.post('/contact', (req, res) => {
     const name = req.body.name;
