@@ -13,6 +13,13 @@ const transporter = require('./config');
 const dotenv = require('dotenv');
 dotenv.config();
 
+const mailchimp = require('@mailchimp/mailchimp_marketing');
+
+mailchimp.setConfig({
+  apiKey: process.env.MailChimp_API_KEY,
+  //server: 'YOUR_MAILCHIMP_SERVER_PREFIX', 
+});
+
 /*
 const db = mysql.createConnection({
     user: process.env.DB_USER,
@@ -59,14 +66,28 @@ app.get('/newsletter', (req, res) => {
             const newsletter = results[0];
             res.send(newsletter.content);
         }   
-    })
+    })  
 })
 
-// route to send out newsletter
-app.post('/newsletter/send', (req, res) => {
-    const query = "SELECT email FROM email_list";
-    connection.query(query, (error, results) => {
 
+// route to send out newsletter
+app.post('/newsletter', (req, res) => {
+    const getEmailListQuery = 'SELECT email FROM email_list';
+    connection.query(getEmailListQuery, (err, results) => {
+        if(err) {
+            console.log('Error retrieving email list', err);
+        } else {
+            const emailList = results.map((row) => row.email);
+            emailList.forEach((email) => {
+
+            })
+        }
+    })
+
+})
+
+/*
+    connection.query(query, (error, results) => {
         if (error) {
             res.status(500).send(error);
         } else {
@@ -78,7 +99,6 @@ app.post('/newsletter/send', (req, res) => {
                     to: emails.join(', '),
                     subject: 'Newsletter',
                     html: emailContent({ body: emailContent.body}) 
-                    
                 }
                 
                 transporter.sendMail(mail, (error, info) => {
@@ -92,7 +112,7 @@ app.post('/newsletter/send', (req, res) => {
             })
         }
     });
-})
+*/
 
 // route to add email and send a Welcome Email
 app.post('/register', (req, res) => {
