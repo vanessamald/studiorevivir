@@ -20,12 +20,6 @@ mailchimp.setConfig({
   server: process.env.MAILCHIMP_SERVER_PREFIX, 
 });
 
-async function run() {
-    const response = await mailchimp.ping.get();
-    console.log(response);
-  }
-  
-  run();
 
 /*
 const db = mysql.createConnection({
@@ -75,6 +69,34 @@ app.get('/newsletter', (req, res) => {
     })  
 })
 
+app.post('/newsletter/send', (req, res) => {
+    // get campaign info from mailchimp api
+    const campaignId = process.env.MAILCHIMP_CAMPAIGN_ID;
+
+    mailchimp.campaigns.getContent(campaignId).then((response)=> {
+        const campaignContent = response.html || '';
+        console.log(campaignContent);
+    }
+)})
+
+app.get('/test-campaign', (req, res) => {
+    const campaignId = process.env.MAILCHIMP_CAMPAIGN_ID;
+  
+    mailchimp.campaigns.getContent(campaignId)
+      .then((response) => {
+        const campaignContent = response.html || '';
+        console.log(campaignContent); // Log the retrieved campaign content
+  
+        // Optionally, you can return the campaign content as a response
+        // res.send(campaignContent);
+      })
+      .catch((error) => {
+        console.error('Error retrieving campaign content:', error);
+        // Handle the error appropriately
+        res.status(500).send('Error retrieving campaign content');
+      });
+  });
+
 // route to send out newsletter
 app.post('/newsletter', (req, res) => {
     // get campaign info from mailchimp api
@@ -97,7 +119,7 @@ app.post('/newsletter', (req, res) => {
                 const mailOptions = {
                     from: process.env.newsletter_email,
                     to: email,
-                    subject: '',
+                    subject: 'Email Campaign',
                     html: campaignContent
                 }
                 // send email campaign
@@ -158,14 +180,28 @@ app.post('/register', (req, res) => {
                             } else {
                                 console.log('Data inserted successfully:', result);
 
-                                // welcome email
-                                const mail = {
-                                    from: process.env.newsletter_email,
-                                    to: email,
-                                    subject: 'Newsletter',
-                                    html: '<p>Thanks for signing up! <br/> content coming soon!</p>'
+                                // Update email list in Mailchimp
+                                const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
+
+                                const subscriber = {
+                                    email_address: email,
+                                    status: 'subscribed',
+                                    merge_fields: {
+                                    FNAME: name,
+                                    },
                                 };
 
+                                mailchimp.lists.addListMember(audienceId, subscriber)
+                                .then(() => {
+                                    console.log('Subscriber added to Mailchimp list');
+                                    // Send welcome email to new user
+                                    const mail = {
+                                        from: process.env.newsletter_email,
+                                        to: email,
+                                        subject: 'Newsletter',
+                                        html: '<p>Thanks for signing up! <br/> content coming soon!</p>',
+                                    };
+                               
                                 // send welcome email to new user
                                 transporter.sendMail(mail, (mailErr, info) => {
                                         if (mailErr) {
@@ -176,14 +212,19 @@ app.post('/register', (req, res) => {
                                         res.send('Newsletter sent to the client');
                                     }
                                 });
-                            }
-                        });
+                            })
+                            .catch((error) => {
+                                console.error('Error adding subscriber to Mailchimp:', error);
+                                res.status(500).send('Error adding subscriber to Mailchimp');
+                            })
+                        }
                     }
-                }
-            });
-        }
-    });
-});
+                )}
+            }
+        })
+    }})
+})
+
 
 
 app.post('/contact', (req, res) => {
