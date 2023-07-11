@@ -2,7 +2,6 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
-  
 }
 
 body {
@@ -422,6 +421,7 @@ a span span {
   font-size: 3rem;
   padding: 25px;
   line-height: 2rem;
+  text-align: center;
 }
 
 .about-i-container {
@@ -602,6 +602,12 @@ a span span {
   }
   .about-i {
     width: 100%;
+  }
+  .about-i-title {
+    padding-bottom: 0px;
+  }
+  .about-i-content {
+    margin-left: -150px;
   }
   .register-form {
     display: flex;

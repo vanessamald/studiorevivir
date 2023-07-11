@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 function Contact() {
@@ -57,6 +56,7 @@ function Contact() {
         message: message
     } 
 
+    // if field is blank set alert
     if ( emailMessage === '') {
         setResult({
             message: 'Please fill out all fields'
@@ -84,10 +84,7 @@ function Contact() {
     return (
     <div>
         <div className={show}>
-           
-            
             <div className={show2}>
-            
             <div className='close-btn-container'>
             <h3 className='contact-form-title'>Contact Form</h3>
                 <button className='close-btn' onClick={handleClose}>
@@ -104,8 +101,6 @@ function Contact() {
                     </p>
                     )}
             </div>
-           
-            
             <Form onSubmit={submitForm} className='form-content'>
                 <Form.Group className="form-group" controlId="name">
                     <Form.Label className='form-name'></Form.Label>
@@ -155,12 +150,11 @@ function Contact() {
                 {status}
                 </button>
                 </div>
-               
             </Form>
             </div>
         </div>
         <div className='contact-button-container'>
-            <a className='menu-link' onClick={handleClick}><SplitText3 className={about}/></a>
+            <a className='menu-link' onClick={handleClick}>Contact{/*<SplitText3 className={about}/>*/}</a>
         </div>  
     </div>
     )
