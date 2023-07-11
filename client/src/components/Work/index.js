@@ -4,7 +4,7 @@ import useCursorPosition from '../useCursorPosition';
 import Navigation from '../Navigation';
 
 function Work() {
-    const [ position, setPosition] = useCursorPosition();
+    //const [ position, setPosition] = useCursorPosition();
 
     //console.log(position);
 
@@ -35,7 +35,7 @@ function Work() {
                     <span>01/</span>
                     <p className='text-animation'><em>Evoke Neurodiagnostics</em></p>
                     <span className='border-bottom'></span>
-                    {isDiv && (<img className='work-img1-container' src={evokeDesktop} style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}></img>)}
+                    {/*{isDiv && (<img className='work-img1-container' src={evokeDesktop} style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}></img>)}*/}
                 </div>
                 <div className='flex-row work-content' 
                     //onMouseEnter={showDiv} 
@@ -46,7 +46,7 @@ function Work() {
                     <span>02/</span>
                     <p className='text-animation'><em>Ruff Mom Life</em></p>
                     <span className='border-bottom'></span>
-                    {isDiv && (<img className='work-img1-container' src={evokeDesktop} style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}></img>)}
+                    {/*{isDiv && (<img className='work-img1-container' src={evokeDesktop} style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}></img>)}*/}
                 </div>
                 <div className='flex-row work-content' 
                     //onMouseEnter={showDiv} 
@@ -57,7 +57,7 @@ function Work() {
                     <span>03/</span>
                     <p className='text-animation'><em>Coming Soon</em></p>
                     <span className='border-bottom'></span>
-                    {isDiv && (<img className='work-img1-container' src={evokeDesktop} style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}></img>)}
+                    {/*{isDiv && (<img className='work-img1-container' src={evokeDesktop} style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}></img>)}*/}
                 </div>
             </div>
         </div>   

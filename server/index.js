@@ -32,8 +32,8 @@ connection.connect((err) => {
       console.error('Error connecting to the database:', err);
     } else {
       console.log('Connected to the database!');
-      // Execute your database commands here
-      connection.query('SELECT * FROM table', (error, results) => {
+    
+      connection.query('SELECT * FROM email_list', (error, results) => {
         if (error) {
           console.error('Error executing query:', error);
         } else {
@@ -51,7 +51,7 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 
 app.get('/newsletter', (req, res) => {
-    const query = "SELECT * FROM mail";
+    const query = "SELECT * FROM email_list";
     connection.query(query, (error, results) => {
         if (error){
             res.status(500).send(error);
