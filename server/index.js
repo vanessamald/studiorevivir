@@ -1,15 +1,13 @@
 const express = require('express');
 const path = require('path');
 const mysql = require("mysql2");
-const cors = require("cors");
 const mailchimp = require('@mailchimp/mailchimp_marketing');
-//const emailContent = require('../client/src/components/Newsletter') ;
+const cors = require("cors");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(express.json());
 
-//const { htmlToText } = require('html-to-text');
 const transporter = require('./config');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -19,17 +17,6 @@ mailchimp.setConfig({
   apiKey: process.env.MAILCHIMP_API_KEY,
   server: process.env.MAILCHIMP_SERVER_PREFIX, 
 });
-
-
-/*
-const db = mysql.createConnection({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
-    //port: process.env.DB_PORT
-});
-*/
 
 // connection to db
 const connection = mysql.createConnection(process.env.JAWSDB_URL);
@@ -50,53 +37,26 @@ connection.connect((err) => {
     }
   });
 
+// middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
 
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-
+// get newsletter users
 app.get('/newsletter', (req, res) => {
     const query = "SELECT * FROM email_list";
     connection.query(query, (error, results) => {
         if (error){
             res.status(500).send(error);
         } else {
-            const newsletter = results[0];
-            res.send(newsletter.content);
+            console.log(results);
         }   
     })  
 })
 
-app.post('/newsletter/send', (req, res) => {
-    // get campaign info from mailchimp api
-    const campaignId = process.env.MAILCHIMP_CAMPAIGN_ID;
-
-    mailchimp.campaigns.getContent(campaignId).then((response)=> {
-        const campaignContent = response.html || '';
-        console.log(campaignContent);
-    }
-)})
-
-app.get('/test-campaign', (req, res) => {
-    const campaignId = process.env.MAILCHIMP_CAMPAIGN_ID;
-  
-    mailchimp.campaigns.getContent(campaignId)
-      .then((response) => {
-        const campaignContent = response.html || '';
-        console.log(campaignContent); // Log the retrieved campaign content
-  
-        // Optionally, you can return the campaign content as a response
-        // res.send(campaignContent);
-      })
-      .catch((error) => {
-        console.error('Error retrieving campaign content:', error);
-        // Handle the error appropriately
-        res.status(500).send('Error retrieving campaign content');
-      });
-  });
-
+// 
 // route to send out newsletter
 app.post('/newsletter', (req, res) => {
     // get campaign info from mailchimp api
@@ -134,9 +94,7 @@ app.post('/newsletter', (req, res) => {
             res.send('Email sent to email list');
         }
     })
-
 })
-
 })
 
 // route to add email and send a Welcome Email
@@ -225,8 +183,7 @@ app.post('/register', (req, res) => {
     }})
 })
 
-
-
+// post route to send contact form email
 app.post('/contact', (req, res) => {
     // get email information from form submission
     const name = req.body.name;
