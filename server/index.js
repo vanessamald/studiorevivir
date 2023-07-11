@@ -2,23 +2,30 @@ const express = require('express');
 const path = require('path');
 const mysql = require("mysql2");
 const cors = require("cors");
-const emailContent = require('../client/src/components/Newsletter') ;
+const mailchimp = require('@mailchimp/mailchimp_marketing');
+//const emailContent = require('../client/src/components/Newsletter') ;
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(express.json());
 
-const { htmlToText } = require('html-to-text');
+//const { htmlToText } = require('html-to-text');
 const transporter = require('./config');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const mailchimp = require('@mailchimp/mailchimp_marketing');
-
+// mailchimp connection
 mailchimp.setConfig({
-  apiKey: process.env.MailChimp_API_KEY,
-  //server: 'YOUR_MAILCHIMP_SERVER_PREFIX', 
+  apiKey: process.env.MAILCHIMP_API_KEY,
+  server: process.env.MAILCHIMP_SERVER_PREFIX, 
 });
+
+async function run() {
+    const response = await mailchimp.ping.get();
+    console.log(response);
+  }
+  
+  run();
 
 /*
 const db = mysql.createConnection({
@@ -30,9 +37,8 @@ const db = mysql.createConnection({
 });
 */
 
+// connection to db
 const connection = mysql.createConnection(process.env.JAWSDB_URL);
-
-
 
 connection.connect((err) => {
     if (err) {
@@ -69,50 +75,47 @@ app.get('/newsletter', (req, res) => {
     })  
 })
 
-
 // route to send out newsletter
 app.post('/newsletter', (req, res) => {
-    const getEmailListQuery = 'SELECT email FROM email_list';
-    connection.query(getEmailListQuery, (err, results) => {
+    // get campaign info from mailchimp api
+    const campaignId = process.env.MAILCHIMP_CAMPAIGN_ID;
+
+    mailchimp.campaigns.getContent(campaignId).then((response)=> {
+        const campaignContent = response.html || '';
+
+        // query email list from db
+        const getEmailListQuery = 'SELECT email FROM email_list';
+
+        connection.query(getEmailListQuery, (err, results) => {
         if(err) {
             console.log('Error retrieving email list', err);
         } else {
+            // loop through email list
             const emailList = results.map((row) => row.email);
             emailList.forEach((email) => {
-
+                // nodemailer email options
+                const mailOptions = {
+                    from: process.env.newsletter_email,
+                    to: email,
+                    subject: '',
+                    html: campaignContent
+                }
+                // send email campaign
+                transporter.sendMail(mailOptions, (error, info)=> {
+                    if (error) {
+                        console.error('Error sending email', error);
+                    } else {
+                        console.log('Email sent!');
+                    }
+                })
             })
+            res.send('Email sent to email list');
         }
     })
 
 })
 
-/*
-    connection.query(query, (error, results) => {
-        if (error) {
-            res.status(500).send(error);
-        } else {
-            const emails = results.map(result => result.email);
-            //const content = <EmailContent/>
-           
-                const mail = {
-                    from: process.env.newsletter_email,
-                    to: emails.join(', '),
-                    subject: 'Newsletter',
-                    html: emailContent({ body: emailContent.body}) 
-                }
-                
-                transporter.sendMail(mail, (error, info) => {
-                if (error) {
-                    console.log(error);
-                    res.status(500).send(error);
-                } else {
-                    console.log('Newsletter sent successfully!');
-                    res.send('Newsletter sent to all users');
-                }
-            })
-        }
-    });
-*/
+})
 
 // route to add email and send a Welcome Email
 app.post('/register', (req, res) => {
@@ -184,6 +187,7 @@ app.post('/register', (req, res) => {
 
 
 app.post('/contact', (req, res) => {
+    // get email information from form submission
     const name = req.body.name;
     const email = req.body.email;
     const message = req.body.message;
@@ -195,6 +199,7 @@ app.post('/contact', (req, res) => {
                 <p>Email: ${email}</p>
                 <p>Message: ${message}</p>`,
         };
+    // send email via nodemailer
     transporter.sendMail(mail, (error) => {
         if (error) {
             res.json({ status: "Error "});
