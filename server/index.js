@@ -156,8 +156,31 @@ app.post('/register', (req, res) => {
                                     const mail = {
                                         from: process.env.newsletter_email,
                                         to: email,
-                                        subject: 'Newsletter',
-                                        html: '<p>Thanks for signing up! <br/> content coming soon!</p>',
+                                        subject: 'Revivir Newsletter',
+                                        html: `
+                                            <html>
+                                                <head>
+                                                <style>
+                                                body {
+                                                    font-family: Arial, sans-serif;
+                                                    background-color: #242222;
+                                                }
+                                                h1 {
+                                                    color: #edece7;
+                                                    font-size: 3rem;
+                                                    padding: 20px;
+                                                }
+                                                 p {
+                                                    color: #edece7;
+                                                }
+                                                </style>
+                                                </head>
+                                                <body>
+                                                    <h1>Welcome to our Newsletter!</h1>
+                                                    <p>Thanks for signing up! Content coming soon!</p>
+                                                </body>
+                                            </html>
+                                        `,
                                     };
                                
                                 // send welcome email to new user

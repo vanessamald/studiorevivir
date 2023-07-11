@@ -412,8 +412,6 @@ a span span {
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  
 }
 
 .about-i-title {
@@ -580,6 +578,9 @@ a span span {
 @media only screen and (max-width: 600px) {
   * {
     cursor: auto;
+  }
+  .cursor {
+    display: none;
   }
   .home-container {
     flex-direction: column;
