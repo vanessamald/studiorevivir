@@ -205,6 +205,22 @@ app.post('/register', (req, res) => {
     }})
 })
 
+app.delete('/register', (req, res) => {
+    const name = req.body.name;
+    const email = req.body.email;
+
+    const deleteQuery = 'DELETE FROM email_list WHERE email = ?';
+
+    connection.query(deleteQuery, [email], (error, results ) => {
+        if (error) {
+            console.error('Error selecting email');
+        } else {
+            console.log('Data deleted successfully:');
+            res.status(200);
+        }
+    })
+})
+
 // post route to send contact form email
 app.post('/contact', (req, res) => {
     // get email information from form submission
