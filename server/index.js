@@ -18,6 +18,7 @@ mailchimp.setConfig({
   server: process.env.MAILCHIMP_SERVER_PREFIX, 
 });
 
+/*
 // connection to db
 const connection = mysql.createConnection(process.env.JAWSDB_URL);
 
@@ -36,6 +37,7 @@ connection.connect((err) => {
       });
     }
   });
+*/
 
 // middleware
 app.use(express.urlencoded({ extended: false }));
@@ -43,18 +45,6 @@ app.use(express.json());
 app.use(cors());
 
 app.use(express.static(path.resolve(__dirname, '../client/build')));
-
-// get newsletter users
-app.get('/newsletter', (req, res) => {
-    const query = "SELECT * FROM email_list";
-    connection.query(query, (error, results) => {
-        if (error){
-            res.status(500).send(error);
-        } else {
-            console.log(results);
-        }   
-    })  
-})
 
 // route to send out newsletter
 app.post('/newsletter', (req, res) => {
@@ -101,123 +91,90 @@ app.post('/register', (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
 
-    // create table schema
-    const createTableQuery = `
-    CREATE TABLE IF NOT EXISTS email_list (
-      id INT PRIMARY KEY AUTO_INCREMENT,
-      name VARCHAR(255) NOT NULL,
-      email VARCHAR(255) NOT NULL
-    )
-  `;
-  
-    // queries to select and insert email into db
-    const insertQuery = 'INSERT INTO email_list (name, email) VALUES (?, ?)';
-    const selectQuery = 'SELECT email FROM email_list WHERE email = ?';
-    
-    // Create the table (if it doesn't exist) before inserting data
-    connection.query(createTableQuery, (createErr) => {
-        if (createErr) {
-            console.error('Error creating table:', createErr);
-            res.status(500).send('Error creating table');
-        } else {
-            // check if user exists in the db
-            connection.query(selectQuery, [email], (selectErr, results) => {
-                if (selectErr) {
-                    console.error('Error selecting data from the database:', selectErr);
-                    res.status(500).send('Error selecting data from the database');
-                } else {
-                    if (results.length > 0) {
-                        res.status(400).send('Email already registered');
-                    } else {
-                        // Insert data into the table if the user does not exist
-                        connection.query(insertQuery, [name, email], (insertErr, result) => {
-                            if (insertErr) {
-                                console.error('Error inserting data into the database:', insertErr);
-                                res.status(500).send('Error inserting data into the database');
-                            } else {
-                                console.log('Data inserted successfully:', result);
+    // Update email list in Mailchimp
+    const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
 
-                                // Update email list in Mailchimp
-                                const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
+    const subscriber = {
+                        email_address: email,
+                        status: 'subscribed',
+                        merge_fields: {
+                        FNAME: name,
+                        },
+                    };
 
-                                const subscriber = {
-                                    email_address: email,
-                                    status: 'subscribed',
-                                    merge_fields: {
-                                    FNAME: name,
-                                    },
-                                };
-
-                                mailchimp.lists.addListMember(audienceId, subscriber)
-                                .then(() => {
-                                    console.log('Subscriber added to Mailchimp list');
-                                    // Send welcome email to new user
-                                    const mail = {
-                                        from: process.env.newsletter_email,
-                                        to: email,
-                                        subject: 'Revivir Newsletter',
-                                        html: `
-                                            <html>
-                                                <head>
-                                                <style>
-                                                body {
-                                                    font-family: Arial, sans-serif;
-                                                    background-color: #242222;
-                                                }
-                                                h1 {
-                                                    color: #edece7;
-                                                    font-size: 3rem;
-                                                    padding: 20px;
-                                                }
-                                                 p {
-                                                    color: #edece7;
-                                                }
-                                                </style>
-                                                </head>
-                                                <body>
-                                                    <h1>Welcome to our Newsletter!</h1>
-                                                    <p>Thanks for signing up! Content coming soon!</p>
-                                                </body>
-                                            </html>
-                                        `,
-                                    };
-                               
-                                // send welcome email to new user
-                                transporter.sendMail(mail, (mailErr, info) => {
-                                        if (mailErr) {
-                                        console.error('Error sending email:', mailErr);
-                                        res.status(500).send('Error sending email');
-                                    } else {
-                                        console.log('Newsletter sent successfully!');
-                                        res.send('Newsletter sent to the client');
+    mailchimp.lists.addListMember(audienceId, subscriber).then(() => {
+        console.log('Subscriber added to Mailchimp list');
+        // Send welcome email to new user
+        const mail = {
+                        from: process.env.newsletter_email,
+                        to: email,
+                        subject: 'Revivir Newsletter',
+                        html: `
+                        <html>
+                            <head>
+                                <style>
+                                body {
+                                    font-family: Arial, sans-serif;
+                                    background-color: #242222;
+                                    padding: 25px;
                                     }
-                                });
-                            })
-                            .catch((error) => {
-                                console.error('Error adding subscriber to Mailchimp:', error);
-                                res.status(500).send('Error adding subscriber to Mailchimp');
-                            })
-                        }
-                    }
-                )}
+                                h1 {
+                                    color: #edece7;
+                                    font-size: 2rem;
+                                    padding: 10px;
+                                    }
+                                p {
+                                    color: #edece7;
+                                }
+                                </style>
+                            </head>
+                                <body>
+                                    <h1>Welcome to our Newsletter!</h1>
+                                    <p>Thanks for signing up! Content coming soon!</p>
+                                    <br/>
+                                    <br/>
+                                    <p>Love,</p>
+                                    <p>Revivir Studio</p>
+                                </body>
+                        </html>
+                        `,
+                    };
+                               
+        // send welcome email to new user
+        transporter.sendMail(mail, (mailErr, info) => {
+            if (mailErr) {
+                console.error('Error sending email:', mailErr);
+                res.status(500).send('Error sending email');
+            } else {
+                console.log('Newsletter sent successfully!');
+                res.send('Newsletter sent to the client');
             }
-        })
-    }})
+        });
+    })
+    .catch((error) => {
+        console.error('Error adding subscriber to Mailchimp:', error);
+        res.status(500).send('Error adding subscriber to Mailchimp');
+    })
 })
 
+
+// delete route for users to unsubscribe from newsletter
 app.delete('/register', (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
 
-    const deleteQuery = 'DELETE FROM email_list WHERE email = ?';
+    // update Mailchimp audience
+    const listId = process.env.MAILCHIMP_AUDIENCE_ID;
+    const memberEmail = { email_adress: email};
+    const memberStatus = 'unsubscribed';
 
-    connection.query(deleteQuery, [email], (error, results ) => {
-        if (error) {
-            console.error('Error selecting email');
-        } else {
-            console.log('Data deleted successfully:');
-            res.status(200);
-        }
+    mailchimp.lists.updateListMember(listId, memberEmail, {status: memberStatus}).then(() => {
+        console.log('Member unsubscribed in Mailchimp successfully');
+        res.status(200).send('Member unsubscribed!');
+    })
+    .catch((error) => {
+        console.log('Error updating member in Mailchimp', error);
+        res.status(500).send('Error updating member in Mailchimp');
     })
 })
 
