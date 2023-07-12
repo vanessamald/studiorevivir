@@ -7,7 +7,6 @@ import Work from './components/Work';
 import Cursor from './components/cursor';
 import useTheme from './components/useTheme';
 
-
 function App() {
   const [theme, componentMounted] = useTheme();
  

@@ -60,6 +60,7 @@ function Work() {
                     {/*{isDiv && (<img className='work-img1-container' src={evokeDesktop} style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}></img>)}*/}
                 </div>
             </div>
+            
         </div>   
     )
 }

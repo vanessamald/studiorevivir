@@ -56,7 +56,6 @@ app.get('/newsletter', (req, res) => {
     })  
 })
 
-// 
 // route to send out newsletter
 app.post('/newsletter', (req, res) => {
     // get campaign info from mailchimp api
@@ -97,7 +96,7 @@ app.post('/newsletter', (req, res) => {
 })
 })
 
-// route to add email and send a Welcome Email
+// route to register email for newsletter and send a Welcome Email
 app.post('/register', (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
@@ -111,7 +110,7 @@ app.post('/register', (req, res) => {
     )
   `;
   
-    // queries to insert email into db
+    // queries to select and insert email into db
     const insertQuery = 'INSERT INTO email_list (name, email) VALUES (?, ?)';
     const selectQuery = 'SELECT email FROM email_list WHERE email = ?';
     
