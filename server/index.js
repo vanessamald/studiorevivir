@@ -18,27 +18,6 @@ mailchimp.setConfig({
   server: process.env.MAILCHIMP_SERVER_PREFIX, 
 });
 
-/*
-// connection to db
-const connection = mysql.createConnection(process.env.JAWSDB_URL);
-
-connection.connect((err) => {
-    if (err) {
-      console.error('Error connecting to the database:', err);
-    } else {
-      console.log('Connected to the database!');
-    
-      connection.query('SELECT * FROM email_list', (error, results) => {
-        if (error) {
-          console.error('Error executing query:', error);
-        } else {
-          console.log('Query results:', results);
-        }
-      });
-    }
-  });
-*/
-
 // middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -121,7 +100,6 @@ app.post('/register', (req, res) => {
                                 h1 {
                                     color: #edece7;
                                     font-size: 2rem;
-                                    padding: 10px;
                                     }
                                 p {
                                     color: #edece7;
