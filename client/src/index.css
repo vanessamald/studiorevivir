@@ -490,6 +490,24 @@ a span span {
   font-size: 36px;
   margin-top: 50px;
 }
+
+.work-hidden-container {
+  display: flex;
+  position: absolute;
+  height: 90%;
+  width: 100%;
+
+}
+
+.work-hidden-content {
+  display: flex;
+  padding: 100px;
+
+}
+
+.work-hidden-text {
+  margin-left: 25px;
+}
 /* Work Styling Ends */
 
 /* Newsletter Styling */
@@ -627,12 +645,14 @@ a span span {
   }
   .register-form {
     display: flex;
-  flex-direction: column;
+    flex-direction: column;
   }
   .work-content {
     padding: 50px;
   }
- 
+  .work-hidden-content {
+    flex-direction: column;
+  }
 }
 
 @media only screen and (device-width: 768px) {

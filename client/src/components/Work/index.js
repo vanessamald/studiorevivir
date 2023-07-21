@@ -5,6 +5,7 @@ import Navigation from '../Navigation';
 function Work() {
     const [ position, setPosition] = useCursorPosition();
     const [ isButton, setButton ] = useState(false);
+    const [showComponent, setShowComponent] = useState(false);
 
     // use cursor position
     var x = position.clientX;
@@ -20,7 +21,9 @@ function Work() {
     }
 
     const viewButtonHandler = () => {
-        console.log('CLICKED')
+        console.log('CLICKED');
+        setShowComponent(!showComponent);
+        setButton(false);
     }
 
 
@@ -40,7 +43,7 @@ function Work() {
                     {isButton && (<button onClick={viewButtonHandler} className='work-img1-container'  style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}><p className='work-button-text'>View</p></button>)}
                 </div>  
            
-
+                {showComponent ? <ComponentToShow /> : ''}
                 {/*
                 <div className='flex-row work-content' 
                     //onMouseEnter={showDiv} 
@@ -59,5 +62,22 @@ function Work() {
         </div>   
     )
 }
+
+const ComponentToShow = () => {
+    return  <div className='work-hidden-container'>
+                <div className='work-hidden-content'>
+                    <h1>Evoke Neurodiagnostics</h1>
+                    <p className='work-hidden-text'> 
+                        Evoke, a cognitive impairment testing services company, was looking to establish 
+                        their brand identity in the Healthcare field while setting themselves apart. 
+                        We created a strong and unique brand presence through modern design.
+                    </p>
+                </div> 
+            </div>;
+  };
+  
+  const ComponentToHide = () => {
+    return <h1>Bye</h1>;
+  };
 
 export default Work;
