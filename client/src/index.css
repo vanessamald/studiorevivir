@@ -476,6 +476,20 @@ a span span {
   box-sizing: border-box;
   
 }
+
+.work-button {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.work-button-text {
+  text-align: center;
+  background-color: transparent;
+  color:rgba(36, 34, 34, 0.75);
+  font-size: 36px;
+  margin-top: 50px;
+}
 /* Work Styling Ends */
 
 /* Newsletter Styling */
@@ -538,6 +552,11 @@ a span span {
 /* Colors */
 .bkg-transparent {
   background-color: transparent;
+}
+
+/* Font Styling */
+.no-underline {
+  text-decoration: none;
 }
 
 /* Animations */
