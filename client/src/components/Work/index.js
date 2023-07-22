@@ -40,7 +40,7 @@ function Work() {
                     <span>01/</span>
                     <p className='no-underline text-animation'><em>Evoke Neurodiagnostics</em></p>
                     <span className='border-bottom'></span>
-                    {isButton && (<button onClick={viewButtonHandler} className='work-img1-container'  style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}><p className='work-button-text'>View</p></button>)}
+                    {isButton && ( <button onClick={viewButtonHandler} className='work-button-container'  style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}><p className='work-button-text'>View</p></button>)}
                 </div>  
            
                 {showComponent ? <ComponentToShow /> : ''}
@@ -65,14 +65,25 @@ function Work() {
 
 const ComponentToShow = () => {
     return  <div className='work-hidden-container'>
-                <div className='work-hidden-content'>
-                    <h1>Evoke Neurodiagnostics</h1>
+                <div className='work-hidden-content flex'>
+                
+                    <div className='flex-column'>
+                        <div className='work-hidden-subtitle'>
+                            <h2>Branding</h2>
+                            <h2>Web Design & Development</h2>
+                        </div>
+                        
+                    </div>
+                    
                     <p className='work-hidden-text'> 
                         Evoke, a cognitive impairment testing services company, was looking to establish 
-                        their brand identity in the Healthcare field while setting themselves apart. 
+                        their brand identity in the Healthcare field. 
                         We created a strong and unique brand presence through modern design.
                     </p>
                 </div> 
+                <div>
+                    <p></p>
+                </div>
             </div>;
   };
   

@@ -467,14 +467,13 @@ a span span {
   
 }
 
-.work-img1-container {
-  background-color: white;
+.work-button-container {
+  background-color: var(--font-color);
   border-radius: 50%;
   object-fit: cover;
   max-width: 200px;
   max-height: 200px;
   box-sizing: border-box;
-  
 }
 
 .work-button {
@@ -484,11 +483,11 @@ a span span {
 }
 
 .work-button-text {
-  text-align: center;
+
   background-color: transparent;
   color:rgba(36, 34, 34, 0.75);
   font-size: 36px;
-  margin-top: 50px;
+ 
 }
 
 .work-hidden-container {
@@ -496,17 +495,19 @@ a span span {
   position: absolute;
   height: 90%;
   width: 100%;
-
+  overflow: hidden;
 }
 
 .work-hidden-content {
-  display: flex;
   padding: 100px;
-
 }
 
 .work-hidden-text {
   margin-left: 25px;
+}
+
+.work-hidden-subtitle {
+  line-height: 1rem;
 }
 /* Work Styling Ends */
 
@@ -553,6 +554,10 @@ a span span {
 /* Register Ends */
 
 /* Flex Styling */
+.flex {
+  display: flex;
+}
+
 .flex-column {
   display: flex;
   flex-direction: column;
@@ -565,6 +570,10 @@ a span span {
 
 .justify-center {
   justify-content: center;
+}
+
+.align-center {
+  align-items: center;
 }
 
 /* Colors */
