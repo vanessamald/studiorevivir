@@ -21,7 +21,26 @@ function About() {
                     <h2 className='about-i-content bkg-transparent text-animation' style={{animationDelay: '2.5s'}}>dentity</h2>
                     {/*<h2 className='about-i-content bkg-transparent text-animation' style={{animationDelay: '2.5s'}} >Brand</h2>*/}
                 </div>
+                <div>
+                <div>
+                    <h2>Behind the Brand</h2>
+                    <p>
+                        If you are new here my name is Vanessa, I love creating content wether it's for myself or my brand. 
+                    </p>
+                </div>
+                <div>
+                    <h2>Why revivir?</h2>
+                    <p>
+                        In Spanish revívír means to come alive again, to reawaken. After discovering Web Development, 
+                        my creativity was reawakened and I wanted to commemorate my excitement for this new career path with a fitting name.
+                    </p>
+                    <p>
+                        
+                    </p>
+                </div>
             </div>
+            </div>
+            
         </div>
     )
 }
