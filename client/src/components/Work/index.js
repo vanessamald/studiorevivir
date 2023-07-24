@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import useCursorPosition from '../useCursorPosition';
 import Navigation from '../Navigation';
+import ImageZoom from '../ImageZoom';
+import Evoke from '../../assets/images/evoke.png';
 
 function Work() {
     const [ position, setPosition] = useCursorPosition();
@@ -66,15 +68,12 @@ function Work() {
 const ComponentToShow = () => {
     return  <div className='work-hidden-container'>
                 <div className='work-hidden-content flex'>
-                
                     <div className='flex-column'>
                         <div className='work-hidden-subtitle'>
                             <h2>Branding</h2>
                             <h2>Web Design & Development</h2>
-                        </div>
-                        
+                        </div> 
                     </div>
-                    
                     <p className='work-hidden-text'> 
                         Evoke, a cognitive impairment testing services company, was looking to establish 
                         their brand identity in the Healthcare field. 
@@ -82,13 +81,11 @@ const ComponentToShow = () => {
                     </p>
                 </div> 
                 <div>
-                    <p></p>
+                    <p>{/* More Info Here */}</p>
                 </div>
+                <ImageZoom imageUrl={Evoke}/>
+
             </div>;
-  };
-  
-  const ComponentToHide = () => {
-    return <h1>Bye</h1>;
   };
 
 export default Work;

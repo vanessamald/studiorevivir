@@ -35,7 +35,7 @@ function About() {
                         my creativity was reawakened and I wanted to commemorate my excitement for this new career path with a fitting name.
                     </p>
                     <p>
-                        
+                        {/* More Info Here */}
                     </p>
                 </div>
             </div>
