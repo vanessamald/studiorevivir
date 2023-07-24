@@ -1,32 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
 function ImageZoom({ imageUrl }) {
-    const [ zoom, setZoom ] = useState(1);
-    
-    const handleScroll = () => {
-        const scrollY = window.screenY;
-        const newZoomLevel = 1 + scrollY / 500;
-        setZoom(newZoomLevel);
-        console.log(zoom);
+    const [ scrollY, setScrollY ] = useState(0);
+
+    const handleScroll = (e) => {
+        setScrollY(e.target.scrollTop);
     };
-
-    useEffect(() => {
-        const handleScrollEvent = () => {
-            handleScroll();
-        };
-
-        window.addEventListener('scroll', handleScrollEvent);
-        return () => {
-            window.removeEventListener('scroll', handleScrollEvent);
-        }
-    }, []);
-
+    
     return (
-        <div className='image-zoom-container' >
+        <div 
+            onScroll={handleScroll}
+            className='image-zoom-container' 
+            style={{ overflow: 'auto', height: '400px' }}
+        >
             <img 
                 src={imageUrl} 
                 alt='preview of works'
-                style={{transform: `scale(${zoom}) `, transition: "transform 1000ms ease-in-out"}}
+                style={{transform: `scale(${1 + scrollY / 1000}) `, transition: "transform 0.2s ease-out"}}
             >
             </img>
         </div>
