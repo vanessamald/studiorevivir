@@ -8,13 +8,12 @@ function Work() {
     const [ position, setPosition] = useCursorPosition();
     const [ isButton, setButton ] = useState(false);
     const [showComponent, setShowComponent] = useState(false);
-    const [ showComponent2, setShowComponent2 ] = useState(false);
 
     // use cursor position
     var x = position.clientX;
     var y = position.clientY;
 
-    // show button on mouse hover
+    // show view button on mouse hover
     const showButton = () => {
         setButton(true);
     }
@@ -23,84 +22,85 @@ function Work() {
         setButton(false);
     }
 
-    const viewButtonHandler = () => {
-        console.log('CLICKED');
-        setShowComponent(!showComponent);
+    // work data array
+    const workData = [
+        {
+            id: 1,
+            title: 'Evoke',
+            subtitle: 'Web Design & Development',
+            subtitle2: 'Branding',
+            description: 'Evoke, a cognitive impairment testing services company, was looking to establish their brand identity in the Healthcare field. We created a strong and unique brand presence through modern design.',
+            image: Evoke
+        },
+        {
+            id: 2,
+            title: 'Coming Soon',
+            subtitle: '',
+            subtitle2: '',
+            description: '',
+            image: ''
+        }
+    ]
+
+    // handle view button click for each work
+    const viewButtonHandler = (id) => {
+        console.log('CLICKED WORK BUTTON');
+        setShowComponent(id);
         setButton(false);
     }
-
-    const viewButtonHandler2 = () => {
-        console.log('CLICKED');
-        setShowComponent2(!showComponent2);
-        setButton(false);
-    }
-
 
     return (
         <div className='work-container' id='work'>
             <Navigation/>
             <div className='flex-column work-content-container'>
-                <div className='flex-row work-content' 
+                {workData.map((data) => (
+                <div 
+                    key={data.id}
+                    className='flex-row work-content' 
                     onMouseEnter={showButton} 
                     onMouseLeave={closeButton}
                     style={{padding: ''}}
                 >
                     <span className='border-bottom'></span>
-                    <span>01/</span>
-                    <button onClick={viewButtonHandler} className='work-button no-underline text-animation'><em>Evoke Neurodiagnostics</em></button>
-                    <span className='border-bottom'></span>
-                    {isButton && ( <div className='work-button-container'  style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}><p className='work-button-text'>View</p></div>)}
-                </div> 
-                <div className='flex-row work-content' 
-                    onMouseEnter={showButton} 
-                    onMouseLeave={closeButton}
-                    style={{padding: ''}}
-                >
-                    <span className='border-bottom'></span>
-                    <span>02/</span>
-                    <button onClick={viewButtonHandler2} className='work-button no-underline text-animation'><em>Coming Soon</em></button>
+                    <span>{data.id}/</span>
+                    <button 
+                        onClick={() => viewButtonHandler(data.id)}
+                        className='work-button no-underline text-animation'
+                    >
+                        <em>{data.title}</em>
+                    </button>
                     <span className='border-bottom'></span>
                     {isButton && ( <div className='work-button-container'  style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}><p className='work-button-text'>View</p></div>)}
                 </div>  
-           
-                {showComponent ? <ComponentToShow /> : ''}
-                {showComponent2 ? <ComponentToShow2 /> : ''}
-           
+            ))}
+                {showComponent ? <ComponentToShow data={workData.find((data) => data.id === showComponent)} /> : ''}
             </div>
-            
         </div>   
     )
 }
 
-const ComponentToShow = () => {
+// show work data content
+const ComponentToShow = ({ data }) => {
     return  <div className='work-hidden-container'>
                 <div className='work-hidden-content flex'>
                     <div className='flex-column'>
                         <div className='work-hidden-subtitle'>
-                            <h2>Branding</h2>
-                            <h2>Web Design & Development</h2>
+                            <h1>{data.title}</h1>
+                            <h2>{data.subtitle}</h2>
+                            <h2>{data.subtitle2}</h2>
                         </div> 
                     </div>
                     <p className='work-hidden-text'> 
-                        Evoke, a cognitive impairment testing services company, was looking to establish 
-                        their brand identity in the Healthcare field. 
-                        We created a strong and unique brand presence through modern design.
+                        {data.description}
                     </p>
                 </div> 
                 <div>
                     <p>{/* More Info Here */}</p>
-                    
                 </div>
                 <div className='image-reveal-container'>
-                    <ImageZoom imageUrl={Evoke}/>
+                    <ImageZoom imageUrl={data.image}/>
                 </div>
             </div>;
   };
-
-  const ComponentToShow2 = () => {
-    return <div>
-        <p>CONTENT COMING SOON!</p>
-    </div>
-  }
 
 export default Work;
