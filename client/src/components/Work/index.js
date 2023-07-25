@@ -84,10 +84,10 @@ const ComponentToShow = ({ data }) => {
     return  <div className='work-hidden-container'>
                 <div className='work-hidden-content flex'>
                     <div className='flex-column'>
-                        <div className='work-hidden-subtitle'>
-                            <h1>{data.title}</h1>
-                            <h2>{data.subtitle}</h2>
-                            <h2>{data.subtitle2}</h2>
+                            <h1 className='work-title'>{data.title}</h1>
+                        <div >
+                            <h2 className='work-hidden-subtitle'>{data.subtitle}</h2>
+                            <h2 className='work-hidden-subtitle'>{data.subtitle2}</h2>
                         </div> 
                     </div>
                     <p className='work-hidden-text'> 
