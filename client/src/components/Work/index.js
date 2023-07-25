@@ -82,8 +82,12 @@ const ComponentToShow = () => {
                 </div> 
                 <div>
                     <p>{/* More Info Here */}</p>
+                    
                 </div>
-                <ImageZoom imageUrl={Evoke}/>
+                <div className='image-reveal-container'>
+                    <ImageZoom imageUrl={Evoke}/>
+                </div>
+                
 
             </div>;
   };

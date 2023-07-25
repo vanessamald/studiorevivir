@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import useTheme from '../useTheme';
 import idark from '../../assets/images/i-dark.png';
 import ilight from '../../assets/images/i-light.png';
@@ -6,6 +6,20 @@ import Navigation from '../Navigation';
 
 function About() {
     const [ theme ] = useTheme();
+    const [ scrollY, setScrollY ] = useState(0);
+
+
+    const animateOnScroll = (e) => {
+        setScrollY(e.target.scrollTop);
+    }
+
+
+    useEffect(() => {
+        window.addEventListener('scroll', animateOnScroll);
+        return () => {
+          window.removeEventListener('scroll', animateOnScroll);
+        };
+      }, []);
 
     return (
         <div className='about-container'>
@@ -13,19 +27,40 @@ function About() {
             <div className='flex-column justify-center'>
                 <h2 className='about-i-title text-animation' style={{animationDelay: '0.5s'}}>Web Design & Development Focused on Brand</h2>
             </div>
-            <div className='flex-row justify-center'>
-                <img alt='light or dark theme icon' className='about-i bkg-transparent text-animation' src={theme === 'dark' ? ilight : idark}></img>
+            <div className='flex-row justify-center' onScroll={animateOnScroll}>
+                <img 
+                    alt='light or dark theme icon' 
+                    className={`about-i bkg-transparent ${animateOnScroll ? 'text-animation' : ''}`} 
+                    src={theme === 'dark' ? ilight : idark}
+                >
+                </img>
                 <div className='about-i-container flex-column justify-center bkg-transparent'>
-                    <h2 className='about-i-content bkg-transparent text-animation' style={{animationDelay: '1.5s'}}>mage</h2>
-                    <h2 className='about-i-content bkg-transparent text-animation' style={{animationDelay: '2s'}}>&</h2>
-                    <h2 className='about-i-content bkg-transparent text-animation' style={{animationDelay: '2.5s'}}>dentity</h2>
+                    <h2  
+                        className={`about-i-content bkg-transparent ${animateOnScroll ? 'text-animation' : ''}`}
+                        style={{animationDelay: '1.5s'}}
+                    >
+                        mage
+                    </h2>
+                    <h2 
+                        className={`about-i-content bkg-transparent ${animateOnScroll ? 'text-animation' : ''}`}
+                        style={{animationDelay: '2s'}}
+                    >
+                        &
+                    </h2>
+                    <h2 
+                        className={`about-i-content bkg-transparent ${animateOnScroll ? 'text-animation' : ''}`}
+                        style={{animationDelay: '2.5s'}}
+                    >
+                        dentity
+                    </h2>
                     {/*<h2 className='about-i-content bkg-transparent text-animation' style={{animationDelay: '2.5s'}} >Brand</h2>*/}
                 </div>
-                <div>
+            </div>
+            <div className='flex-column justify-center about-content'>
                 <div>
                     <h2>Behind the Brand</h2>
                     <p>
-                        If you are new here my name is Vanessa, I love creating content wether it's for myself or my brand. 
+                        If you are new here my name is Vanessa, I love creating content whether it's for myself or my brand. 
                     </p>
                 </div>
                 <div>
@@ -38,7 +73,7 @@ function About() {
                         {/* More Info Here */}
                     </p>
                 </div>
-            </div>
+            
             </div>
             
         </div>
