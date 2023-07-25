@@ -8,6 +8,7 @@ function Work() {
     const [ position, setPosition] = useCursorPosition();
     const [ isButton, setButton ] = useState(false);
     const [showComponent, setShowComponent] = useState(false);
+    const [ showComponent2, setShowComponent2 ] = useState(false);
 
     // use cursor position
     var x = position.clientX;
@@ -28,6 +29,12 @@ function Work() {
         setButton(false);
     }
 
+    const viewButtonHandler2 = () => {
+        console.log('CLICKED');
+        setShowComponent2(!showComponent2);
+        setButton(false);
+    }
+
 
     return (
         <div className='work-container' id='work'>
@@ -40,25 +47,25 @@ function Work() {
                 >
                     <span className='border-bottom'></span>
                     <span>01/</span>
-                    <p className='no-underline text-animation'><em>Evoke Neurodiagnostics</em></p>
+                    <button onClick={viewButtonHandler} className='work-button no-underline text-animation'><em>Evoke Neurodiagnostics</em></button>
                     <span className='border-bottom'></span>
-                    {isButton && ( <button onClick={viewButtonHandler} className='work-button-container'  style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}><p className='work-button-text'>View</p></button>)}
-                </div>  
-           
-                {showComponent ? <ComponentToShow /> : ''}
-                {/*
+                    {isButton && ( <div className='work-button-container'  style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}><p className='work-button-text'>View</p></div>)}
+                </div> 
                 <div className='flex-row work-content' 
-                    //onMouseEnter={showDiv} 
-                    //onMouseLeave={closeDiv}
+                    onMouseEnter={showButton} 
+                    onMouseLeave={closeButton}
                     style={{padding: ''}}
                 >
                     <span className='border-bottom'></span>
                     <span>02/</span>
-                    <p className='text-animation'><em>Coming Soon</em></p>
+                    <button onClick={viewButtonHandler2} className='work-button no-underline text-animation'><em>Coming Soon</em></button>
                     <span className='border-bottom'></span>
-                    {isDiv && (<img className='work-img1-container' src={evokeDesktop} style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}></img>)}
-                </div>
-                */}
+                    {isButton && ( <div className='work-button-container'  style={{left: x - (200/2), top: y - (200/2), position: 'absolute', height: '100%', width: '100%', zIndex: '999999' }}><p className='work-button-text'>View</p></div>)}
+                </div>  
+           
+                {showComponent ? <ComponentToShow /> : ''}
+                {showComponent2 ? <ComponentToShow2 /> : ''}
+           
             </div>
             
         </div>   
@@ -87,9 +94,13 @@ const ComponentToShow = () => {
                 <div className='image-reveal-container'>
                     <ImageZoom imageUrl={Evoke}/>
                 </div>
-                
-
             </div>;
   };
+
+  const ComponentToShow2 = () => {
+    return <div>
+        <p>CONTENT COMING SOON!</p>
+    </div>
+  }
 
 export default Work;
