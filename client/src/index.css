@@ -85,19 +85,20 @@ code {
   display: block;
 }
 
+
+
+/*
 .menu-link span {
   background-color: var(--font-color);
-  
 }
 
 a span span {
   position: relative;
   opacity: 0;
   animation: move-text 1s forwards;
-  /* animation: move-text 1s forwards;*/
-  
   animation-iteration-count: 1;
 }
+*/
 
 .menu-button {
   border: 1px solid red;
@@ -159,9 +160,9 @@ a span span {
 }
 
 .menu-container {
-  transition: 1s;
-  /*height: 75%;*/
+  transition: 2s;
   width: 100%;
+  height: 100vh;
   position: absolute;
   z-index: 3;
   left: 0;
@@ -170,19 +171,21 @@ a span span {
   overflow-x: hidden;
   overflow-y: hidden;
   transition: 1s;
+  transition: move-text 1s forwards;
 }
 
 .menu-content {
   background-color: var(--font-color);
+  color: var(--body-bg-color);
   position: relative;
-  left: 25px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   /*text-align: center;*/
-  margin-top: 50px;
+  margin-top: 200px;
+  margin-bottom: 50px;
 }
 
 .menu-link {
@@ -191,14 +194,18 @@ a span span {
   color: var(--body-bg-color);
   border: none;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 200;
+  letter-spacing: -.075em;
   border: none;
 }
 
 .menu-link:hover {
-  opacity: 0.5;
+
+  background-color: transparent;
 }
+
+
 /* Navigation Styling Ends */
 
 /* Toggle and Theme Styling */
@@ -318,6 +325,9 @@ a span span {
 
 .contact-button-container {
   background-color: var(--font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-button {
@@ -327,7 +337,6 @@ a span span {
   z-index: 3;
   font-weight: 100;
   font-size: 5vw;
-
 }
 
 .contact-container {
@@ -634,15 +643,24 @@ a span span {
 }
 
 /* Split Text Animation Styling */ 
+.menu-content > span span {
+  color: var(--body-bg-color);
+  background-color: var(--font-color);
+  font-size: 6rem;
+}
+
+.menu-content > span {
+  margin-bottom: 50px;
+  background-color: var(--font-color);
+}
+
 span span { 
   position: relative;
   opacity: 0;	
-  color: var(--font-color);
   text-transform: uppercase;
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 200;
   animation: split-text 1s forwards; 
- 
 }
 
 /* Animations */

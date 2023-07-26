@@ -3,13 +3,13 @@ import React, { useEffect, useState } from 'react';
 // typewriter animation component
 const SplitText = ({ text }) => {
   return (
-      <span style={{animationDelay: ''}}>
+      <span>
           {text.split("").map(function(char, index){
               const style = {
-                  "animationDelay": (0.5 + index / 10) + "s",
+                  "animationDelay": (2 + index / 15) + "s",
                   };
                   return (
-                      <span aria-hidden="true" key={index} id={index} className='nav-link' style={style}>
+                      <span aria-hidden="true" key={index} id={index} className='' style={style}>
                           {char}
                       </span>
                   );

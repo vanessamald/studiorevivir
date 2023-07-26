@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import About from '../About';
 import Contact from '../Contact';
 import Register from '../Register';
+import SplitText from '../SplitText';
 
 function Navigation() {
     const [ menu, setMenu ] = useState('hidden-menu');
@@ -40,14 +41,15 @@ function Navigation() {
             </button>
             <div className={menu}>
                 <div className='menu-content'>
+                    <SplitText text='Menu'/>
                     <a className='menu-link' href='/'>Home</a>
                     <a className='menu-link' href='/about'>About</a>
                     <a className='menu-link' href='/work'>Work</a>
                     <Contact/>
                 </div>
                 <div>
-                    <div className='border'></div>
-                    <Register/>
+                    {/*(<div className='border'></div>*/}
+                    {/*<Register/>*/}
                 </div>
             </div>
         </div>
