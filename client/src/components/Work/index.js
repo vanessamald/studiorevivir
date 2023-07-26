@@ -39,6 +39,14 @@ function Work() {
             subtitle2: '',
             description: '',
             image: ''
+        },
+        {
+            id: 3,
+            title: 'Coming Soon',
+            subtitle: '',
+            subtitle2: '',
+            description: '',
+            image: ''
         }
     ]
 

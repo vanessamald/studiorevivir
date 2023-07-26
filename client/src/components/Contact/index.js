@@ -148,7 +148,7 @@ function Contact() {
             </div>
         </div>
         <div className='contact-button-container'>
-            <a className='menu-link' onClick={handleClick}>Contact</a>
+            <a className='menu-link text-animation' style={{animationDelay: '2s'}} onClick={handleClick}>Contact</a>
         </div>  
     </div>
     )

@@ -205,6 +205,14 @@ a span span {
   background-color: transparent;
 }
 
+.text-animation {
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  animation: textAnimation 2s forwards;
+  animation-delay: 1s;
+}
+
 
 /* Navigation Styling Ends */
 
@@ -407,7 +415,7 @@ a span span {
 }
 
 .close-line1, .close-line2 {
-  height: 2px;
+  height: 1px;
   margin: 10px 0;
   width: 35px;
   background-color: var(--font-color);
