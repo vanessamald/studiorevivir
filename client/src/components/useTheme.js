@@ -47,6 +47,7 @@ useEffect(() => {
     setComponentMounted(true);
 },
 [])
+
 return [ theme, themeToggler, componentMounted, isOn, logo  ]
 };
 

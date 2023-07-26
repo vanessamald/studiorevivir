@@ -1,0 +1,23 @@
+/* Define the keyframes for the slide-up animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the slide-up animation to the .page-enter class */
+.page-enter {
+  animation: slideUp 0.5s ease forwards;
+  /* Use 'forwards' to maintain the final state of the animation */
+}
+
+/* Apply the slide-up animation to the .page-exit class */
+.page-exit {
+  animation: slideUp 0.5s ease reverse forwards;
+  /* Use 'reverse forwards' to play the exit animation backwards before maintaining the final state */
+}
