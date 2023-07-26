@@ -32,6 +32,28 @@ function Navigation() {
         console.log('CLICKED MENU');
     }
 
+   
+
+    const SplitText2 = () => {
+        const menuText = 'about';
+
+        return (
+            <span className='menu-link-text'>
+                {menuText.split("").map(function(char, index){
+                    const style = {
+                        "animationDelay": ( index * 5 ) + "s",
+                        
+                        };
+                        return (
+                            <span aria-hidden="true" key={index} id={index} className={`menu-link-letter letter-${index}`} style={style}>
+                                {char}
+                            </span>
+                        );
+                    })}
+                    </span>
+                );
+            };
+
     return (
         <div>
             <button className={button} onClick={handleClick}>
@@ -43,7 +65,7 @@ function Navigation() {
                 <div className='menu-content'>
                     <SplitText text='Menu'/>
                     <a className='menu-link text-animation' style={{animationDelay: '0.5s'}} href='/'>Home</a>
-                    <a className='menu-link text-animation' style={{animationDelay: '1s'}} href='/about'>About</a>
+                    <a className='' style={{animationDelay: '1s'}} href='/about'><SplitText2></SplitText2></a>
                     <a className='menu-link text-animation' style={{animationDelay: '1.5s'}} href='/work'>Work</a>
                     <Contact/>
                 </div>

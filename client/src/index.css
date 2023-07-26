@@ -2,6 +2,7 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
+
 }
 
 body {
@@ -194,24 +195,61 @@ a span span {
   color: var(--body-bg-color);
   border: none;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 200;
   letter-spacing: -.075em;
   border: none;
 }
 
-.menu-link:hover {
-
-  background-color: transparent;
+a {
+  background-color: var(--font-color);
 }
 
-.text-animation {
-  position: relative;
+.menu-link-text {
   display: inline-block;
+  position: relative;
+
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: -.075em;
   opacity: 0;
   animation: textAnimation 2s forwards;
   animation-delay: 1s;
+  transform-origin: left bottom;
 }
+
+.menu-link-letter {
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 1s ease;
+  background-color: transparent;
+  color: var(--body-bg-color);
+  
+}
+
+.menu-link-text:hover .menu-link-letter {
+  transform: rotate(20deg);
+  transition: transform 1s ease;
+}
+
+
+/*
+.menu-link-letter.letter-0 {
+  transition-delay: 0s; 
+
+}
+
+.menu-link-letter.letter-1 {
+  transition-delay: 2s; 
+
+}
+*/
+
+
+
 
 
 /* Navigation Styling Ends */
@@ -313,7 +351,6 @@ a span span {
 }
 
 .contact-show {
-
   background-color: var(--alt-font-color);
   top: 0;
   left: 0;
@@ -469,7 +506,6 @@ a span span {
 /* Work Styling */
 .work-container {
   height: 100vh;
-
 }
 
 .work-content {
@@ -548,7 +584,6 @@ a span span {
 
 .work-title {
   font-size: 18px;
-
 }
 
 .work-hidden-subtitle {
@@ -561,7 +596,6 @@ a span span {
 
 /* Zoom Image Styling */
 .image-zoom-container {
-
   padding: 100px;
   max-width: 100%;
   max-height: 100%;
@@ -595,7 +629,6 @@ a span span {
 
 .register-form {
   background-color: var(--font-color);
- 
 }
 
 .register-input {
@@ -662,7 +695,7 @@ a span span {
   background-color: var(--font-color);
 }
 
-span span { 
+.close-btn-container > span span { 
   position: relative;
   opacity: 0;	
   text-transform: uppercase;
