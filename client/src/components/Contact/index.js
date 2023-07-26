@@ -86,7 +86,7 @@ function Contact() {
         <div className={show}>
             <div className={show2}>
             <div className='close-btn-container'>
-            <h3 className='contact-form-title'>Contact Form</h3>
+            <h3 className='contact-form-title'>Inquire</h3>
                 <button className='close-btn' onClick={handleClose}>
                     <div className='close-container'>
                         <div className='close-line1'></div>
@@ -111,6 +111,7 @@ function Contact() {
                         required
                     />
                 </Form.Group>
+                <div className='line-div'></div>
                 <Form.Group className="form-group" controlId="email">
                     <Form.Label className='form-name'></Form.Label>
                     <Form.Control className='form-input'
@@ -120,6 +121,7 @@ function Contact() {
                         required
                     />
                 </Form.Group>
+                <div className='line-div'></div>
                 <Form.Group className='form-group'>
                     <Form.Label className='form-name'></Form.Label>
                     <Form.Control className='form-input'
@@ -129,6 +131,7 @@ function Contact() {
                         required
                     />
                 </Form.Group>
+                <div className='line-div'></div>
                 <Form.Group className='form-group'
                     controlId="message"
                     >
@@ -141,6 +144,7 @@ function Contact() {
                         required
                     />
                 </Form.Group>
+                <div className='line-div'></div>
                 <div style={{}}>
                 <button 
                     className='form-button'

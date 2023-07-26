@@ -287,6 +287,10 @@ a span span {
 /*Theme and Toggle Styling Ends */
 
 /* Contact Styling */
+.line-div {
+  border-bottom: 0.5px solid var(--font-color);
+}
+
 .hidden-contact, .hidden-form {
   visibility: hidden;
   height: 0px;
@@ -337,11 +341,12 @@ a span span {
 
 .contact-form-title {
   font-size: 3.5vw;
+  font-weight: 200;
+  text-transform: uppercase;
 }
 
 .form-content {
   font-size: 3vw;
-
 }
 
 .form-group {
@@ -356,6 +361,12 @@ a span span {
   padding: 10px;
   width: 95%;
   border: 1px solid white;
+  text-transform: uppercase;
+  border: none;
+}
+
+.form-input:hover {
+  opacity: 0.1;
 }
 
 .form-button {
@@ -364,7 +375,8 @@ a span span {
   align-items: center;
   padding: 10px 200px;
   text-align: center;
-  border: 1px solid white;
+  border: 0.5px solid white;
+  text-transform: uppercase;
 }
 
 .close-btn-container {
@@ -494,10 +506,10 @@ a span span {
 
 .work-button-text {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 45px;
   background-color: transparent;
   color: var(--body-bg-color);
-  font-size: 16px;
+  font-size: 14px;
   text-transform: uppercase;
 
 }
