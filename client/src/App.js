@@ -16,7 +16,7 @@ function App() {
 
   const [isMounted, setIsMounted] = useState(false);
 
-  console.log(isMounted);
+  //console.log(isMounted);
 
   useEffect(() => {
     setIsMounted(true); // Set isMounted to true when the component mounts

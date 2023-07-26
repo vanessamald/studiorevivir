@@ -1,21 +1,11 @@
 import React, { useState, useRef } from 'react';
 import Form from 'react-bootstrap/Form';
+import SplitText from '../SplitText';
 
 function Contact() {
     const [ about, setAbout ] = useState('hidden-a');
 
     const contactText = 'Contact';
-    const SplitText3 = () => {
-        return (
-            <span>
-                {contactText.split("").map(function(char, index){
-                    const style = {"animationDelay": (0.5 + index / 10) + "s", "backgroundColor": 'var(--font-color)', "color": "var(--body-bg-color)", "opacity": "0"};
-                        return <span key={index} id={index} className='nav-link' style={style}>{char}</span>
-                        ;
-                        })}
-                        </span>
-                    );
-                }
 
     // set state for contact form open/close 
     const [ show, setShow] = useState('hidden-contact');
@@ -86,7 +76,7 @@ function Contact() {
         <div className={show}>
             <div className={show2}>
             <div className='close-btn-container'>
-            <h3 className='contact-form-title'>Inquire</h3>
+            <SplitText text='Inquire'/>
                 <button className='close-btn' onClick={handleClose}>
                     <div className='close-container'>
                         <div className='close-line1'></div>
@@ -158,7 +148,7 @@ function Contact() {
             </div>
         </div>
         <div className='contact-button-container'>
-            <a className='menu-link' onClick={handleClick}>Contact{/*<SplitText3 className={about}/>*/}</a>
+            <a className='menu-link' onClick={handleClick}>Contact</a>
         </div>  
     </div>
     )
