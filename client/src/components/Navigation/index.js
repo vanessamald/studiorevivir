@@ -3,6 +3,7 @@ import About from '../About';
 import Contact from '../Contact';
 import Register from '../Register';
 import SplitText from '../SplitText';
+import SplitText2 from '../SplitText2';
 
 function Navigation() {
     const [ menu, setMenu ] = useState('hidden-menu');
@@ -32,28 +33,6 @@ function Navigation() {
         console.log('CLICKED MENU');
     }
 
-   
-
-    const SplitText2 = () => {
-        const menuText = 'about';
-
-        return (
-            <span className='menu-link-text'>
-                {menuText.split("").map(function(char, index){
-                    const style = {
-                        "animationDelay": ( index * 5 ) + "s",
-                        
-                        };
-                        return (
-                            <span aria-hidden="true" key={index} id={index} className={`menu-link-letter letter-${index}`} style={style}>
-                                {char}
-                            </span>
-                        );
-                    })}
-                    </span>
-                );
-            };
-
     return (
         <div>
             <button className={button} onClick={handleClick}>
@@ -64,9 +43,9 @@ function Navigation() {
             <div className={menu}>
                 <div className='menu-content'>
                     <SplitText text='Menu'/>
-                    <a className='menu-link text-animation' style={{animationDelay: '0.5s'}} href='/'>Home</a>
-                    <a className='' style={{animationDelay: '1s'}} href='/about'><SplitText2></SplitText2></a>
-                    <a className='menu-link text-animation' style={{animationDelay: '1.5s'}} href='/work'>Work</a>
+                    <a className='menu-link' style={{animationDelay: '0.5s'}} href='/'><SplitText2 text='Home' /></a>
+                    <a className='menu-link' style={{animationDelay: '1s'}} href='/about'><SplitText2 text='About' /></a>
+                    <a className='menu-link' style={{animationDelay: '1.5s'}} href='/work'><SplitText2 text='Work' /></a>
                     <Contact/>
                 </div>
                 <div>

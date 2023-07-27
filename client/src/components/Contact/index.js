@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Form from 'react-bootstrap/Form';
 import SplitText from '../SplitText';
+import SplitText2 from '../SplitText2';
 
 function Contact() {
     const [ about, setAbout ] = useState('hidden-a');
@@ -148,7 +149,7 @@ function Contact() {
             </div>
         </div>
         <div className='contact-button-container'>
-            <a className='menu-link text-animation' style={{animationDelay: '2s'}} onClick={handleClick}>Contact</a>
+            <a className='menu-link' style={{animationDelay: '2s'}} onClick={handleClick}><SplitText2 text='Contact'/></a>
         </div>  
     </div>
     )

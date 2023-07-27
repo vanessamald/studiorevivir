@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 // typewriter animation component
 const SplitText = ({ text }) => {
   return (
-      <span>
+      <span className='text-animation'>
           {text.split("").map(function(char, index){
               const style = {
-                  "animationDelay": (1 + index / 15) + "s",
+                  "animationDelay": (3 + index / 15) + "s",
                   };
                   return (
                       <span aria-hidden="true" key={index} id={index} className='' style={style}>

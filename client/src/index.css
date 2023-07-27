@@ -196,9 +196,13 @@ a span span {
   border: none;
   text-transform: uppercase;
   font-size: 3rem;
-  font-weight: 200;
+ 
   letter-spacing: -.075em;
   border: none;
+
+  opacity: 0;
+  animation: textAnimation 2s forwards;
+  animation-delay: 1s;
 }
 
 a {
@@ -215,9 +219,7 @@ a {
   text-transform: uppercase;
   font-weight: 200;
   letter-spacing: -.075em;
-  opacity: 0;
-  animation: textAnimation 2s forwards;
-  animation-delay: 1s;
+ 
   transform-origin: left bottom;
 }
 
@@ -687,7 +689,10 @@ a {
 .menu-content > span span {
   color: var(--body-bg-color);
   background-color: var(--font-color);
+
   font-size: 6rem;
+  animation: split-text 10s forwards; 
+  text-transform: uppercase;
 }
 
 .menu-content > span {
@@ -702,6 +707,9 @@ a {
   font-size: 32px;
   font-weight: 200;
   animation: split-text 1s forwards; 
+  background-color: var(--body-bg-color);
+  color: var(--font-color);
+  letter-spacing: normal;
 }
 
 /* Animations */
