@@ -42,9 +42,9 @@ function Navigation() {
             </button>
             <div className={menu}>
                 <div className='menu-content'>
-                    <SplitText text='Menu' className='text-animation'/>
-                    <a className='text-animation' style={{animationDelay: '0.5s'}} href='/'><SplitText2 text='Home' /></a>
-                    <a className='text-animation' style={{animationDelay: '1s'}} href='/about'><SplitText2 text='About' /></a>
+                    <SplitText text='Menu'/>
+                    <a className='menu-link text-animation' style={{animationDelay: '0.5s'}} href='/'><SplitText2 text='Home' /></a>
+                    <a className='menu-link text-animation' style={{animationDelay: '1s'}} href='/about'><SplitText2 text='About' /></a>
                     <a className='text-animation' style={{animationDelay: '1.5s'}} href='/work'><SplitText2 text='Work' /></a>
                     <Contact/>
                 </div>

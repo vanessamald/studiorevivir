@@ -74,6 +74,8 @@ function Work() {
                     <button 
                         onClick={() => viewButtonHandler(data.id)}
                         className='work-button no-underline text-animation'
+                        // add animationDelay based on id
+                        style={{animationDelay: `${data.id}` + 's'}}
                     >
                         <em>{data.title}</em>
                     </button>
