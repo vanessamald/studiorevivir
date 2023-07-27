@@ -6,7 +6,7 @@ const SplitText = ({ text }) => {
       <span className='text-animation'>
           {text.split("").map(function(char, index){
               const style = {
-                  "animationDelay": (3 + index / 15) + "s",
+                  "animationDelay": (3 + index / 5) + "s",
                   };
                   return (
                       <span aria-hidden="true" key={index} id={index} className='' style={style}>

@@ -687,12 +687,13 @@ a {
 
 /* Split Text Animation Styling */ 
 .menu-content > span span {
+  position: relative;
+  text-transform: uppercase;
   color: var(--body-bg-color);
   background-color: var(--font-color);
-
   font-size: 6rem;
-  animation: split-text 10s forwards; 
-  text-transform: uppercase;
+  opacity: 0;
+  animation: split-text 2s forwards;
 }
 
 .menu-content > span {
