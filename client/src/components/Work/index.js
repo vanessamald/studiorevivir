@@ -91,8 +91,24 @@ function Work() {
 
 // show work data content
 const ComponentToShow = ({ data }) => {
-    return  <div className='work-hidden-container'>
-                <div className='work-hidden-content flex'>
+    // state for scroll position 
+    const [scrollY, setScrollY] = useState(0);
+
+    // check scroll position from top of container
+    const handleScroll = (e) => {
+    setScrollY(e.target.scrollTop);
+
+    console.log(scrollY);
+    };
+
+    return  <div 
+                className='work-hidden-container' 
+                onScroll={handleScroll} 
+                style={{
+                    overflow: 'auto', // Create a scrollable area within the container to trigger onScroll in hidden container
+                    height: '100%'}}
+                >
+                <div className='work-hidden-content flex' >
                     <div className='flex-column'>
                             <h1 className='work-title'>{data.title}</h1>
                         <div >
@@ -107,8 +123,8 @@ const ComponentToShow = ({ data }) => {
                 <div>
                     <p>{/* More Info Here */}</p>
                 </div>
-                <div className='image-reveal-container'>
-                    <ImageZoom imageUrl={data.image}/>
+                <div className='image-reveal-container' >
+                    <ImageZoom imageUrl={data.image} scrollY={scrollY}/> 
                 </div>
             </div>;
   };

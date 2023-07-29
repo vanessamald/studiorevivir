@@ -2,7 +2,7 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
-
+  border: 1px solid red;
 }
 
 body {
@@ -219,7 +219,7 @@ a {
   background-color: transparent;
   font-size: 3rem;
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 100;
   letter-spacing: -.075em;
   transform-origin: left bottom;
 }
@@ -594,12 +594,11 @@ a {
 
 /* Zoom Image Styling */
 .image-zoom-container {
-  padding: 100px;
-  max-width: 100%;
-  max-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+
+ 
 }
 
 .image {
