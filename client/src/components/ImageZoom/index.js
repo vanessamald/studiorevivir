@@ -15,18 +15,20 @@ function ImageZoom({ imageUrl, scrollY }) {
             className='image-zoom-container' 
             style={{
                 overflow: 'hidden', // set overflow hidden to contain image 
-                height: '600px',
-                position: 'relative'
+                height: '800px',
+                position: 'relative',
+                
               }}
         >
             <img 
                 src={imageUrl} 
                 alt='preview of works'
                 style={{
-                    transform: `scale(${0.3 + scrollPosition / 1000}) `,
+                    transform: `scale(${0.3 + scrollPosition / 5000}) `,
                     transition: "transform 0.2s ease-out",
                     filter: 'grayscale(1)',
-                    transformOrigin: '50% 50%'
+                    transformOrigin: '50% 50%',
+                    
                 }}
             >
             </img>
