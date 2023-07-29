@@ -41,7 +41,7 @@ function Navigation() {
                     <div className='nav-line3'></div>
             </button>
             <div className={menu}>
-                <div className='menu-content'>
+                <div className='menu-content flex-column justify-center align-center'>
                     <SplitText text='Menu'/>
                     <a className='text-animation' style={{animationDelay: '0.5s'}} href='/'><SplitText2 text='Home' /></a>
                     <a className='text-animation' style={{animationDelay: '1s'}} href='/about'><SplitText2 text='About' /></a>

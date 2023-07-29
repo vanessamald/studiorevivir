@@ -114,7 +114,7 @@ const ComponentToShow = ({ data }) => {
                 onScroll={handleScroll} 
                 style={{
                     overflow: 'auto', // Create a scrollable area within the container to trigger onScroll in hidden container
-                    height: '100%'}}
+                    height: '90vh'}}
                 >
                 <div className='work-hidden-content flex' >
                     <div className='flex-column'>

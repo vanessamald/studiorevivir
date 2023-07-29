@@ -6,7 +6,6 @@ function ImageZoom({ imageSrc, scrollY }) {
     // update state and scrollY change
     useEffect(() => {
       setScrollPosition(scrollY); 
-      //console.log(scrollY);
     }, [scrollY]);
 
     return (
@@ -25,7 +24,7 @@ function ImageZoom({ imageSrc, scrollY }) {
                 style={{
                     transform: `scale(${0.3 + scrollPosition / 2000}) `,
                     transition: "transform 0.2s ease-out",
-                    filter: 'grayscale(1)',
+                    //filter: 'grayscale(1)',
                     transformOrigin: '50% 50%', 
                 }}
             >
