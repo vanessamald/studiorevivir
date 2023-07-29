@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function ImageZoom({ imageUrl, scrollY }) {
+function ImageZoom({ imageSrc, scrollY }) {
     const [scrollPosition, setScrollPosition] = useState(0);
 
     // update state and scrollY change
@@ -8,8 +8,7 @@ function ImageZoom({ imageUrl, scrollY }) {
       setScrollPosition(scrollY); 
       //console.log(scrollY);
     }, [scrollY]);
- 
-    
+
     return (
         <div 
             className='image-zoom-container' 
@@ -21,14 +20,13 @@ function ImageZoom({ imageUrl, scrollY }) {
               }}
         >
             <img 
-                src={imageUrl} 
-                alt='preview of works'
+                src={imageSrc} 
+                alt='Evoke mobile/desktop view'
                 style={{
-                    transform: `scale(${0.3 + scrollPosition / 5000}) `,
+                    transform: `scale(${0.3 + scrollPosition / 2000}) `,
                     transition: "transform 0.2s ease-out",
                     filter: 'grayscale(1)',
-                    transformOrigin: '50% 50%',
-                    
+                    transformOrigin: '50% 50%', 
                 }}
             >
             </img>

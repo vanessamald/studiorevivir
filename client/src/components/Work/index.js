@@ -3,6 +3,7 @@ import useCursorPosition from '../useCursorPosition';
 import Navigation from '../Navigation';
 import ImageZoom from '../ImageZoom';
 import Evoke from '../../assets/images/evoke.png';
+import EvokeMobile from '../../assets/images/evoke-phone1.png';
 
 function Work() {
     const [ position, setPosition] = useCursorPosition();
@@ -30,7 +31,8 @@ function Work() {
             subtitle: 'Web Design & Development',
             subtitle2: 'Branding',
             description: 'Evoke, a cognitive impairment testing services company, was looking to establish their brand identity in the Healthcare field. We created a strong and unique brand presence through modern design.',
-            image: Evoke
+            desktopImage: Evoke,
+            mobileImage: EvokeMobile
         },
         {
             id: 2,
@@ -38,7 +40,8 @@ function Work() {
             subtitle: '',
             subtitle2: '',
             description: '',
-            image: ''
+            desktopImage: '',
+            mobileImage: ''
         },
         {
             id: 3,
@@ -46,7 +49,8 @@ function Work() {
             subtitle: '',
             subtitle2: '',
             description: '',
-            image: ''
+            desktopImage: '',
+            mobileImage: ''
         }
     ]
 
@@ -101,6 +105,10 @@ const ComponentToShow = ({ data }) => {
     console.log(scrollY);
     };
 
+    // Get the window width and set image source
+    const screenWidth = window.innerWidth;
+    const imageSrc = screenWidth <= 768 ? data.mobileImage : data.desktopImage;
+
     return  <div 
                 className='work-hidden-container' 
                 onScroll={handleScroll} 
@@ -124,7 +132,7 @@ const ComponentToShow = ({ data }) => {
                     <p>{/* More Info Here */}</p>
                 </div>
                 <div className='image-reveal-container' >
-                    <ImageZoom imageUrl={data.image} scrollY={scrollY}/> 
+                    <ImageZoom imageSrc={imageSrc} scrollY={scrollY}/> 
                 </div>
             </div>;
   };
