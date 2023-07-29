@@ -13,7 +13,6 @@ function About() {
         setScrollY(e.target.scrollTop);
     }
 
-
     useEffect(() => {
         window.addEventListener('scroll', animateOnScroll);
         return () => {
@@ -60,22 +59,33 @@ function About() {
                 <div>
                     <h2>Behind the Brand</h2>
                     <p>
-                        If you are new here my name is Vanessa, I love creating content whether it's for myself or my brand. 
+                        If you are new here my name is Vanessa, I love creating content whether it's for myself or my brand.
+                        In Spanish <em>revívír</em> means to come alive again, to reawaken. After discovering Web Development, 
+                        my creativity was reawakened and I wanted to commemorate my excitement for this new career path with a fitting name. 
                     </p>
                 </div>
                 <div>
-                    <h2>Why revivir?</h2>
+                    <h2>Why <em>revívír</em>?</h2>
                     <p>
-                        In Spanish revívír means to come alive again, to reawaken. After discovering Web Development, 
-                        my creativity was reawakened and I wanted to commemorate my excitement for this new career path with a fitting name.
+                        Attract more clients!
+                        Enhanced user experience converts to increased engagement by:
                     </p>
+                    <ul>
+                        <li>Improving SEO and search visibility</li>
+                        <li>Enhancing your Brand Perception</li>
+                        <li>Competitive Differentiation</li>
+                    </ul> 
                     <p>
-                        {/* More Info Here */}
+                        You will have an edge over the competition!
                     </p>
                 </div>
-            
+                <div>
+                    <h2>Services</h2>
+                    <p>
+                        {/* More Info Here */}
+                    </p>   
+                </div>
             </div>
-            
         </div>
     )
 }
