@@ -102,7 +102,7 @@ const ComponentToShow = ({ data }) => {
     const handleScroll = (e) => {
     setScrollY(e.target.scrollTop);
 
-    console.log(scrollY);
+    //console.log(scrollY);
     };
 
     // Get the window width and set image source

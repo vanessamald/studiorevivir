@@ -66,10 +66,8 @@ function About() {
                 </div>
                 <div>
                     <h2>Why <em>revívír</em>?</h2>
-                    <p>
-                        Attract more clients!
-                        Enhanced user experience converts to increased engagement by:
-                    </p>
+                    <p> Attract more clients!</p>
+                    <p> Enhanced user experience converts to increased engagement by:</p>
                     <ul>
                         <li>Improving SEO and search visibility</li>
                         <li>Enhancing your Brand Perception</li>
