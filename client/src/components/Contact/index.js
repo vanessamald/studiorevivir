@@ -149,7 +149,7 @@ function Contact() {
             </div>
         </div>
         <div className='contact-button-container'>
-            <a className='text-animation' style={{animationDelay: '2s'}} onClick={handleClick}><SplitText2 text='Contact'/></a>
+            <a className='text-animation font-classic' style={{animationDelay: '2s'}} onClick={handleClick}><SplitText2 text='Contact'/></a>
         </div>  
     </div>
     )

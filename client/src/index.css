@@ -193,8 +193,7 @@ a {
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: 100;
-  /*letter-spacing: -.075em;*/
-  line-height: 2.5rem
+
 }
 
 .menu-link-letter {
@@ -203,7 +202,7 @@ a {
   transition: transform 1s ease;
   background-color: transparent;
   color: var(--body-bg-color);
-  font-family: 'Cormorant Garamond', serif;
+
 }
 
 .menu-link-text:hover .menu-link-letter {
@@ -441,6 +440,8 @@ a {
   font-size: 3rem;
   line-height: 3rem;
   text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  
 }
 
 .about-i-container {
@@ -452,11 +453,14 @@ a {
   margin-left: -200px;
   font-size: 2rem;
   margin-top: -25px;
+  font-family: 'Cormorant Garamond', serif;
+
 }
 
 .about-content {
   height: 100vh;
   padding: 100px;
+
 }
 /* About Styling Ends */
 
@@ -627,6 +631,21 @@ a {
   text-decoration: none;
 }
 
+.font-italic {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+}
+
+.font-classic {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+/* Font Styling Ends */
+
 /* Split Text Animation Styling */ 
 .menu-content > span span {
   position: relative;
@@ -636,7 +655,8 @@ a {
   font-size: 6rem;
   opacity: 0;
   animation: split-text 2s forwards;
-  font-family: 'Cormorant Garamond', serif;
+
+ 
 /*
   font-style: italic;
   text-transform: lowercase;

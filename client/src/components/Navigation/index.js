@@ -43,9 +43,9 @@ function Navigation() {
             <div className={menu}>
                 <div className='menu-content flex-column justify-center align-center'>
                     <SplitText text='Menu'/>
-                    <a className='text-animation nav-text' style={{animationDelay: '0.5s'}} href='/'><SplitText2 text='Home' /></a>
-                    <a className='text-animation' style={{animationDelay: '1s'}} href='/about'><SplitText2 text='About' /></a>
-                    <a className='text-animation' style={{animationDelay: '1.5s'}} href='/work'><SplitText2 text='Work' /></a>
+                    <a className='text-animation font-classic' style={{animationDelay: '0.5s'}} href='/'><SplitText2 text='Home' /></a>
+                    <a className='text-animation font-classic' style={{animationDelay: '1s'}} href='/about'><SplitText2 text='About' /></a>
+                    <a className='text-animation font-classic' style={{animationDelay: '1.5s'}} href='/work'><SplitText2 text='Work' /></a>
                     <Contact/>
                 </div>
                 <div>
