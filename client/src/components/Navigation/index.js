@@ -47,6 +47,7 @@ function Navigation() {
                     <a className='text-animation font-classic' style={{animationDelay: '1s'}} href='/about'><SplitText2 text='About' /></a>
                     <a className='text-animation font-classic' style={{animationDelay: '1.5s'}} href='/work'><SplitText2 text='Work' /></a>
                     <Contact/>
+                    <Register/>
                 </div>
                 <div>
                     {/*(<div className='border'></div>*/}
