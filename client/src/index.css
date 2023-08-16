@@ -4,6 +4,7 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
+
 }
 
 body {
@@ -156,12 +157,11 @@ code {
   transition: move-text 1s forwards;
 }
 
-.menu-content {
+.menu-content-text {
   background-color: var(--font-color);
   color: var(--body-bg-color);
-  position: relative;
-  width: 100%;
-  height: 100%;
+  padding: 2rem;
+  padding-top: 5rem;
   /*text-align: center;*/
 }
 
@@ -219,6 +219,28 @@ a {
 .menu-link-letter.letter-1 {
   transition-delay: 2s; 
 
+}
+
+.menu-issue {
+  background-color: transparent;
+  color: var(--body-bg-color);
+}
+
+.menu-issue-em {
+  background-color: transparent;
+  color: var(--body-bg-color);
+}
+
+.menu-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--font-color);
+}
+
+.menu-links-container {
+  padding: 2rem;
+  background-color: (var(--font-color));
 }
 /* Navigation Styling Ends */
 
@@ -339,7 +361,6 @@ a {
 .contact-button-container {
   background-color: var(--font-color);
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
@@ -593,7 +614,7 @@ a {
 }
 
 .register-container {
-  padding: 25px;
+  padding: 2rem;
   background-color: var(--font-color);
 }
 /* Register Ends */
@@ -619,6 +640,10 @@ a {
 
 .align-center {
   align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
 }
 
 /* Colors */
@@ -647,7 +672,7 @@ a {
 /* Font Styling Ends */
 
 /* Split Text Animation Styling */ 
-.menu-content > span span {
+.menu-content-text > span span {
   position: relative;
   text-transform: uppercase;
   color: var(--body-bg-color);
@@ -655,7 +680,7 @@ a {
   font-size: 6rem;
   opacity: 0;
   animation: split-text 2s forwards;
-
+  letter-spacing: 3rem;
  
 /*
   font-style: italic;
@@ -665,8 +690,7 @@ a {
 */
 }
 
-.menu-content > span {
-  margin-bottom: 50px;
+.menu-content-text > span {
   background-color: var(--font-color);
 }
 
@@ -766,6 +790,9 @@ a {
   }
   .work-hidden-content {
     flex-direction: column;
+  }
+  .menu-content-text > span span {
+    font-size: 1rem;
   }
 }
 
