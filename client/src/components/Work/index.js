@@ -64,6 +64,7 @@ function Work() {
     return (
         <div className='work-container' id='work'>
             <Navigation/>
+            <h2 className='work-title flex align-center justify-center'>Archive</h2>
             <div className='flex-column work-content-container'>
                 {workData.map((data) => (
                 <div 

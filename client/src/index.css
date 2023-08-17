@@ -490,6 +490,12 @@ a {
   height: 100vh;
 }
 
+.work-title{
+  font-size: 4rem;
+  letter-spacing: 3rem;
+  text-transform: uppercase;
+}
+
 .work-content {
   padding-left: 100px;
   padding-right: 100px;
@@ -552,9 +558,7 @@ a {
   margin-left: 25px;
 }
 
-.work-title {
-  font-size: 18px;
-}
+
 
 .work-hidden-subtitle {
   line-height: 1.5rem;
@@ -605,7 +609,7 @@ a {
   background-color: var(--font-color);
   border: 1px solid var(--body-bg-color);
   min-height: 32px;
-  min-width: 200px;
+  min-width: 175px;
   margin-right: 12px;
   margin-bottom: 6px;
   padding-right: 16px;
@@ -793,6 +797,10 @@ a {
   }
   .menu-content-text > span span {
     font-size: 1rem;
+    letter-spacing: 1rem;
+  }
+  .menu-link-text {
+    font-size: 1.5rem;
   }
 }
 
