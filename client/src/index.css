@@ -4,7 +4,7 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
-
+  border: 1px solid red;
 }
 
 body {
@@ -794,6 +794,11 @@ a {
   }
   .work-hidden-content {
     flex-direction: column;
+    padding: 50px;
+  }
+  .work-title {
+    font-size: 1.5rem;
+    letter-spacing: 2rem;
   }
   .menu-content-text > span span {
     font-size: 1rem;

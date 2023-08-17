@@ -31,6 +31,7 @@ function Work() {
             subtitle: 'Web Design & Development',
             subtitle2: 'Branding',
             description: 'Evoke, a cognitive impairment testing services company, was looking to establish their brand identity in the Healthcare field. We created a strong and unique brand presence through modern design.',
+            features:['custom cursor', 'dark mode', 'contact form'],
             desktopImage: Evoke,
             mobileImage: EvokeMobile
         },
@@ -64,8 +65,9 @@ function Work() {
     return (
         <div className='work-container' id='work'>
             <Navigation/>
-            <h2 className='work-title flex align-center justify-center'>Archive</h2>
+            
             <div className='flex-column work-content-container'>
+                <h2 className='work-title flex align-center justify-center'>Archives</h2>
                 {workData.map((data) => (
                 <div 
                     key={data.id}
@@ -128,6 +130,16 @@ const ComponentToShow = ({ data }) => {
                     <p className='work-hidden-text'> 
                         {data.description}
                     </p>
+                    <p>Key Features:</p>
+                    <ul>
+                        {data.features.map(function(feature, id) {
+                        console.log(feature);
+                            return (
+                                <li key={id}>{feature}</li>
+                            )
+                        })}
+                    </ul>
+                    
                 </div> 
                 <div>
                     <p>{/* More Info Here */}</p>
