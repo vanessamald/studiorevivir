@@ -4,6 +4,7 @@ import Navigation from '../Navigation';
 import ImageZoom from '../ImageZoom';
 import Evoke from '../../assets/images/evoke.png';
 import EvokeMobile from '../../assets/images/evoke-phone1.png';
+import SplitText from '../SplitText';
 
 function Work() {
     const [ position, setPosition] = useCursorPosition();
@@ -31,7 +32,7 @@ function Work() {
             subtitle: 'Web Design & Development',
             subtitle2: 'Branding',
             description: 'Evoke, a cognitive impairment testing services company, was looking to establish their brand identity in the Healthcare field. We created a strong and unique brand presence through modern design.',
-            features:['custom cursor', 'dark mode', 'contact form'],
+            features:['custom cursor', 'dark mode', 'contact form', 'animations'],
             desktopImage: Evoke,
             mobileImage: EvokeMobile
         },
@@ -41,6 +42,7 @@ function Work() {
             subtitle: '',
             subtitle2: '',
             description: '',
+            features: [''],
             desktopImage: '',
             mobileImage: ''
         },
@@ -50,6 +52,7 @@ function Work() {
             subtitle: '',
             subtitle2: '',
             description: '',
+            features: [''],
             desktopImage: '',
             mobileImage: ''
         }
@@ -122,24 +125,29 @@ const ComponentToShow = ({ data }) => {
                 <div className='work-hidden-content flex' >
                     <div className='flex-column'>
                             <h1 className='work-title'>{data.title}</h1>
+                        <div className='work-title menu-content-text'>
+                            <SplitText text='Evoke' fontColor='theme-text-color'/>
+                        </div>
+                            
                         <div >
                             <h2 className='work-hidden-subtitle'>{data.subtitle}</h2>
                             <h2 className='work-hidden-subtitle'>{data.subtitle2}</h2>
                         </div> 
                     </div>
-                    <p className='work-hidden-text'> 
-                        {data.description}
-                    </p>
-                    <p>Key Features:</p>
-                    <ul>
-                        {data.features.map(function(feature, id) {
-                        console.log(feature);
-                            return (
-                                <li key={id}>{feature}</li>
-                            )
-                        })}
-                    </ul>
-                    
+                    <div className='flex-column'>
+                        <p className='work-hidden-text'> 
+                            {data.description}
+                        </p>
+                        <p>Key Features:</p>
+                        <ul>
+                            {data.features.map(function(feature, id) {
+                            //console.log(feature);
+                                return (
+                                    <li key={id}>{feature}</li>
+                                )
+                            })}
+                        </ul>
+                    </div> 
                 </div> 
                 <div>
                     <p>{/* More Info Here */}</p>

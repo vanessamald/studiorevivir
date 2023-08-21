@@ -3,6 +3,7 @@ import useTheme from '../useTheme';
 import idark from '../../assets/images/i-dark.png';
 import ilight from '../../assets/images/i-light.png';
 import Navigation from '../Navigation';
+import SplitText from '../SplitText';
 
 function About() {
     const [ theme ] = useTheme();
@@ -74,7 +75,7 @@ function About() {
                         <li>Competitive Differentiation</li>
                     </ul> 
                     <p>
-                        You will have an edge over the competition!
+                        You will have an edge over the competition.
                     </p>
                 </div>
                 <div>

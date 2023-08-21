@@ -4,7 +4,6 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
-  border: 1px solid red;
 }
 
 body {
@@ -158,7 +157,7 @@ code {
 }
 
 .menu-content-text {
-  background-color: var(--font-color);
+  background-color: transparent;
   color: var(--body-bg-color);
   padding: 2rem;
   padding-top: 5rem;
@@ -490,6 +489,14 @@ a {
   height: 100vh;
 }
 
+/* TESTING */
+.work-title-container {
+  background-color: var(--body-bg-color);
+  color: var(--font-color);
+  padding: 2rem;
+  padding-top: 5rem;
+}
+
 .work-title{
   font-size: 4rem;
   letter-spacing: 3rem;
@@ -673,13 +680,21 @@ a {
   font-weight: bolder;
 }
 
+.theme-text-color {
+  color: var(--font-color)
+}
+
+.alternate-text-color {
+  color: var(--body-bg-color);
+}
+
 /* Font Styling Ends */
 
 /* Split Text Animation Styling */ 
 .menu-content-text > span span {
   position: relative;
   text-transform: uppercase;
-  color: var(--body-bg-color);
+  /*color: var(--body-bg-color);*/
   background-color: transparent;
   font-size: 6rem;
   opacity: 0;
@@ -695,7 +710,7 @@ a {
 }
 
 .menu-content-text > span {
-  background-color: var(--font-color);
+  background-color: transparent;
 }
 
 .close-btn-container > span span { 
@@ -746,6 +761,7 @@ a {
   opacity: 0;
   animation: textAnimation 2s forwards;
   animation-delay: 1s;
+  background-color: transparent;
 }
 
 /* Animations End */

@@ -43,7 +43,7 @@ function Navigation() {
             <div className={menu}>
                 <div className='menu-content flex-column justify-center'>
                     <div className='menu-content-text flex-row space-between align-center'>
-                        <SplitText text='Menu'/>
+                        <SplitText text='Menu' fontColor='alternate-text-color'/>
                         <p className='menu-issue text-animation'><em className='menu-issue-em'>revívír</em>STUDIO /<em className='menu-issue-em'> No.001</em></p>
                     </div>
                     <div className='menu-links-container flex-column justify-center'>
@@ -52,7 +52,7 @@ function Navigation() {
                         <a className='text-animation font-classic' style={{animationDelay: '1.5s'}} href='/work'><SplitText2 text='Work' /></a>
                         <Contact/>
                     </div>
-                    <Register/>
+                    {/*<Register/>*/}
                 </div>
                 <div>
                     {/*(<div className='border'></div>*/}
