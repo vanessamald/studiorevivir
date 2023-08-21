@@ -42,7 +42,7 @@ function Navigation() {
             </button>
             <div className={menu}>
                 <div className='menu-content flex-column justify-center'>
-                    <div className='menu-content-text flex-row space-between align-center'>
+                    <div className='split-text-container flex-row space-between align-center padding-around'>
                         <SplitText text='Menu' fontColor='alternate-text-color'/>
                         <p className='menu-issue text-animation'><em className='menu-issue-em'>revívír</em>STUDIO /<em className='menu-issue-em'> No.001</em></p>
                     </div>

@@ -4,6 +4,7 @@ import idark from '../../assets/images/i-dark.png';
 import ilight from '../../assets/images/i-light.png';
 import Navigation from '../Navigation';
 import SplitText from '../SplitText';
+import SplitText2 from '../SplitText2';
 
 function About() {
     const [ theme ] = useTheme();

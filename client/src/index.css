@@ -156,12 +156,10 @@ code {
   transition: move-text 1s forwards;
 }
 
-.menu-content-text {
+.split-text-container {
   background-color: transparent;
-  color: var(--body-bg-color);
-  padding: 2rem;
-  padding-top: 5rem;
-  /*text-align: center;*/
+  /*padding: 2rem;
+  padding-top: 5rem;*/
 }
 
 /*
@@ -489,14 +487,6 @@ a {
   height: 100vh;
 }
 
-/* TESTING */
-.work-title-container {
-  background-color: var(--body-bg-color);
-  color: var(--font-color);
-  padding: 2rem;
-  padding-top: 5rem;
-}
-
 .work-title{
   font-size: 4rem;
   letter-spacing: 3rem;
@@ -656,6 +646,17 @@ a {
 .space-between {
   justify-content: space-between;
 }
+/* Flexbox Styling Ends */
+
+/* Padding */
+
+.padding-around {
+  padding: 2rem;
+}
+
+.padding-left {
+  padding-left: 2rem
+}
 
 /* Colors */
 .bkg-transparent {
@@ -691,7 +692,7 @@ a {
 /* Font Styling Ends */
 
 /* Split Text Animation Styling */ 
-.menu-content-text > span span {
+.split-text-container > span span {
   position: relative;
   text-transform: uppercase;
   /*color: var(--body-bg-color);*/
@@ -709,7 +710,7 @@ a {
 */
 }
 
-.menu-content-text > span {
+.split-text-container > span {
   background-color: transparent;
 }
 
@@ -816,7 +817,7 @@ a {
     font-size: 1.5rem;
     letter-spacing: 2rem;
   }
-  .menu-content-text > span span {
+  .split-text-container > span span {
     font-size: 1rem;
     letter-spacing: 1rem;
   }

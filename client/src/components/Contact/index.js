@@ -77,7 +77,10 @@ function Contact() {
         <div className={show}>
             <div className={show2}>
             <div className='close-btn-container'>
-            <SplitText text='Inquire'/>
+                <div className='split-text-container'>
+                    <SplitText text='Inquire' fontColor='theme-text-color'/>
+                </div>
+            
                 <button className='close-btn' onClick={handleClose}>
                     <div className='close-container'>
                         <div className='close-line1'></div>

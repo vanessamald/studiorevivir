@@ -68,9 +68,10 @@ function Work() {
     return (
         <div className='work-container' id='work'>
             <Navigation/>
-            
             <div className='flex-column work-content-container'>
-                <h2 className='work-title flex align-center justify-center'>Archives</h2>
+                <div className='split-text-container flex align-center justify-center work-title'>
+                    <SplitText text='Archives' fontColor='theme-text-color'/>
+                </div>
                 {workData.map((data) => (
                 <div 
                     key={data.id}
@@ -124,12 +125,10 @@ const ComponentToShow = ({ data }) => {
                 >
                 <div className='work-hidden-content flex' >
                     <div className='flex-column'>
-                            <h1 className='work-title'>{data.title}</h1>
-                        <div className='work-title menu-content-text'>
-                            <SplitText text='Evoke' fontColor='theme-text-color'/>
-                        </div>
-                            
-                        <div >
+                        <div className='work-title split-text-container'>
+                            <SplitText text={data.title} fontColor='theme-text-color'/>
+                        </div> 
+                        <div>
                             <h2 className='work-hidden-subtitle'>{data.subtitle}</h2>
                             <h2 className='work-hidden-subtitle'>{data.subtitle2}</h2>
                         </div> 
