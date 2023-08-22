@@ -4,6 +4,7 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
+  border: 1px solid red;
 }
 
 body {
@@ -395,10 +396,6 @@ a {
   border: 1px solid white;
   text-transform: uppercase;
   border: none;
-}
-
-.form-input:hover {
-  opacity: 0.1;
 }
 
 .form-button {

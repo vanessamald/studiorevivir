@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function ImageZoom({ imageSrc, scrollY }) {
+function ImageZoom({ imageSrc, scrollY, alt }) {
     const [scrollPosition, setScrollPosition] = useState(0);
 
     // update state and scrollY change
@@ -20,7 +20,7 @@ function ImageZoom({ imageSrc, scrollY }) {
         >
             <img 
                 src={imageSrc} 
-                alt='Evoke mobile/desktop view'
+                alt={alt}
                 style={{
                     transform: `scale(${0.3 + scrollPosition / 2000}) `,
                     transition: "transform 0.2s ease-out",

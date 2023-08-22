@@ -162,13 +162,16 @@ app.post('/contact', (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
     const message = req.body.message;
+    const option = req.body.option;
     const mail = {
         from: process.env.email,
         to: process.env.email,
         subject: 'Contact Form Submission',
         html:   `<p>Name: ${name}</p>
                 <p>Email: ${email}</p>
-                <p>Message: ${message}</p>`,
+                <p>Message: ${message}</p>
+                <p>Option:${option}</p>`,
+                
         };
     // send email via nodemailer
     transporter.sendMail(mail, (error) => {

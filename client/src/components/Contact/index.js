@@ -30,6 +30,7 @@ function Contact() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [subject, setSubject] = useState('');
+    const [option, setOption] = useState('');
 
     // set state for response 
     const [result, setResult] = useState(null);
@@ -44,7 +45,8 @@ function Contact() {
         name: name,
         email: email,
         subject: subject,
-        message: message
+        message: message,
+        option: option
     } 
 
     // if field is blank set alert
@@ -137,6 +139,14 @@ function Contact() {
                         rows={3} 
                         required
                     />
+                </Form.Group>
+                <Form.Group controlId="dropdown">
+                    <Form.Label>Select an Option:</Form.Label>
+                    <Form.Control as="select" value={option} onChange={(e) => setOption(e.target.value)} >
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
+                    </Form.Control>
                 </Form.Group>
                 <div className='line-div'></div>
                 <div style={{}}>

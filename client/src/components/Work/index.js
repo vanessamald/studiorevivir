@@ -34,7 +34,8 @@ function Work() {
             description: 'Evoke, a cognitive impairment testing services company, was looking to establish their brand identity in the Healthcare field. We created a strong and unique brand presence through modern design.',
             features:['custom cursor', 'dark mode', 'contact form', 'animations'],
             desktopImage: Evoke,
-            mobileImage: EvokeMobile
+            mobileImage: EvokeMobile,
+            alt: 'Evoke mobile/desktop view'
         },
         {
             id: 2,
@@ -152,7 +153,7 @@ const ComponentToShow = ({ data }) => {
                     <p>{/* More Info Here */}</p>
                 </div>
                 <div className='image-reveal-container' >
-                    <ImageZoom imageSrc={imageSrc} scrollY={scrollY}/> 
+                    <ImageZoom imageSrc={imageSrc} scrollY={scrollY} alt={data.alt}/> 
                 </div>
             </div>;
   };
