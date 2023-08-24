@@ -140,12 +140,14 @@ function Contact() {
                         required
                     />
                 </Form.Group>
-                <Form.Group controlId="dropdown">
-                    <Form.Label>Select an Option:</Form.Label>
+                <Form.Group 
+                    className='form-group'
+                    controlId="dropdown">
+                    <Form.Label className='form-name'>How can we collaborate?</Form.Label>
                     <Form.Control as="select" value={option} onChange={(e) => setOption(e.target.value)} >
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
+                        <option className='form-option' value="Interested in website and content creation">Interested in website and content creation</option>
+                        <option className='form-option' value="Interested in website">Interested in website</option>
+                        <option className='form-option' value="Unsure, need more information">Unsure, need more information</option>
                     </Form.Control>
                 </Form.Group>
                 <div className='line-div'></div>
