@@ -4,7 +4,7 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
-  border: 1px solid red;
+
 }
 
 body {
@@ -330,8 +330,10 @@ a {
 /* Contact Styling */
 .contact-container {
   height: 100vh;
-  width: 100%;
   overflow: hidden;
+  flex-wrap: wrap;
+  padding-right: 2vw;
+  padding-left: 2vw;
 }
 
 .line-div {
@@ -389,7 +391,8 @@ a {
 }
 
 .form-content {
-  font-size: 3vw;
+  /*font-size: 3em;*/
+  
 }
 
 .form-group {
@@ -442,7 +445,7 @@ a {
 }
 
 .close-line1 {
-  transform: translateY(12px) rotate(45deg);
+  transform: translateY(11px) rotate(45deg);
 }
 
 /* About Styling */
@@ -790,6 +793,7 @@ a {
   }
   .contact-container {
     flex-direction: column;
+    justify-content: space-evenly;
   }
   .contact-form-container {
     /*padding: 50px;*/

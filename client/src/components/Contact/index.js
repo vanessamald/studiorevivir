@@ -78,7 +78,7 @@ function Contact() {
     return (
     <div>
         <Navigation/>
-        <div className='contact-container flex flex-center'>
+        <div className='contact-container flex space-between'>
             
                 <div className='split-text-container'>
                     <SplitText text='Inquire' fontColor='theme-text-color'/>
