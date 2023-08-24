@@ -157,20 +157,30 @@ app.delete('/register', (req, res) => {
 })
 
 // post route to send contact form email
-app.post('/contact', (req, res) => {
+app.post('/inquire', (req, res) => {
     // get email information from form submission
     const name = req.body.name;
     const email = req.body.email;
     const message = req.body.message;
     const option = req.body.option;
+    const businessName = req.body.businessName;
+    const budgetRange = req.body.budgetRange;
+    const deadline = req.body.deadline;
+
     const mail = {
         from: process.env.email,
         to: process.env.email,
         subject: 'Contact Form Submission',
-        html:   `<p>Name: ${name}</p>
+        html:   `<h2>Contact Information</h2>
+                <p>Name: ${name}</p>
                 <p>Email: ${email}</p>
                 <p>Message: ${message}</p>
-                <p>Option:${option}</p>`,
+                <p>Interest: ${option}</p>
+                <h2>Business Information</h2>
+                <p>Business Name: ${businessName}</p>
+                <p>Budget Range: ${budgetRange}</p>
+                <p>Expected Deadline: ${deadline}</p>
+                `,
                 
         };
     // send email via nodemailer

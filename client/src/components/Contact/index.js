@@ -30,8 +30,11 @@ function Contact() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    const [subject, setSubject] = useState('');
+    //const [subject, setSubject] = useState('');
     const [option, setOption] = useState('');
+    const [businessName, setBusinessName] = useState('');
+    const [deadline, setDeadline] = useState('');
+    const [budgetRange, setBudgetRange] = useState('');
 
     // set state for response 
     const [result, setResult] = useState(null);
@@ -45,9 +48,12 @@ function Contact() {
     let emailMessage = {
         name: name,
         email: email,
-        subject: subject,
+        //subject: subject,
         message: message,
-        option: option
+        option: option,
+        businessName: businessName,
+        deadline: deadline,
+        budgetRange: budgetRange
     } 
 
     // if field is blank set alert
@@ -56,7 +62,7 @@ function Contact() {
             message: 'Please fill out all fields'
         })
     } else {
-        let response = await fetch("/contact", {
+        let response = await fetch("/inquire", {
             method: "POST",
             headers: {
               "Content-Type": "application/json;charset=utf-8",
@@ -122,6 +128,7 @@ function Contact() {
                     />
                 </Form.Group>
                 <div className='line-div'></div>
+                {/*}
                 <Form.Group className='form-group'>
                     <Form.Label className='form-name'></Form.Label>
                     <Form.Control className='form-input'
@@ -131,6 +138,7 @@ function Contact() {
                         required
                     />
                 </Form.Group>
+                */}
                 <div className='line-div'></div>
                 <Form.Group className='form-group'
                     controlId="message"
@@ -153,6 +161,37 @@ function Contact() {
                         <option className='form-option' value="Interested in website">Interested in website</option>
                         <option className='form-option' value="Unsure, need more information">Unsure, need more information</option>
                     </Form.Control>
+                </Form.Group>
+                <div className='line-div'></div>
+                <p>Business Info</p>
+                <Form.Group className='form-group'>
+                    <Form.Label className='form-name'></Form.Label>
+                    <Form.Control className='form-input'
+                        onChange={(e) => setBusinessName(e.target.value)} 
+                        type="text"
+                        placeholder="Business Name"
+                        required
+                    />
+                </Form.Group>
+                <div className='line-div'></div>
+                <Form.Group className='form-group'>
+                    <Form.Label className='form-name'></Form.Label>
+                    <Form.Control className='form-input'
+                        onChange={(e) => setBudgetRange(e.target.value)} 
+                        type="text"
+                        placeholder="Budget Range"
+                        required
+                    />
+                </Form.Group>
+                <div className='line-div'></div>
+                <Form.Group className='form-group'>
+                    <Form.Label className='form-name'></Form.Label>
+                    <Form.Control className='form-input'
+                        onChange={(e) => setDeadline(e.target.value)} 
+                        type="text"
+                        placeholder="Expected Deadline"
+                        required
+                    />
                 </Form.Group>
                 <div className='line-div'></div>
                 <div style={{}}>
