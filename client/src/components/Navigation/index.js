@@ -50,7 +50,7 @@ function Navigation() {
                         <a className='text-animation font-classic' style={{animationDelay: '0.5s'}} href='/'><SplitText2 text='Home' /></a>
                         <a className='text-animation font-classic' style={{animationDelay: '1s'}} href='/about'><SplitText2 text='About' /></a>
                         <a className='text-animation font-classic' style={{animationDelay: '1.5s'}} href='/work'><SplitText2 text='Work' /></a>
-                        <Contact/>
+                        <a className='text-animation font-classic' style={{animationDelay: '2s'}} href='/inquire'><SplitText2 text='Inquire' /></a>
                     </div>
                     {/*<Register/>*/}
                 </div>

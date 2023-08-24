@@ -6,6 +6,7 @@ import './PageTransitions.css';
 import Home from './components/Home';
 import About from './components/About';
 import Work from './components/Work';
+import Contact from './components/Contact';
 import Cursor from './components/cursor';
 import useTheme from './components/useTheme';
 
@@ -38,6 +39,7 @@ function App() {
                   <Route path='/' className={isMounted ? 'page-enter' : 'page-exit'} element={<Home/>}></Route>
                   <Route path='/about' className={isMounted ? 'page-enter' : 'page-exit'} element={<About/>}></Route>
                   <Route path='/work' className={isMounted ? 'page-enter' : 'page-exit'} element={<Work/>}></Route>
+                  <Route path='/inquire' className={isMounted ? 'page-enter' : 'page-exit'} element={<Contact/>}></Route>
           </Routes>
         </BrowserRouter>
       </main>

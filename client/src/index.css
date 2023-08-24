@@ -328,6 +328,12 @@ a {
 /*Theme and Toggle Styling Ends */
 
 /* Contact Styling */
+.contact-container {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
 .line-div {
   border-bottom: 0.5px solid var(--font-color);
 }
@@ -415,11 +421,7 @@ a {
 
 .close-btn-container {
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 25px;
+  margin-bottom: 2rem;
 }
 
 .close-btn {
@@ -647,6 +649,10 @@ a {
 .space-between {
   justify-content: space-between;
 }
+
+.flex-end {
+  justify-content: flex-end;
+}
 /* Flexbox Styling Ends */
 
 /* Padding */
@@ -781,6 +787,9 @@ a {
   .logo {
     margin-top: 20rem;
     padding-bottom: 100%;
+  }
+  .contact-container {
+    flex-direction: column;
   }
   .contact-form-container {
     /*padding: 50px;*/

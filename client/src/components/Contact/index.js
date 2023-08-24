@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Form from 'react-bootstrap/Form';
+import Navigation from '../Navigation';
 import SplitText from '../SplitText';
 import SplitText2 from '../SplitText2';
 
@@ -76,20 +77,15 @@ function Contact() {
         }; 
     return (
     <div>
-        <div className={show}>
-            <div className={show2}>
-            <div className='close-btn-container'>
+        <Navigation/>
+        <div className='contact-container flex flex-center'>
+            
                 <div className='split-text-container'>
                     <SplitText text='Inquire' fontColor='theme-text-color'/>
                 </div>
             
-                <button className='close-btn' onClick={handleClose}>
-                    <div className='close-container'>
-                        <div className='close-line1'></div>
-                        <div className='close-line2'></div>
-                    </div>
-                </button>
-            </div>
+                
+            
             <div>
                 {result && (
                     <p className={`${result.success ? 'success' : 'error'}`}>
@@ -98,6 +94,14 @@ function Contact() {
                     )}
             </div>
             <Form onSubmit={submitForm} className='form-content'>
+                <div className='close-btn-container flex flex-end'>
+                    <button className='close-btn' onClick={handleClose}>
+                        <div className='close-container'>
+                            <div className='close-line1'></div>
+                            <div className='close-line2'></div>
+                        </div>
+                    </button>
+                </div>
                 <Form.Group className="form-group" controlId="name">
                     <Form.Label className='form-name'></Form.Label>
                     <Form.Control className='form-input'
@@ -135,7 +139,7 @@ function Contact() {
                     <Form.Control className='form-input'
                         onChange={(e) => setMessage(e.target.value)}  
                         as="textarea" 
-                        placeholder="Message"
+                        placeholder="Please provide a brief description of the project, purpose, and goals, along with any questions."
                         rows={3} 
                         required
                     />
@@ -162,11 +166,8 @@ function Contact() {
                 </div>
             </Form>
             </div>
-        </div>
-        <div className='contact-button-container'>
-            <a className='text-animation font-classic' style={{animationDelay: '2s'}} onClick={handleClick}><SplitText2 text='Contact'/></a>
-        </div>  
-    </div>
+        </div> 
+
     )
 }
 
