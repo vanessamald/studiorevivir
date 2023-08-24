@@ -9,6 +9,7 @@ import Work from './components/Work';
 import Contact from './components/Contact';
 import Cursor from './components/cursor';
 import useTheme from './components/useTheme';
+import Services from './components/Services';
 
 function App() {
   const [theme, componentMounted] = useTheme();
@@ -40,6 +41,7 @@ function App() {
                   <Route path='/about' className={isMounted ? 'page-enter' : 'page-exit'} element={<About/>}></Route>
                   <Route path='/work' className={isMounted ? 'page-enter' : 'page-exit'} element={<Work/>}></Route>
                   <Route path='/inquire' className={isMounted ? 'page-enter' : 'page-exit'} element={<Contact/>}></Route>
+                  <Route path='/services' className={isMounted ? 'page-enter' : 'page-exit'} element={<Services/>}></Route>
           </Routes>
         </BrowserRouter>
       </main>

@@ -79,20 +79,7 @@ function About() {
                         You will have an edge over the competition.
                     </p>
                 </div>
-                <div>
-                    <h2>Services</h2>
-                    <p>
-                        {/* More Info Here */}
-                    </p> 
-                    <ul>
-                        <li>Web Development:</li>
-                        <p>Responsive and mobile friendly applications</p>
-                        <li>Content Creation</li>
-                        <li>Search Engine Optimization(SEO)</li>
-                        <li>Accessibility Design</li>
-                        <p></p>
-                    </ul>  
-                </div>
+                
             </div>
         </div>
     )

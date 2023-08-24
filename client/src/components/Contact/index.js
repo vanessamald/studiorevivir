@@ -100,6 +100,7 @@ function Contact() {
                     )}
             </div>
             <Form onSubmit={submitForm} className='form-content'>
+                {/*}
                 <div className='close-btn-container flex flex-end'>
                     <button className='close-btn' onClick={handleClose}>
                         <div className='close-container'>
@@ -108,6 +109,8 @@ function Contact() {
                         </div>
                     </button>
                 </div>
+                */}
+                <h2 className='font-classic uppercase'>Contact Info</h2>
                 <Form.Group className="form-group" controlId="name">
                     <Form.Label className='form-name'></Form.Label>
                     <Form.Control className='form-input'
@@ -138,8 +141,9 @@ function Contact() {
                         required
                     />
                 </Form.Group>
-                */}
                 <div className='line-div'></div>
+                */}
+                
                 <Form.Group className='form-group'
                     controlId="message"
                     >
@@ -152,6 +156,7 @@ function Contact() {
                         required
                     />
                 </Form.Group>
+                <div className='line-div'></div>
                 <Form.Group 
                     className='form-group'
                     controlId="dropdown">
@@ -162,8 +167,8 @@ function Contact() {
                         <option className='form-option' value="Unsure, need more information">Unsure, need more information</option>
                     </Form.Control>
                 </Form.Group>
-                <div className='line-div'></div>
-                <p>Business Info</p>
+               
+                <h2 className='font-classic uppercase'>Business Info</h2>
                 <Form.Group className='form-group'>
                     <Form.Label className='form-name'></Form.Label>
                     <Form.Control className='form-input'

@@ -4,7 +4,6 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
-
 }
 
 body {
@@ -51,7 +50,7 @@ code {
 
 .home-container {
   height: 100vh;
-  overflow-y: hidden;
+  /*overflow-y: hidden;*/
 }
 
 .coming-soon-text {
@@ -338,6 +337,7 @@ a {
 
 .line-div {
   border-bottom: 0.5px solid var(--font-color);
+  margin-bottom: 2vw;
 }
 
 .hidden-contact, .hidden-form {
@@ -391,20 +391,21 @@ a {
 }
 
 .form-content {
-  /*font-size: 3em;*/
+  
   
 }
 
 .form-group {
-  margin-bottom: 25px;
+  
 }
 
 .form-input {
-  padding: 10px;
+  padding-bottom: 20px;
   width: 95%;
   border: 1px solid white;
   text-transform: uppercase;
   border: none;
+  font-size: 13px;
 }
 
 .form-button {
@@ -447,6 +448,17 @@ a {
 
 .close-line1 {
   transform: translateY(11px) rotate(45deg);
+}
+/* Contact Styling Ends*/
+
+/* Services Styling */
+.services-container {
+  height: 100vh;
+  width: 100%;
+}
+
+.services-content {
+  padding: 100px;
 }
 
 /* About Styling */
@@ -698,6 +710,10 @@ a {
 
 .alternate-text-color {
   color: var(--body-bg-color);
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 /* Font Styling Ends */
