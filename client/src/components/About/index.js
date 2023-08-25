@@ -25,8 +25,10 @@ function About() {
     return (
         <div className='about-container'>
             <Navigation/>
+            <div>
+                
             <div className='flex-column justify-center'>
-                <h2 className='about-i-title text-animation' style={{animationDelay: '0.5s'}}>Web Design & Development Focused on Brand</h2>
+                <h2 className='about-i-title text-animation font-classic uppercase' style={{animationDelay: '0.5s'}}>Web Design & Development Focused on Brand</h2>
             </div>
             <div className='flex-row justify-center' onScroll={animateOnScroll}>
                 <img 
@@ -56,6 +58,7 @@ function About() {
                     </h2>
                     {/*<h2 className='about-i-content bkg-transparent text-animation' style={{animationDelay: '2.5s'}} >Brand</h2>*/}
                 </div>
+            </div>
             </div>
             <div className='flex-column justify-center about-content'>
                 <div>

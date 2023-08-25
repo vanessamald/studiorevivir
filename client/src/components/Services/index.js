@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Navigation from '../Navigation';
+import SplitText from '../SplitText';
 
 function Services() {
     return (
         <div className='services-container'>
             <Navigation/>
             <div className='services-content'>
-                <h2 className='font-classic uppercase'>Services</h2>
-                <p>Website Design & Development</p>
+                <div className='split-text-container flex align-center justify-center work-title'>
+                    <SplitText text='Services' fontColor='theme-text-color'/>
+                </div>
+                <p className='font-classic uppercase services-title'>Website Design & Development</p>
                 <ul>
                     <li>Website Design</li>
                     <li>Hosting & Domain Set Up</li>
@@ -27,7 +30,7 @@ function Services() {
                     */}
                  
 
-                <h2 className='font-classic uppercase'>FAQs</h2>
+                <h2 className='font-classic uppercase services-title'>FAQs</h2>
             </div>
             <div>
                 

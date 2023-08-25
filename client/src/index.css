@@ -4,6 +4,7 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
+  border: 1px solid red;
 }
 
 body {
@@ -244,7 +245,7 @@ a {
 /* Toggle and Theme Styling */
 .dark {
   --font-color: #edece7;
-  --body-bg-color: #242222;
+  --body-bg-color: black;
   --alt-font-color: rgba(237, 236, 231, 0.75);
   
 }
@@ -459,6 +460,10 @@ a {
 
 .services-content {
   padding: 100px;
+}
+
+.services-title {
+  font-size: 2em;
 }
 
 /* About Styling */

@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Cursor from './components/cursor';
 import useTheme from './components/useTheme';
 import Services from './components/Services';
+import Navigation from './components/Navigation';
 
 function App() {
   const [theme, componentMounted] = useTheme();
