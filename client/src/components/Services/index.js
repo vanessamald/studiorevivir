@@ -28,9 +28,15 @@ function Services() {
                     <p></p>
                 </ul> 
                     */}
-                 
-
-                <h2 className='font-classic uppercase services-title'>FAQs</h2>
+                <div>
+                    <h2 className='font-classic uppercase services-title'>FAQs</h2>
+                </div>
+                <div>
+                    <p>What can I expect from the website design process?</p>
+                    <p>What is a general timeline for a project?</p>
+                    <p>What web templates do you work with?</p>
+                    <p></p>
+                </div>
             </div>
             <div>
                 
