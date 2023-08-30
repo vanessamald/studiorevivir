@@ -86,7 +86,7 @@ function Contact() {
         <Navigation/>
         <div className='contact-container flex space-between'>
             
-                <div className='split-text-container'>
+                <div className='split-text-container flex justify-center work-title'>
                     <SplitText text='Inquire' fontColor='theme-text-color'/>
                 </div>
             
@@ -159,13 +159,13 @@ function Contact() {
                 </Form.Group>
                 <div className='line-div'></div>
                 <Form.Group 
-                    className='form-group'
+                    className='form-group dropdown font-classic uppercase flex-column'
                     controlId="dropdown">
                     <Form.Label className='form-name'>How can we collaborate?</Form.Label>
                     <Form.Control as="select" value={option} onChange={(e) => setOption(e.target.value)} >
-                        <option className='form-option' value="Interested in website and content creation">Interested in website and content creation</option>
-                        <option className='form-option' value="Interested in website">Interested in website</option>
-                        <option className='form-option' value="Unsure, need more information">Unsure, need more information</option>
+                        <option className='form-option' value="Website and content creation">Website and content creation</option>
+                        <option className='form-option' value="Website">Website</option>
+                        <option className='form-option' value="Unsure">Unsure</option>
                     </Form.Control>
                 </Form.Group>
                

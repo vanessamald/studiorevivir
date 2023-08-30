@@ -12,10 +12,11 @@ function Services() {
                 </div>
                 <p className='font-classic uppercase services-title'>Website Design & Development</p>
                 <ul>
-                    <li>Website Design</li>
+                    <li>Mobile-first Responsive Website Design & Development</li>
+                    <li>CMS Development (WordPress, SquareSpace)</li>
                     <li>Hosting & Domain Set Up</li>
                     <li>SEO</li>
-                    <li>Site Maintenance</li>
+                    <li>Site Maintenance & Support</li>
                     <li>Social Media</li>
                 </ul>
                     {/* More Info Here 

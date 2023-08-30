@@ -44,10 +44,9 @@ function Navigation() {
                 <div className='menu-content flex-column justify-center'>
                     <div className='split-text-container flex-row space-between align-center padding-around'>
                         <SplitText text='Menu' fontColor='alternate-text-color'/>
-                        <p className='menu-issue text-animation'><em className='menu-issue-em'>revívír</em>STUDIO /<em className='menu-issue-em'> No.001</em></p>
+                        <a href='/' className='menu-issue text-animation'><em className='menu-issue-em'>revívír</em>STUDIO /<em className='menu-issue-em'> No.001</em></a>
                     </div>
                     <div className='menu-links-container flex-column justify-center'>
-                        <a className='text-animation font-classic' style={{animationDelay: '0.5s'}} href='/'><SplitText2 text='Home' /></a>
                         <a className='text-animation font-classic' style={{animationDelay: '1s'}} href='/about'><SplitText2 text='About' /></a>
                         <a className='text-animation font-classic' style={{animationDelay: '1.5s'}} href='/services'><SplitText2 text='Services' /></a>
                         <a className='text-animation font-classic' style={{animationDelay: '2s'}} href='/work'><SplitText2 text='Work' /></a>

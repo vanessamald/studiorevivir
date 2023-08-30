@@ -25,8 +25,13 @@ function About() {
     return (
         <div className='about-container'>
             <Navigation/>
-            <div>
-                
+            <div className='about-content-container'>
+                <div className='split-text-container flex align-center justify-center work-title'>
+                    <SplitText text='About' fontColor='theme-text-color'/>
+                </div>
+
+
+{/*
             <div className='flex-column justify-center'>
                 <h2 className='about-i-title text-animation font-classic uppercase' style={{animationDelay: '0.5s'}}>Web Design & Development Focused on Brand</h2>
             </div>
@@ -56,15 +61,20 @@ function About() {
                     >
                         dentity
                     </h2>
-                    {/*<h2 className='about-i-content bkg-transparent text-animation' style={{animationDelay: '2.5s'}} >Brand</h2>*/}
+    
+                    <h2 className='about-i-content bkg-transparent text-animation' style={{animationDelay: '2.5s'}} >Brand</h2>
                 </div>
+
+    
             </div>
             </div>
-            <div className='flex-column justify-center about-content'>
+    */}
+
+            
+            <div className='flex-column about-content'>
                 <div>
-                    <h2>Behind the Brand</h2>
                     <p>
-                        If you are new here my name is Vanessa, I love creating content whether it's for myself or my brand.
+                        <em className='emphasize font-classic'>I</em>f you are new here my name is Vanessa, I love creating content whether it's for myself or my brand.
                         In Spanish <em className='font-italic bolder'>revívír</em> means to come alive again, to reawaken. After discovering Web Development, 
                         my creativity was reawakened and I wanted to commemorate my excitement for this new career path with a fitting name. 
                     </p>
@@ -82,7 +92,7 @@ function About() {
                         You will have an edge over the competition.
                     </p>
                 </div>
-                
+                </div>
             </div>
         </div>
     )

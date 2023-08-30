@@ -35,6 +35,7 @@ function Work() {
             features:['custom cursor', 'dark mode', 'contact form', 'animations'],
             desktopImage: Evoke,
             mobileImage: EvokeMobile,
+            link: 'https://www.evokediagnostics.com/',
             alt: 'Evoke mobile/desktop view'
         },
         {
@@ -117,6 +118,8 @@ const ComponentToShow = ({ data }) => {
     const screenWidth = window.innerWidth;
     const imageSrc = screenWidth <= 768 ? data.mobileImage : data.desktopImage;
 
+    
+
     return  <div 
                 className='work-hidden-container' 
                 onScroll={handleScroll} 
@@ -128,7 +131,7 @@ const ComponentToShow = ({ data }) => {
                     <div className='flex-column'>
                         <div className='work-title split-text-container'>
                             <SplitText text={data.title} fontColor='theme-text-color'/>
-                        </div> 
+                        </div>
                         <div>
                             <h2 className='work-hidden-subtitle'>{data.subtitle}</h2>
                             <h2 className='work-hidden-subtitle'>{data.subtitle2}</h2>
@@ -153,7 +156,7 @@ const ComponentToShow = ({ data }) => {
                     <p>{/* More Info Here */}</p>
                 </div>
                 <div className='image-reveal-container' >
-                    <ImageZoom imageSrc={imageSrc} scrollY={scrollY} alt={data.alt}/> 
+                    <a href={data.link} target='_blank' style={{backgroundColor: 'transparent'}}><ImageZoom imageSrc={imageSrc} scrollY={scrollY} alt={data.alt}/> </a>
                 </div>
             </div>;
   };

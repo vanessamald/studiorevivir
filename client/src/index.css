@@ -4,7 +4,6 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   cursor: none;
-  border: 1px solid red;
 }
 
 body {
@@ -331,7 +330,6 @@ a {
 .contact-container {
   height: 100vh;
   /*overflow: hidden;*/
-  flex-wrap: wrap;
   padding-right: 2vw;
   padding-left: 2vw;
 }
@@ -399,6 +397,11 @@ a {
   
 }
 
+.dropdown {
+  font-size: 1.5em;
+  width: 100%;
+}
+
 .form-input {
   padding-bottom: 20px;
   width: 95%;
@@ -464,7 +467,7 @@ a {
 }
 
 .services-content {
-  padding: 100px;
+  padding: 3em;
 }
 
 .services-title {
@@ -506,8 +509,10 @@ a {
 
 .about-content {
   height: 100vh;
-  padding: 100px;
+}
 
+.about-content-container {
+  padding: 3em;
 }
 /* About Styling Ends */
 
@@ -726,6 +731,13 @@ a {
   text-transform: uppercase;
 }
 
+.emphasize {
+  font-size: 5em;
+  font-style: normal;
+  line-height: 0.5em;
+
+}
+
 /* Font Styling Ends */
 
 /* Split Text Animation Styling */ 
@@ -820,7 +832,7 @@ a {
   }
   .contact-container {
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     padding: 2.5em;
   }
   .contact-form-container {
@@ -834,6 +846,7 @@ a {
   }
   .form-content {
     width: 100%;
+    padding-top: 3em;
   }
   .about-i {
     width: 100%;
@@ -845,7 +858,7 @@ a {
     margin-left: -150px;
   }
   .about-content {
-    padding: 75px;
+    
   }
   .register-form {
     display: flex;
@@ -863,8 +876,8 @@ a {
     letter-spacing: 2rem;
   }
   .split-text-container > span span {
-    font-size: 1rem;
-    letter-spacing: 1rem;
+    font-size: 2rem;
+    letter-spacing: 1.5rem;
   }
   .menu-link-text {
     font-size: 1.5rem;
@@ -875,6 +888,11 @@ a {
   .logo-container {
 
   }
+  .contact-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2.5em;
+  }
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
@@ -882,12 +900,25 @@ a {
   .logo-container {
   
   }
+  .contact-container {
+    
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2.5em;
+  }
+
 }
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
   /* For landscape layouts only */
   .logo-container {
   
+  }
+  .contact-container {
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2.5em;
   }
 }
 
