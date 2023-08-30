@@ -91,7 +91,7 @@ function Contact() {
                 </div>
             
                 
-            
+            {/*}
             <div>
                 {result && (
                     <p className={`${result.success ? 'success' : 'error'}`}>
@@ -99,6 +99,7 @@ function Contact() {
                     </p>
                     )}
             </div>
+                */}
             <Form onSubmit={submitForm} className='form-content'>
                 {/*}
                 <div className='close-btn-container flex flex-end'>
@@ -199,7 +200,7 @@ function Contact() {
                     />
                 </Form.Group>
                 <div className='line-div'></div>
-                <div style={{}}>
+                <div className='form-button-container'>
                 <button 
                     className='form-button'
                     type="submit" 

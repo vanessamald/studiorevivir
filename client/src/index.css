@@ -330,7 +330,7 @@ a {
 /* Contact Styling */
 .contact-container {
   height: 100vh;
-  overflow: hidden;
+  /*overflow: hidden;*/
   flex-wrap: wrap;
   padding-right: 2vw;
   padding-left: 2vw;
@@ -393,7 +393,6 @@ a {
 
 .form-content {
   
-  
 }
 
 .form-group {
@@ -407,6 +406,12 @@ a {
   text-transform: uppercase;
   border: none;
   font-size: 13px;
+}
+
+.form-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .form-button {
@@ -816,6 +821,7 @@ a {
   .contact-container {
     flex-direction: column;
     justify-content: space-evenly;
+    padding: 2.5em;
   }
   .contact-form-container {
     /*padding: 50px;*/
@@ -825,6 +831,9 @@ a {
   }
   .form-input {
     width: 90%;
+  }
+  .form-content {
+    width: 100%;
   }
   .about-i {
     width: 100%;
