@@ -5,6 +5,7 @@ import ilight from '../../assets/images/i-light.png';
 import Navigation from '../Navigation';
 import SplitText from '../SplitText';
 import SplitText2 from '../SplitText2';
+import Register from '../Register';
 
 function About() {
     const [ theme ] = useTheme();
@@ -92,6 +93,9 @@ function About() {
                         You will have an edge over the competition.
                     </p>
                 </div>
+                </div>
+                <div>
+                    <Register/>
                 </div>
             </div>
         </div>

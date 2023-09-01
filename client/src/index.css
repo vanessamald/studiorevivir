@@ -474,6 +474,10 @@ a {
   font-size: 2em;
 }
 
+.services-list {
+  list-style-type: none;
+}
+
 /* About Styling */
 .about-container {
   height: 100vh;
@@ -874,6 +878,11 @@ a {
   .work-title {
     font-size: 1.5rem;
     letter-spacing: 2rem;
+  }
+  .split-text-container {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+
   }
   .split-text-container > span span {
     font-size: 2rem;
