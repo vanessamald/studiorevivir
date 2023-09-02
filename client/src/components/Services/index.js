@@ -44,6 +44,9 @@ function Services() {
                 </div>
                 <div>
                     <div>
+                        <h2 className='font-classic uppercase services-title'>The Goods</h2>
+                    </div>
+                    <div>
                         <h3>01/ Luxe Package</h3>
                         <h4>Website Design & Development + Content Creation</h4>
                         <ul>
@@ -56,9 +59,6 @@ function Services() {
                             <li></li>
                             <li></li>
                         </ul>
-                    </div>
-                    <div>
-                        <h2 className='font-classic uppercase services-title'>The Goods</h2>
                     </div>
                     <div>
                         <h3>02/ Standard Packet</h3>
@@ -95,6 +95,7 @@ function Services() {
                         <p>What is a general timeline for a project?</p>
                         <p>What web templates do you work with?</p>
                         <p>What are your terms of service?</p>
+                        <p>What if none of the packages are right for me?</p>
                     </div>
                 </div>
             </div>
