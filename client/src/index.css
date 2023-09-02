@@ -244,8 +244,10 @@ a {
 /* Toggle and Theme Styling */
 .dark {
   --font-color: #edece7;
-  --body-bg-color: black;
+  --body-bg-color: #242222;
   --alt-font-color: rgba(237, 236, 231, 0.75);
+  --alt-dark-color: #443F3A;
+  --alt-light-color: #C3B8A8;
   
 }
 
@@ -253,6 +255,8 @@ a {
   --font-color: #242222;
   --body-bg-color: #edece7;
   --alt-font-color: rgba(36, 34, 34, 0.75);
+  --alt-dark-color: #443F3A;
+  --alt-light-color: #C3B8A8;
 }
 
 .home-nav-container {

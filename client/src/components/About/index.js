@@ -75,13 +75,17 @@ function About() {
             <div className='flex-column about-content'>
                 <div>
                     <p>
-                        <em className='emphasize font-classic'>I</em>f you are new here my name is Vanessa, I love creating content whether it's for myself or my brand.
-                        In Spanish <em className='font-italic bolder'>revívír</em> means to come alive again, to reawaken. After discovering Web Development, 
-                        my creativity was reawakened and I wanted to commemorate my excitement for this new career path with a fitting name. 
+                        <em className='emphasize font-classic'>I</em>f you are new here my name is Vanessa, I love creating content whether it's for myself, my brand, or clients.  
+                        
                     </p>
                 </div>
                 <div>
                     <h2>Why <em className='font-italic bolder'>revívír</em>?</h2>
+                    <p>
+                        In Spanish <em className='font-italic bolder'>revívír</em> means to come alive again, to reawaken. After discovering Web Development, 
+                        my creativity was reawakened and I wanted to commemorate my excitement for this new career path with a fitting name.
+                    </p>
+
                     <p> Attract more clients!</p>
                     <p> Enhanced user experience converts to increased engagement by:</p>
                     <ul>
