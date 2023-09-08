@@ -11,38 +11,33 @@ import Cursor from './components/cursor';
 import useTheme from './components/useTheme';
 import Services from './components/Services';
 import Navigation from './components/Navigation';
+import Preloader from './components/Preloader';
 
 function App() {
-  const [theme, componentMounted] = useTheme();
+  const [ theme, componentMounted ] = useTheme();
+  const [ loading, setLoading ] = useState(true);
 
-  //console.log(componentMounted);
+  useEffect(()=> {
+    const delay = setTimeout(()=> {
+      setLoading(false);
+      clearTimeout(delay);
+    }, 1000);
 
-  const [isMounted, setIsMounted] = useState(false);
-
-  //console.log(isMounted);
-
-  useEffect(() => {
-    setIsMounted(true); // Set isMounted to true when the component mounts
-    return () => {
-      setIsMounted(false); // Set isMounted to false when the component will unmount
-    };
+    return ()=> clearTimeout(delay);
   }, []);
- 
-  //if (!componentMounted) {
-   // return <div/>
-  //}
 
   return (
     <div className={theme}>
     <Cursor/>
       <main className={theme}>
         <BrowserRouter>
+          {loading ? <Preloader /> : null}
           <Routes>
-                  <Route path='/' className={isMounted ? 'page-enter' : 'page-exit'} element={<Home/>}></Route>
-                  <Route path='/about' className={isMounted ? 'page-enter' : 'page-exit'} element={<About/>}></Route>
-                  <Route path='/work' className={isMounted ? 'page-enter' : 'page-exit'} element={<Work/>}></Route>
-                  <Route path='/inquire' className={isMounted ? 'page-enter' : 'page-exit'} element={<Contact/>}></Route>
-                  <Route path='/services' className={isMounted ? 'page-enter' : 'page-exit'} element={<Services/>}></Route>
+                  <Route path='/' element={loading ? <Preloader/> : <Home/>}></Route>
+                  <Route path='/about' element={<About/>}></Route>
+                  <Route path='/work' element={<Work/>}></Route>
+                  <Route path='/inquire' element={<Contact/>}></Route>
+                  <Route path='/services' element={<Services/>}></Route>
           </Routes>
         </BrowserRouter>
       </main>
