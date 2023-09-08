@@ -62,7 +62,6 @@ code {
 }
 
 /* Preloader */ 
-
 .preloader {
   position: absolute;
   top: 0;
@@ -73,7 +72,8 @@ code {
   justify-content: center;
   align-items: center;
   z-index: 99999;
-  animation: slideUp 1.5s ease-in-out;
+  animation: slideUp 1.5s ease-in;
+  opacity: 1;
   /*opacity: 1;
   transition: opacity 0.3 ease-in-out;*/
 }
@@ -90,8 +90,6 @@ code {
   z-index: 99999;
   background-color: black;
 }
-
-
 /* Preloader Ends */ 
 
 /* Logo Styling */
@@ -847,15 +845,11 @@ a {
 }
 
 @keyframes slideUp {
-  0% {
+  from {
     opacity: 1;
-    transform: translateY(100%); 
+    transform: translateY(-20%); 
   }
-  75% {
-    opacity: 1;
-    transform: translateY(-90%);
-  }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
     background-color: var(--body-bg-color);
