@@ -63,6 +63,33 @@ code {
 
 /* Preloader */ 
 
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  animation: slideUp 1.5s ease-in-out;
+  /*opacity: 1;
+  transition: opacity 0.3 ease-in-out;*/
+}
+
+.preloader-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  background-color: black;
+}
 
 
 /* Preloader Ends */ 
@@ -816,6 +843,22 @@ a {
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 1;
+    transform: translateY(100%); 
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(-90%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    background-color: var(--body-bg-color);
   }
 }
 
