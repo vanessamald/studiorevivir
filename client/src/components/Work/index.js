@@ -118,8 +118,6 @@ const ComponentToShow = ({ data }) => {
     const screenWidth = window.innerWidth;
     const imageSrc = screenWidth <= 768 ? data.mobileImage : data.desktopImage;
 
-    
-
     return  <div 
                 className='work-hidden-container' 
                 onScroll={handleScroll} 
@@ -141,7 +139,8 @@ const ComponentToShow = ({ data }) => {
                         <p className='work-hidden-text'> 
                             {data.description}
                         </p>
-                        <p>Key Features:</p>
+
+                        <h2>Key Features:</h2>
                         <ul>
                             {data.features.map(function(feature, id) {
                             //console.log(feature);
@@ -150,13 +149,16 @@ const ComponentToShow = ({ data }) => {
                                 )
                             })}
                         </ul>
+                        
+
                     </div> 
                 </div> 
                 <div>
                     <p>{/* More Info Here */}</p>
                 </div>
                 <div className='image-reveal-container' >
-                    <a href={data.link} target='_blank' style={{backgroundColor: 'transparent'}}><ImageZoom imageSrc={imageSrc} scrollY={scrollY} alt={data.alt}/> </a>
+                    <a href={data.link} target='_blank' style={{backgroundColor: 'transparent'}}><ImageZoom imageSrc={imageSrc} scrollY={scrollY} alt={data.alt}/></a>
+                    
                 </div>
             </div>;
   };

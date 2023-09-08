@@ -3,7 +3,7 @@
 * {
   background-color: var(--body-bg-color);
   color: var(--font-color);
-  cursor: none;
+  /*cursor: none;*/
 }
 
 body {
@@ -72,7 +72,7 @@ code {
   justify-content: center;
   align-items: center;
   z-index: 99999;
-  animation: slideUp 1.5s ease-in;
+  animation: slideUp 2s ease-in;
   opacity: 1;
   /*opacity: 1;
   transition: opacity 0.3 ease-in-out;*/
@@ -615,7 +615,7 @@ a {
 
 .work-hidden-container {
   position: absolute;
-  height: 90%;
+  height: 100%;
   width: 100%;
 }
 
@@ -639,12 +639,14 @@ a {
 /* Work Styling Ends */
 
 /* Zoom Image Styling */
+.image-reveal-container {
+
+}
+
 .image-zoom-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 100px;
-  padding-right: 100px;
 }
 
 .image {
@@ -847,7 +849,7 @@ a {
 @keyframes slideUp {
   from {
     opacity: 1;
-    transform: translateY(-20%); 
+    transform: translateY(-10%); 
   }
   to {
     opacity: 1;

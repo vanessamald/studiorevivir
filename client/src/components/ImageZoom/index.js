@@ -13,7 +13,8 @@ function ImageZoom({ imageSrc, scrollY, alt }) {
             className='image-zoom-container' 
             style={{
                 overflow: 'hidden', // set overflow hidden to contain image 
-                height: '800px',
+                height: '90vh',
+                width: '100vw',
                 position: 'relative',
                 
               }}
@@ -22,10 +23,11 @@ function ImageZoom({ imageSrc, scrollY, alt }) {
                 src={imageSrc} 
                 alt={alt}
                 style={{
-                    transform: `scale(${0.3 + scrollPosition / 2000}) `,
+                    //transform: `scale(${0.1 + scrollPosition / 3000}) `,
                     transition: "transform 0.2s ease-out",
                     //filter: 'grayscale(1)',
-                    transformOrigin: '50% 50%', 
+                    transformOrigin: '50% 90%', 
+                    transform: `translate(0%, ${scrollPosition / -40 + '%'}) translate3d(0px, 0px, 0px) scale(${0.1 + scrollPosition / 3000}, ${0.1 + scrollPosition / 3000})`
                 }}
             >
             </img>
