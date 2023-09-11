@@ -26,10 +26,14 @@ function About() {
     return (
         <div className='about-container'>
             <Navigation/>
-            <div className='about-content-container'>
+            <div className=''>
                 <div className='split-text-container flex align-center justify-center work-title'>
                     <SplitText text='About' fontColor='theme-text-color'/>
                 </div>
+            </div>
+            
+            <div className='about-content-container'>
+                
 
 
 {/*
@@ -99,9 +103,11 @@ function About() {
                 </div>
                 </div>
                 <div>
-                    <Register/>
+                <Register/>
                 </div>
+                
             </div>
+            
         </div>
     )
 }

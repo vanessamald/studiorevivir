@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useCursorPosition from '../useCursorPosition';
 import Navigation from '../Navigation';
 import ImageZoom from '../ImageZoom';
-import Evoke from '../../assets/images/evoke.png';
+import Evoke from '../../assets/images/evoke-desktop1.png';
 import EvokeMobile from '../../assets/images/evoke-phone1.png';
 import SplitText from '../SplitText';
 
@@ -38,6 +38,7 @@ function Work() {
             link: 'https://www.evokediagnostics.com/',
             alt: 'Evoke mobile/desktop view'
         },
+        
         {
             id: 2,
             title: 'Coming Soon',
@@ -58,6 +59,7 @@ function Work() {
             desktopImage: '',
             mobileImage: ''
         }
+        
     ]
 
     // handle view button click for each work
@@ -70,10 +72,13 @@ function Work() {
     return (
         <div className='work-container' id='work'>
             <Navigation/>
+            <div className='title-container'>
+                    <div className='split-text-container flex align-center justify-center work-title'>
+                        <SplitText text='Archives' fontColor='theme-text-color'/>
+                    </div>
+            </div>
             <div className='flex-column work-content-container'>
-                <div className='split-text-container flex align-center justify-center work-title'>
-                    <SplitText text='Archives' fontColor='theme-text-color'/>
-                </div>
+                
                 {workData.map((data) => (
                 <div 
                     key={data.id}
@@ -140,6 +145,17 @@ const ComponentToShow = ({ data }) => {
                             {data.description}
                         </p>
 
+                        
+                        
+
+                    </div> 
+                </div> 
+                <div>
+                    <p>{/* More Info Here */}</p>
+                </div>
+                <div className='image-reveal-container'>
+                    <a href={data.link} target='_blank' style={{backgroundColor: 'transparent'}}><ImageZoom imageSrc={imageSrc} scrollY={scrollY} alt={data.alt}/></a>
+                    <div className='features-container'>
                         <h2>Key Features:</h2>
                         <ul>
                             {data.features.map(function(feature, id) {
@@ -149,17 +165,9 @@ const ComponentToShow = ({ data }) => {
                                 )
                             })}
                         </ul>
-                        
-
-                    </div> 
-                </div> 
-                <div>
-                    <p>{/* More Info Here */}</p>
+                    </div>
                 </div>
-                <div className='image-reveal-container' >
-                    <a href={data.link} target='_blank' style={{backgroundColor: 'transparent'}}><ImageZoom imageSrc={imageSrc} scrollY={scrollY} alt={data.alt}/></a>
-                    
-                </div>
+                
             </div>;
   };
 

@@ -1,30 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import Navigation from '../Navigation';
 import SplitText from '../SplitText';
+import SplitText2 from '../SplitText2';
 
 function Services() {
     return (
         <div className='services-container'>
             <Navigation/>
-            <div className='services-content'>
+            <div className='title-container flex-column'>
                 <div className='split-text-container flex align-center justify-center work-title'>
                     <SplitText text='Services' fontColor='theme-text-color'/>
                 </div>
                 <div>
-                    <p>Web Design & Development Focused on Brand Image & Identity</p>
+                    <p className='font-classic uppercase'>Web Design & Development Focused on Brand Image & Identity</p>
                 </div>
-                <div>
-                    <p className='font-classic uppercase services-title'>Website Design & Development</p>
-                    <ul className='services-list'>
+                <div className=''>
+                    <ul className='services-list flex-row flex-wrap justify-center'>
                         <li>Mobile-first Responsive Website Design & Development</li>
-                        <li>Accessibility Focused Design</li>
                         <li>CMS Development (WordPress, SquareSpace)</li>
                         <li>Hosting & Domain Set Up</li>
                         <li>SEO</li>
                         <li>Site Maintenance & Support</li>
-                        <li>Social Media</li>
+                        <li>Social Media Templates</li>
                     </ul>
                 </div>
+            </div>
+            
+            <div className='services-content'>
+                
+                
+                
                 
                     
                 <div>

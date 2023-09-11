@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 function Register() {
+    const [show, setShow] = useState(true);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     // email registration
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -42,7 +49,10 @@ function Register() {
 }
 
     return (
-        <div className='register-container'>
+        
+        
+        
+          <div className='register-container'>
             <h2 className='register-title'>{status}</h2>
             <h2 className='register-title'>{errorMessage}</h2>
             <form onSubmit={submitForm} className='register-form'>
@@ -51,7 +61,7 @@ function Register() {
                 <button className='register-input' type='submit'>Submit</button>
             </form>
         </div>
-        
+       
     )
 }
 
