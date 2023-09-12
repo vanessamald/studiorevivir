@@ -13,46 +13,43 @@ function Services() {
                         <SplitText text='Services' fontColor='theme-text-color'/>
                     </div>
                     <div className='services-subtitle-container'>
-                        <p className='font-classic subtitle flex align-center'>Web Design & Development Focused on Brand Image & Identity.</p>
+                        <p className='font-classic subtitle justify-center flex align-center'>Web Design & Development Focused on Brand Image & Identity.</p>
                     </div>
                 </div>
-                
-                
                 <div className='services-list-container'>
-                    <ul className='services-list flex-row flex-wrap justify-center'>
-                        <li className='services-list-li text-animation'>Mobile-first Responsive Website Design & Development</li>
-                        <li className='services-list-li text-animation'>CMS Development (WordPress, SquareSpace)</li>
-                        <li className='services-list-li text-animation'>Hosting & Domain Set Up</li>
-                        <li className='services-list-li text-animation'>SEO</li>
-                        <li className='services-list-li text-animation'>Site Maintenance & Support</li>
-                        <li className='services-list-li text-animation'>Social Media Templates</li>
-                    </ul>
+                    <div className='services-list-content'>
+                        <ul className='services-list flex-row flex-wrap justify-center'>
+                            <li className='services-list-li text-animation'>Mobile-first Responsive Website Design & Development</li>
+                            <li className='services-list-li text-animation'>Hosting & Domain Set Up</li>
+                            <li className='services-list-li text-animation'>SEO</li>
+                            <li className='services-list-li text-animation'>CMS Development (WordPress, SquareSpace)</li>
+                            <li className='services-list-li text-animation'>Site Maintenance & Support</li>
+                            <li className='services-list-li text-animation'>Social Media Templates</li>
+                        </ul>
+                    </div>
+                    <div className='services-subtitle-container'>
+                        <p className='subtitle font-classic'>Fall in love with your brand all over again</p>
+                    </div>
                 </div>
             </div>
-            
-            <div className='services-content'>
-            <div>
-                <p className='subtitle font-classic'>Fall in love with your brand all over again</p>
-            </div>
-                
-                
-                
-                    
-                <div>
+            <div className='services-process-container'>   
+                <div className='flex-row'>
                     <div>
                         <h2 className='font-classic uppercase services-title'>The Process</h2>
                     </div>
-                    <div>
-                        <h3>01/ Discovery</h3>
-                        <p>I will provide a detailed questionnaire to get to know you and your brand. Schedule an introductory call to answer any questions you may have.</p>
-                        <h3>02/ Creative Direction</h3>
-                        <p>With the gathered information I will develop the website design and strategy that align with your brand image & identity. </p>
-                        <h3>03/ Implementation</h3>
-                        <p>This is the part of the process where the website will be developed after the Creative Direction is approved. </p>
-                        <h3>04/ Launch</h3>
-                        <p>After the website is approved, we will launch & schedule a walk through.</p>
+                    <div className='flex-row flex-wrap'>
+                        <h3 className='font-classic services-process-list'>01/ Discovery</h3>
+                        <p className='services-process-list'>I will provide a detailed questionnaire to get to know you and your brand. Schedule an introductory call to answer any questions you may have.</p>
+                        <h3 className='font-classic services-process-list'>02/ Creative Direction</h3>
+                        <p className='services-process-list'>With the gathered information I will develop the website design and strategy that align with your brand image & identity. </p>
+                        <h3 className='font-classic services-process-list'>03/ Implementation</h3>
+                        <p className='services-process-list'>This is the part of the process where the website will be developed after the Creative Direction is approved. </p>
+                        <h3 className='font-classic services-process-list'>04/ Launch</h3>
+                        <p className='services-process-list'>After the website is approved, we will launch & schedule a walk through.</p>
                     </div>
                 </div>
+            </div>
+                {/*
                 <div>
                     <div>
                         <h2 className='font-classic uppercase services-title'>The Goods</h2>
@@ -110,9 +107,10 @@ function Services() {
                     </div>
                 </div>
             </div>
+    
             <div>
-                
-            </div>
+    */}
+            
         </div>
     )
 }
