@@ -72,7 +72,7 @@ function Work() {
     return (
         <div className='work-container' id='work'>
             <Navigation/>
-            <div className='title-container'>
+            <div className=''>
                     <div className='split-text-container flex align-center justify-center work-title'>
                         <SplitText text='Archives' fontColor='theme-text-color'/>
                     </div>

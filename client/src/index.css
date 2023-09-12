@@ -513,9 +513,35 @@ a {
 
 .services-list {
   list-style-type: none;
-  gap: 3rem;
+}
+
+.services-list-li {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  padding: 15px;
+}
+
+.services-list-container {
+  margin-top: 5vh;
   
 }
+
+.subtitle {
+  padding: 3rem;
+  line-height: 1.28;
+  letter-spacing: 0.01em;
+  font-size: 1.5rem;
+}
+
+.services-subtitle-container {
+  
+}
+
+.services-landing-container {
+  height: 100vh;
+  margin-top: 10rem;
+}
+
 
 /* About Styling */
 .about-container {
@@ -649,10 +675,10 @@ a {
 .title-container {
 
   height: 100vh;
- 
+ /*
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
 }
 /* Work Styling Ends */
 
@@ -807,7 +833,6 @@ a {
   font-size: 5em;
   font-style: normal;
   line-height: 0.5em;
-
 }
 
 /* Font Styling Ends */
@@ -971,6 +996,9 @@ a {
   }
   .menu-link-text {
     font-size: 1.5rem;
+  }
+  .services-landing-container {
+    margin-top: 0;
   }
 }
 

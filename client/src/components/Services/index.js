@@ -7,27 +7,33 @@ function Services() {
     return (
         <div className='services-container'>
             <Navigation/>
-            <div className='title-container flex-column'>
-                <div className='split-text-container flex align-center justify-center work-title'>
-                    <SplitText text='Services' fontColor='theme-text-color'/>
+            <div className='flex-column'>
+                <div className='services-landing-container'>
+                    <div className='split-text-container flex align-center justify-center work-title'>
+                        <SplitText text='Services' fontColor='theme-text-color'/>
+                    </div>
+                    <div className='services-subtitle-container'>
+                        <p className='font-classic subtitle flex align-center'>Web Design & Development Focused on Brand Image & Identity.</p>
+                    </div>
                 </div>
-                <div>
-                    <p className='font-classic uppercase'>Web Design & Development Focused on Brand Image & Identity</p>
-                </div>
-                <div className=''>
+                
+                
+                <div className='services-list-container'>
                     <ul className='services-list flex-row flex-wrap justify-center'>
-                        <li>Mobile-first Responsive Website Design & Development</li>
-                        <li>CMS Development (WordPress, SquareSpace)</li>
-                        <li>Hosting & Domain Set Up</li>
-                        <li>SEO</li>
-                        <li>Site Maintenance & Support</li>
-                        <li>Social Media Templates</li>
+                        <li className='services-list-li text-animation'>Mobile-first Responsive Website Design & Development</li>
+                        <li className='services-list-li text-animation'>CMS Development (WordPress, SquareSpace)</li>
+                        <li className='services-list-li text-animation'>Hosting & Domain Set Up</li>
+                        <li className='services-list-li text-animation'>SEO</li>
+                        <li className='services-list-li text-animation'>Site Maintenance & Support</li>
+                        <li className='services-list-li text-animation'>Social Media Templates</li>
                     </ul>
                 </div>
             </div>
             
             <div className='services-content'>
-                
+            <div>
+                <p className='subtitle font-classic'>Fall in love with your brand all over again</p>
+            </div>
                 
                 
                 
