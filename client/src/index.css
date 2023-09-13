@@ -4,7 +4,7 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   /*cursor: none;*/
-  border: 1px solid red;
+ 
 }
 
 body {
@@ -542,7 +542,7 @@ a {
   font-size: 2.5rem;
 }
 
-.services-subtitle-container {
+.subtitle-container {
   padding: 6rem;
   height: 100vh;
 }
@@ -682,6 +682,10 @@ a {
 
 }
 
+.features-list {
+  list-style: none;
+}
+
 .title-container {
 
   height: 100vh;
@@ -694,7 +698,7 @@ a {
 
 /* Zoom Image Styling */
 .image-reveal-container {
-
+  overflow-x: hidden;
 }
 
 .image-zoom-container {
@@ -709,11 +713,11 @@ a {
 }
 
 .image-zoom {
-  filter: grayscale(100%);
+  /*filter: grayscale(100%);*/
 }
 
 .image-zoom:hover {
-  filter: grayscale(0);
+  /*filter: grayscale(0);*/
 }
 
 /* Newsletter Styling */

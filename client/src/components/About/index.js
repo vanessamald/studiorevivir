@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import useTheme from '../useTheme';
-import idark from '../../assets/images/i-dark.png';
-import ilight from '../../assets/images/i-light.png';
 import Navigation from '../Navigation';
 import SplitText from '../SplitText';
 import SplitText2 from '../SplitText2';
@@ -10,7 +8,6 @@ import Register from '../Register';
 function About() {
     const [ theme ] = useTheme();
     const [ scrollY, setScrollY ] = useState(0);
-
 
     const animateOnScroll = (e) => {
         setScrollY(e.target.scrollTop);
@@ -31,84 +28,31 @@ function About() {
                     <SplitText text='About' fontColor='theme-text-color'/>
                 </div>
             </div>
-            
             <div className='about-content-container'>
-                
-
-
-{/*
-            <div className='flex-column justify-center'>
-                <h2 className='about-i-title text-animation font-classic uppercase' style={{animationDelay: '0.5s'}}>Web Design & Development Focused on Brand</h2>
-            </div>
-            <div className='flex-row justify-center' onScroll={animateOnScroll}>
-                <img 
-                    alt='light or dark theme icon' 
-                    className={`about-i bkg-transparent ${animateOnScroll ? 'text-animation' : ''}`} 
-                    src={theme === 'dark' ? ilight : idark}
-                >
-                </img>
-                <div className='about-i-container flex-column justify-center bkg-transparent'>
-                    <h2  
-                        className={`about-i-content bkg-transparent ${animateOnScroll ? 'text-animation' : ''}`}
-                        style={{animationDelay: '1.5s'}}
-                    >
-                        mage
-                    </h2>
-                    <h2 
-                        className={`about-i-content bkg-transparent ${animateOnScroll ? 'text-animation' : ''}`}
-                        style={{animationDelay: '2s'}}
-                    >
-                        &
-                    </h2>
-                    <h2 
-                        className={`about-i-content bkg-transparent ${animateOnScroll ? 'text-animation' : ''}`}
-                        style={{animationDelay: '2.5s'}}
-                    >
-                        dentity
-                    </h2>
-    
-                    <h2 className='about-i-content bkg-transparent text-animation' style={{animationDelay: '2.5s'}} >Brand</h2>
-                </div>
-
-    
-            </div>
-            </div>
-    */}
-
-            
-            <div className='flex-column about-content'>
                 <div>
-                    <p>
-                        <em className='emphasize font-classic'>I</em>f you are new here my name is Vanessa, I love creating content whether it's for myself, my brand, or clients.  
-                        
-                    </p>
-                </div>
-                <div>
+                    <p>Hi! My name is Vanessa Maldonado, a Freelance Web Developer and the creator of Revivir Studio.</p>
+                    
+                    <p> <em className='font-italic bolder'>revivir</em> in Spanish means to come alive again, to reawaken. <em className='font-italic bolder'>revivir</em>  Studio is a homage to the rebirth of my creativity through web design & development.</p>
+                    
+                    <p>Well-known for being open and collaborative, leading with compassion, and having an eye for design.</p>
+
+                    <p> I want to help clients elevate their online presence through minimalistic and responsive web applications that showcase their brand.</p> 
+                </div>  
+                <div className='flex-column about-content'>
                     <h2>Why <em className='font-italic bolder'>revívír</em>?</h2>
-                    <p>
-                        In Spanish <em className='font-italic bolder'>revívír</em> means to come alive again, to reawaken. After discovering Web Development, 
-                        my creativity was reawakened and I wanted to commemorate my excitement for this new career path with a fitting name.
-                    </p>
-
-                    <p> Attract more clients!</p>
                     <p> Enhanced user experience converts to increased engagement by:</p>
                     <ul>
                         <li>Improving SEO and search visibility</li>
                         <li>Enhancing your Brand Perception</li>
                         <li>Competitive Differentiation</li>
                     </ul> 
-                    <p>
-                        You will have an edge over the competition.
-                    </p>
+                    <p className='subtitle subtitle-container large-font font-classic uppercase'>Fall in love with your brand all over again</p>
                 </div>
-                </div>
-                <div>
-                <Register/>
-                </div>
-                
             </div>
-            
-        </div>
+            <div>
+                <Register/>
+            </div>
+        </div>    
     )
 }
 

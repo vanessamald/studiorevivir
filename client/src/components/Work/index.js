@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useInView } from 'react-intersection-observer';
 import useCursorPosition from '../useCursorPosition';
 import Navigation from '../Navigation';
 import ImageZoom from '../ImageZoom';
@@ -147,18 +146,9 @@ const ComponentToShow = ({ data }) => {
                         </p>
 
                         
-                        
-
-                    </div> 
-                </div> 
-                <div>
-                    <p>{/* More Info Here */}</p>
-                </div>
-                <div className='image-reveal-container'>
-                    <a href={data.link} target='_blank' style={{backgroundColor: 'transparent'}}><ImageZoom imageSrc={imageSrc} scrollY={scrollY} alt={data.alt}/></a>
-                    <div className='features-container'>
+                        <div className='features-container'>
                         <h2>Key Features:</h2>
-                        <ul>
+                        <ul className='features-list'>
                             {data.features.map(function(feature, id) {
                             //console.log(feature);
                                 return (
@@ -167,6 +157,15 @@ const ComponentToShow = ({ data }) => {
                             })}
                         </ul>
                     </div>
+
+                    </div> 
+                </div> 
+                <div>
+                    <p>{/* More Info Here */}</p>
+                </div>
+                <div className='image-reveal-container'>
+                    <a href={data.link} target='_blank' style={{backgroundColor: 'transparent'}}><ImageZoom imageSrc={imageSrc} scrollY={scrollY} alt={data.alt}/></a>
+                    
                 </div>
                 
             </div>;

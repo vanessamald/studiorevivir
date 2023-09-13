@@ -31,11 +31,7 @@ function Services() {
                             <li className='services-list-li text-animation'>Site Maintenance & Support</li>
                             <li className='services-list-li text-animation'>Social Media Templates</li>
                         </ul>
-                    </div>
-                    
-                </div>
-                <div className='services-subtitle-container '>
-                        <p className='subtitle large-font font-classic uppercase'>Fall in love with your brand all over again</p>
+                    </div>  
                 </div>
             </div>
             <div className='services-process-container'>   
@@ -54,20 +50,20 @@ function Services() {
                         <p className='services-process-list'>After the website is approved, we will launch & schedule a walk through.</p>
                     </div>
                 </div>
-            </div>
-            <div>
                 <div>
-                    <h2 className='font-classic uppercase services-title'>FAQs</h2>
-                </div>
-                <div>
-                    <p>What can I expect from the website design process?</p>
-                    <p>What is a general timeline for a project?</p>
-                    <p>What web templates do you work with?</p>
-                    <p>What are your terms of service?</p>
-                    <p>What if none of the packages are right for me?</p>
+                    <div>
+                        <h2 className='font-classic uppercase services-title'>FAQs</h2>
+                    </div>
+                    <div>
+                        <p>What can I expect from the website design process?</p>
+                        <p>What is a general timeline for a project?</p>
+                        <p>What web templates do you work with?</p>
+                        <p>What are your terms of service?</p>
+                        <p>What if none of the packages are right for me?</p>
+                    </div>
                 </div>
             </div>
-                {/*
+            {/*
                 <div>
                     <div>
                         <h2 className='font-classic uppercase services-title'>The Goods</h2>
@@ -125,10 +121,7 @@ function Services() {
                     </div>
                 </div>
             </div>
-    
-            <div>
-    */}
-            
+            */}   
         </div>
     )
 }
