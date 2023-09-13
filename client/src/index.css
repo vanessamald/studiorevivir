@@ -510,7 +510,7 @@ a {
 
 .services-process-list {
   flex: 1 0 21%;
-  margin: 10px;
+  margin: 5px;
 
 }
 
@@ -539,11 +539,12 @@ a {
 .subtitle {
   line-height: 1.28;
   letter-spacing: 0.01em;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
 .services-subtitle-container {
   padding: 6rem;
+  height: 100vh;
 }
 
 .services-landing-container {
@@ -842,6 +843,10 @@ a {
   font-size: 5em;
   font-style: normal;
   line-height: 0.5em;
+}
+
+.large-font {
+  font-size: 5rem;
 }
 
 /* Font Styling Ends */

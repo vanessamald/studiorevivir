@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import useCursorPosition from '../useCursorPosition';
 import Navigation from '../Navigation';
 import ImageZoom from '../ImageZoom';

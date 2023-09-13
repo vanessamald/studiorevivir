@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import Navigation from '../Navigation';
 import SplitText from '../SplitText';
 import SplitText2 from '../SplitText2';
 
 function Services() {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+    });
+    
     return (
         <div className='services-container'>
             <Navigation/>
@@ -13,7 +18,7 @@ function Services() {
                         <SplitText text='Services' fontColor='theme-text-color'/>
                     </div>
                     <div className='services-subtitle-container'>
-                        <p className='font-classic subtitle justify-center flex align-center'>Web Design & Development Focused on Brand Image & Identity.</p>
+                        <p className='font-classic uppercase subtitle justify-center flex align-center'>Web Design & Development Focused on Brand Image & Identity.</p>
                     </div>
                 </div>
                 <div className='services-list-container'>
@@ -27,18 +32,19 @@ function Services() {
                             <li className='services-list-li text-animation'>Social Media Templates</li>
                         </ul>
                     </div>
-                    <div className='services-subtitle-container'>
-                        <p className='subtitle font-classic'>Fall in love with your brand all over again</p>
-                    </div>
+                    
+                </div>
+                <div className='services-subtitle-container '>
+                        <p className='subtitle large-font font-classic uppercase'>Fall in love with your brand all over again</p>
                 </div>
             </div>
             <div className='services-process-container'>   
                 <div className='flex-row'>
-                    <div>
+                    <div ref={ref}>
                         <h2 className='font-classic uppercase services-title'>The Process</h2>
                     </div>
                     <div className='flex-row flex-wrap'>
-                        <h3 className='font-classic services-process-list'>01/ Discovery</h3>
+                        <h3 className={`font-classic services-process-list ${inView ? 'text-animation' : ''}`}>01/ Discovery</h3>
                         <p className='services-process-list'>I will provide a detailed questionnaire to get to know you and your brand. Schedule an introductory call to answer any questions you may have.</p>
                         <h3 className='font-classic services-process-list'>02/ Creative Direction</h3>
                         <p className='services-process-list'>With the gathered information I will develop the website design and strategy that align with your brand image & identity. </p>
@@ -47,6 +53,18 @@ function Services() {
                         <h3 className='font-classic services-process-list'>04/ Launch</h3>
                         <p className='services-process-list'>After the website is approved, we will launch & schedule a walk through.</p>
                     </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h2 className='font-classic uppercase services-title'>FAQs</h2>
+                </div>
+                <div>
+                    <p>What can I expect from the website design process?</p>
+                    <p>What is a general timeline for a project?</p>
+                    <p>What web templates do you work with?</p>
+                    <p>What are your terms of service?</p>
+                    <p>What if none of the packages are right for me?</p>
                 </div>
             </div>
                 {/*
