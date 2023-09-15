@@ -504,8 +504,7 @@ a {
 }
 
 .services-process-container {
-  padding: 3em;
-  margin-bottom: 6rem;
+  padding-bottom: 8rem;
 }
 
 .services-process-list {
@@ -525,7 +524,7 @@ a {
 }
 
 .services-list-content {
-  padding: 3rem;
+  /*padding: 3rem;*/
 }
 
 .services-list-container {
@@ -550,6 +549,10 @@ a {
 .services-landing-container {
   height: 100vh;
   margin-top: 10rem;
+}
+
+.container {
+  padding: 3rem;
 }
 
 
@@ -592,6 +595,16 @@ a {
 
 .about-content-container {
   padding: 3em;
+}
+
+.about-subtitle-container {
+  padding: 6rem;
+  height: 100vh;
+}
+
+.about-subtitle-container-alternate {
+  padding: 3em;
+  width: 75%;
 }
 /* About Styling Ends */
 
@@ -1022,6 +1035,9 @@ a {
   }
   .about-content {
     
+  }
+  .about-subtitle-container {
+    padding: 3em;
   }
   .register-form {
     display: flex;

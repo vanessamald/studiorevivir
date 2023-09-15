@@ -16,8 +16,7 @@ function Services() {
                 <div className='services-landing-container' >
                     <div className='split-text-container flex align-center justify-center work-title'>
                         <SplitText text='Services' fontColor='theme-text-color'/>
-                    </div>
-                    
+                    </div> 
                 </div>
                 <div className='services-list-container'>
                     <div className='services-subtitle-container' ref={ref}>
@@ -36,11 +35,10 @@ function Services() {
                 </div>
             </div>
             <div className='services-process-container'> 
-                <div className=''>
+                <div className='services-subtitle-container'>
                     <h2 className={`font-classic uppercase subtitle flex align-center em-med ${inView ? 'slide-in' : ''}`}>The Process</h2>
                 </div>  
-                <div className='flex-row'>
-                    
+                <div className='flex-row container'>
                     <div className='flex-row flex-wrap'>
                         <h3 className={`font-classic services-process-list ${inView ? 'text-animation' : ''}`} data-delay="0.2s">01/ Discovery</h3>
                         <p className='services-process-list'>I will provide a detailed questionnaire to get to know you and your brand. Schedule an introductory call to answer any questions you may have.</p>

@@ -34,10 +34,15 @@ function About() {
                 </div>
             </div>
             <div className='about-content-container' ref={ref}>
-                <div className={`${inView ? 'text-animation' : ''}`}>
-                    <p >Hi! My name is Vanessa Maldonado, a Freelance Web Developer and the creator of <em className='font-italic bolder em-med'>revívír</em><em className='font-classic uppercase em-small font-normal'>studio</em></p>
+                <div>
+                    <div className='about-subtitle-container'>
+                        <p className={`font-classic em-med ${inView ? 'text-animation' : ''}`}>Hi! My name is Vanessa Maldonado, a Freelance Web Developer and the creator of <em className='font-italic bolder em-med'>revívír</em><em className='font-classic uppercase em-small font-normal'>studio</em></p>
+                    </div>
                     
-                    <p> <em className='font-italic bolder em-med'>revívír</em> in Spanish means to come alive again, to reawaken. <em className='font-italic bolder em-med'>revívír</em><em className='font-classic uppercase em-small font-normal'>studio</em> is a homage to the rebirth of my creativity through web design & development.</p>
+                    <div className='about-subtitle-container-alternate'>
+                        <p className={`font-classic em-med ${inView ? 'slide-in' : ''}`}> <em className='font-italic bolder em-med'>revívír</em> in Spanish means to come alive again, to reawaken. <em className='font-italic bolder em-med'>revívír</em><em className='font-classic uppercase em-small font-normal'>studio</em> is a homage to the rebirth of my creativity through web design & development.</p>
+                    </div>
+                    
                     
                     <p>Well-known for being open and collaborative, leading with compassion, and having an eye for design.</p>
 
