@@ -561,6 +561,8 @@ a {
   
 }
 
+
+/*
 .about-i {
   display: flex;
   align-items: center;
@@ -586,25 +588,27 @@ a {
   font-size: 2rem;
   margin-top: -25px;
   font-family: 'Cormorant Garamond', serif;
-
 }
+*/
 
 .about-content {
-  height: 100vh;
+  /*height: 100vh;*/
 }
 
 .about-content-container {
   padding: 3em;
+  overflow-x: hidden;
 }
 
 .about-subtitle-container {
   padding: 6rem;
   height: 100vh;
+  line-height: 1;
 }
 
 .about-subtitle-container-alternate {
   padding: 3em;
-  width: 75%;
+  height: 100vh;
 }
 /* About Styling Ends */
 
@@ -769,8 +773,7 @@ a {
 }
 
 .register-container {
-  
-  padding: 2rem;
+  padding: 1.5rem;
   background-color: var(--font-color);
 }
 /* Register Ends */
@@ -873,11 +876,16 @@ a {
 
 .em-med {
   font-size: 2rem;
-  line-height: 2rem;
+  line-height: 3rem;
+}
+
+.medium-font {
+  font-size: 3rem;
 }
 
 .large-font {
   font-size: 4rem;
+  background-color: transparent;
 }
 
 .list-none {
@@ -981,9 +989,22 @@ a {
   }
 }
 
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
 .slide-in {
   animation: slideIn 3s forwards;
   -webkit-animation: slideIn 3s forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 3s backwards;
 }
 
 /* Animations End */
@@ -1003,7 +1024,14 @@ a {
     padding-bottom: 100%;
   }
   .large-font {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+  }
+  .medium-font {
+    font-size: 1rem;
+  }
+  .em-med {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
   .contact-container {
     flex-direction: column;
@@ -1038,6 +1066,9 @@ a {
   }
   .about-subtitle-container {
     padding: 3em;
+  }
+  .about-subtitle-container-alternate {
+    height: 50vh;
   }
   .register-form {
     display: flex;
