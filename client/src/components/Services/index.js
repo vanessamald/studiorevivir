@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Navigation from '../Navigation';
 import SplitText from '../SplitText';
@@ -8,60 +8,61 @@ function Services() {
     const { ref, inView } = useInView({
         triggerOnce: true,
     });
-    
+
     return (
-        <div className='services-container'>
+        <div className='services-container' >
             <Navigation/>
             <div className='flex-column'>
-                <div className='services-landing-container'>
+                <div className='services-landing-container' >
                     <div className='split-text-container flex align-center justify-center work-title'>
                         <SplitText text='Services' fontColor='theme-text-color'/>
                     </div>
-                    <div className='services-subtitle-container'>
-                        <p className='font-classic uppercase subtitle justify-center flex align-center'>Web Design & Development Focused on Brand Image & Identity.</p>
-                    </div>
+                    
                 </div>
                 <div className='services-list-container'>
-                    <div className='services-list-content'>
-                        <ul className='services-list flex-row flex-wrap justify-center'>
-                            <li className='services-list-li text-animation'>Mobile-first Responsive Website Design & Development</li>
-                            <li className='services-list-li text-animation'>Hosting & Domain Set Up</li>
-                            <li className='services-list-li text-animation'>SEO</li>
-                            <li className='services-list-li text-animation'>CMS Development (WordPress, SquareSpace)</li>
-                            <li className='services-list-li text-animation'>Site Maintenance & Support</li>
-                            <li className='services-list-li text-animation'>Social Media Templates</li>
+                    <div className='services-subtitle-container' ref={ref}>
+                        <p className={`font-classic uppercase subtitle justify-center flex align-center em-med ${inView ? 'slide-in' : ''}`}>Web Design & Development Focused on Brand Image & Identity.</p>
+                    </div>
+                    <div className='services-list-content' >
+                        <ul className='list-none flex-row flex-wrap justify-center' >
+                            <li className={`services-list-li ${inView ? 'text-animation' : ''}`}>Mobile-first Responsive Website Design & Development</li>
+                            <li className={`services-list-li ${inView ? 'text-animation' : ''}`}>Hosting & Domain Set Up</li>
+                            <li className={`services-list-li ${inView ? 'text-animation' : ''}`}>SEO</li>
+                            <li className={`services-list-li ${inView ? 'text-animation' : ''}`}>CMS Development (WordPress, SquareSpace)</li>
+                            <li className={`services-list-li ${inView ? 'text-animation' : ''}`}>Site Maintenance & Support</li>
+                            <li className={`services-list-li ${inView ? 'text-animation' : ''}`}>Social Media Templates</li>
                         </ul>
                     </div>  
                 </div>
             </div>
             <div className='services-process-container'>   
                 <div className='flex-row'>
-                    <div ref={ref}>
+                    <div>
                         <h2 className='font-classic uppercase services-title'>The Process</h2>
                     </div>
                     <div className='flex-row flex-wrap'>
-                        <h3 className={`font-classic services-process-list ${inView ? 'text-animation' : ''}`}>01/ Discovery</h3>
+                        <h3 className={`font-classic services-process-list ${inView ? 'text-animation' : ''}`} data-delay="0.2s">01/ Discovery</h3>
                         <p className='services-process-list'>I will provide a detailed questionnaire to get to know you and your brand. Schedule an introductory call to answer any questions you may have.</p>
-                        <h3 className='font-classic services-process-list'>02/ Creative Direction</h3>
+                        <h3 className={`font-classic services-process-list ${inView ? 'text-animation' : ''}`} data-delay="0.2s">02/ Creative Direction</h3>
                         <p className='services-process-list'>With the gathered information I will develop the website design and strategy that align with your brand image & identity. </p>
-                        <h3 className='font-classic services-process-list'>03/ Implementation</h3>
+                        <h3 className={`font-classic services-process-list ${inView ? 'text-animation' : ''}`} data-delay="0.2s">03/ Implementation</h3>
                         <p className='services-process-list'>This is the part of the process where the website will be developed after the Creative Direction is approved. </p>
-                        <h3 className='font-classic services-process-list'>04/ Launch</h3>
+                        <h3 className={`font-classic services-process-list ${inView ? 'text-animation' : ''}`} data-delay="0.2s">04/ Launch</h3>
                         <p className='services-process-list'>After the website is approved, we will launch & schedule a walk through.</p>
                     </div>
                 </div>
+            </div>
+            <div>
                 <div>
-                    <div>
-                        <h2 className='font-classic uppercase services-title'>FAQs</h2>
-                    </div>
-                    <div>
-                        <p>What can I expect from the website design process?</p>
+                    <h2 className='font-classic uppercase services-title'>FAQs</h2>
+                </div>
+                <div>
+                    <p>What can I expect from the website design process?</p>
                         <p>What is a general timeline for a project?</p>
                         <p>What web templates do you work with?</p>
                         <p>What are your terms of service?</p>
                         <p>What if none of the packages are right for me?</p>
                     </div>
-                </div>
             </div>
             {/*
                 <div>

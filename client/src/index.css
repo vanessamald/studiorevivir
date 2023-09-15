@@ -518,10 +518,6 @@ a {
   font-size: 2em;
 }
 
-.services-list {
-  list-style-type: none;
-}
-
 .services-list-li {
   flex: 0 0 33.33%;
   max-width: 33.33%;
@@ -539,11 +535,14 @@ a {
 .subtitle {
   line-height: 1.28;
   letter-spacing: 0.01em;
-  font-size: 2.5rem;
+}
+
+.services-subtitle-container {
+  padding: 3rem;
+  max-width: 50%;
 }
 
 .subtitle-container {
-  padding: 6rem;
   height: 100vh;
 }
 
@@ -849,8 +848,26 @@ a {
   line-height: 0.5em;
 }
 
+.font-normal {
+  font-style: normal;
+}
+
+.em-small {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.em-med {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
 .large-font {
-  font-size: 5rem;
+  font-size: 4rem;
+}
+
+.list-none {
+  list-style-type: none;
 }
 
 /* Font Styling Ends */
@@ -941,6 +958,20 @@ a {
   background-color: transparent;
 }
 
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.slide-in {
+  animation: slideIn 3s forwards;
+  -webkit-animation: slideIn 3s forwards;
+}
+
 /* Animations End */
 
 @media only screen and (max-width: 600px) {
@@ -956,6 +987,9 @@ a {
   .logo {
     margin-top: 20rem;
     padding-bottom: 100%;
+  }
+  .large-font {
+    font-size: 2.5rem;
   }
   .contact-container {
     flex-direction: column;
