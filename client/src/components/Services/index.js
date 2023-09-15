@@ -35,11 +35,12 @@ function Services() {
                     </div>  
                 </div>
             </div>
-            <div className='services-process-container'>   
+            <div className='services-process-container'> 
+                <div className=''>
+                    <h2 className={`font-classic uppercase subtitle flex align-center em-med ${inView ? 'slide-in' : ''}`}>The Process</h2>
+                </div>  
                 <div className='flex-row'>
-                    <div>
-                        <h2 className='font-classic uppercase services-title'>The Process</h2>
-                    </div>
+                    
                     <div className='flex-row flex-wrap'>
                         <h3 className={`font-classic services-process-list ${inView ? 'text-animation' : ''}`} data-delay="0.2s">01/ Discovery</h3>
                         <p className='services-process-list'>I will provide a detailed questionnaire to get to know you and your brand. Schedule an introductory call to answer any questions you may have.</p>
@@ -53,6 +54,7 @@ function Services() {
                 </div>
             </div>
             <div>
+                {/*
                 <div>
                     <h2 className='font-classic uppercase services-title'>FAQs</h2>
                 </div>
@@ -62,7 +64,8 @@ function Services() {
                         <p>What web templates do you work with?</p>
                         <p>What are your terms of service?</p>
                         <p>What if none of the packages are right for me?</p>
-                    </div>
+                </div>
+                */}
             </div>
             {/*
                 <div>
