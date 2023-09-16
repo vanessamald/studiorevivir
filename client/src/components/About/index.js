@@ -45,7 +45,7 @@ function About() {
 
                         {/*<p className={`font-classic medium-font ${inView ? 'slide-in-right' : ''}`}><em className='font-italic bolder'>revívír</em><em className='font-classic uppercase font-normal em-med'>studio</em> is a homage to the rebirth of my creativity through web design & development.</p>*/}
 
-                        <p className={`font-classic medium-font ${inView ? 'slide-in-right' : ''}`}><em className='font-italic bolder'>revívír</em><em className='font-classic uppercase font-normal em-med'>studio</em> is a web design and development studio focused on elevating the online presence of small businesses through minimalistic and responsive designs that <em>recapture</em> their brand <em>essence</em>.</p>
+                        <p className={`font-classic medium-font ${inView ? 'slide-in-right' : ''}`}><em className='font-italic bolder'>revívír</em><em className='font-classic uppercase font-normal em-med'>studio</em> is a web design and development studio focused on elevating the online presence of small businesses through minimalistic design that <em style={{backgroundColor: 'transparent'}}>recapture</em> their brand <em style={{backgroundColor:'transparent'}}>essence</em>.</p>
                         
                     </div>
 
