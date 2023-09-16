@@ -73,7 +73,7 @@ function Work() {
         <div className='work-container' id='work'>
             <Navigation/>
             <div className=''>
-                    <div className=' flex align-center justify-center work-title'>
+                    <div className='split-text-container flex align-center justify-center work-title'>
                         <SplitText text='Archives' fontColor='theme-text-color'/>
                     </div>
             </div>

@@ -1037,7 +1037,6 @@ a {
     flex-direction: column;
     justify-content: flex-start;
     padding: 2.5em;
-    height: 100%;
   }
   .contact-form-container {
     /*padding: 50px;*/
@@ -1100,7 +1099,7 @@ a {
     letter-spacing: 1.5rem;
   }
   .menu-link-text {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
   .services-landing-container {
     margin-top: 0;
