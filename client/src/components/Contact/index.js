@@ -161,7 +161,7 @@ function Contact() {
                 <Form.Group 
                     className='form-group dropdown font-classic uppercase flex-column'
                     controlId="dropdown">
-                    <Form.Label className='form-name'>How can we collaborate?</Form.Label>
+                    <h2 className='form-name'>How can we collaborate?</h2>
                     <Form.Control as="select" value={option} onChange={(e) => setOption(e.target.value)} >
                         <option className='form-option' value="Website and content creation">Website and content creation</option>
                         <option className='form-option' value="Website">Website</option>
