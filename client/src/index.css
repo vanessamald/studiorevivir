@@ -4,6 +4,7 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   /*cursor: none;*/
+  border: 1px solid red;
 }
 
 body {
@@ -507,9 +508,11 @@ a {
 }
 
 .services-process-list {
-  flex: 0 0 21%;
+  flex: 1 0 21%;
   margin: 10px;
+  
 }
+
 
 .services-title {
   font-size: 2em;
