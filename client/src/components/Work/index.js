@@ -73,7 +73,7 @@ function Work() {
         <div className='work-container' id='work'>
             <Navigation/>
             <div className=''>
-                    <div className='split-text-container flex align-center justify-center work-title'>
+                    <div className=' flex align-center justify-center work-title'>
                         <SplitText text='Archives' fontColor='theme-text-color'/>
                     </div>
             </div>
@@ -132,7 +132,7 @@ const ComponentToShow = ({ data }) => {
                 >
                 <div className='work-hidden-content flex' >
                     <div className='flex-column'>
-                        <div className='work-title split-text-container'>
+                        <div className='work-title'>
                             <SplitText text={data.title} fontColor='theme-text-color'/>
                         </div>
                         <div>

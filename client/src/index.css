@@ -190,8 +190,8 @@ code {
 
 .split-text-container {
   background-color: transparent;
-  /*padding: 2rem;
-  padding-top: 5rem;*/
+  /*padding: 2rem;*/
+  padding-top: 5rem;
 }
 
 /*
@@ -1027,7 +1027,7 @@ a {
     font-size: 1.5rem;
   }
   .medium-font {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .em-med {
     font-size: 1.5rem;
@@ -1089,9 +1089,11 @@ a {
     padding-top: 0rem;
   }
   .split-text-container {
-    /*padding-top: 10rem;*/
+    padding-top: 10rem;
     /*padding-bottom: 10rem;*/
-
+  }
+  .split-text-container-alternate {
+    padding-top: 0rem;
   }
   .split-text-container > span span {
     font-size: 2rem;
