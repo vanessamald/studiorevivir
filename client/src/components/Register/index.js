@@ -49,11 +49,8 @@ function Register() {
 }
 
     return (
-        
-        
-        
           <div className='register-container'>
-            <h2 className='register-title'>{status}</h2>
+            <h2 className='register-title uppercase'>{status}</h2>
             <h2 className='register-title'>{errorMessage}</h2>
             <form onSubmit={submitForm} className='register-form'>
                 <input className='register-input' type='text' placeholder='Name'onChange={(e) => setName(e.target.value)}></input>

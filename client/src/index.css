@@ -4,7 +4,6 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   /*cursor: none;*/
- 
 }
 
 body {
@@ -103,7 +102,7 @@ code {
   width: 100%;
   margin-top: -75px;
   z-index: 1;
-  animation: slideUp 2s ease-out;
+  /*animation: slideIn 2s ease-in;*/
 }
 
 /* Navigation Styling */
@@ -674,6 +673,7 @@ a {
   position: absolute;
   height: 100vh;
   width: 100%;
+  padding-top: 10rem;
 }
 
 .work-hidden-content {
@@ -1085,8 +1085,11 @@ a {
     font-size: 1.5rem;
     letter-spacing: 2rem;
   }
+  .work-hidden-container {
+    padding-top: 0rem;
+  }
   .split-text-container {
-    padding-top: 10rem;
+    /*padding-top: 10rem;*/
     /*padding-bottom: 10rem;*/
 
   }

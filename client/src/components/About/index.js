@@ -57,9 +57,9 @@ function About() {
 
                 </div> 
                 <div className='about-subtitle-container-alternate'>
-                    <h2 className='em-med'>Why <em className='font-italic bolder'>revívír</em>?</h2> 
+                    <h2 className='em-med slide-in' style={{animationDelay:'2s'}}>Why <em className='font-italic bolder'>revívír</em>?</h2> 
                     {/*<p className='font-classic em-med'> <em className='em-med'>"</em>I want to help clients <em className='em-med'>elevate</em> their online presence through <em className='em-med'>artistic</em> and <em className='em-med'>seamless</em> designs that <em className='em-med'>showcase</em> their brand.<em className='em-med'>"</em></p> */}
-                    <p className='font-classic em-med'> <em className='large-font'>"</em>I want to help clients fall in love with their brand <em className='em-med'>all over again.</em><em className='large-font'>"</em></p> 
+                    <p className='font-classic em-med text-animation' style={{animationDelay: '2s'}}> <em className='large-font'>"</em>I want to help clients fall in love with their brand <em className='em-med'>all over again.</em><em className='large-font'>"</em></p> 
                 </div>
                 {/* 
                 <div className='flex-column about-content'>

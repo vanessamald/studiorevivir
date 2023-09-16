@@ -128,7 +128,7 @@ const ComponentToShow = ({ data }) => {
                 onScroll={handleScroll} 
                 style={{
                     overflow: 'auto', // Create a scrollable area within the container to trigger onScroll in hidden container
-                    height: '90vh'}}
+                    height: ''}}
                 >
                 <div className='work-hidden-content flex' >
                     <div className='flex-column'>
@@ -160,9 +160,7 @@ const ComponentToShow = ({ data }) => {
 
                     </div> 
                 </div> 
-                <div>
-                    <p>{/* More Info Here */}</p>
-                </div>
+                
                 <div className='image-reveal-container'>
                     <a href={data.link} target='_blank' style={{backgroundColor: 'transparent'}}><ImageZoom imageSrc={imageSrc} scrollY={scrollY} alt={data.alt}/></a>
                     
