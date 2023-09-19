@@ -364,11 +364,15 @@ a {
 /*Theme and Toggle Styling Ends */
 
 /* Contact Styling */
+.contact-title {
+  margin-bottom: 10px;
+}
+
 .contact-container {
-  height: 100vh;
   /*overflow: hidden;*/
   padding-right: 2vw;
   padding-left: 2vw;
+  height: 100vh;
 }
 
 .line-div {
@@ -416,8 +420,7 @@ a {
 }
 
 .contact-form-container {
-  padding: 4rem;
-  opacity: 1;
+  opacity: 0;
 }
 
 .contact-form-title {
@@ -439,6 +442,11 @@ a {
   width: 100%;
 }
 
+.dropdown-title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .form-input {
   padding-bottom: 20px;
   width: 95%;
@@ -452,6 +460,7 @@ a {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .form-button {
@@ -850,6 +859,10 @@ a {
   font-weight: bolder;
 }
 
+.lightweight {
+  font-weight: 100;
+}
+
 .theme-text-color {
   color: var(--font-color)
 }
@@ -880,6 +893,14 @@ a {
 .em-med {
   font-size: 2rem;
   line-height: 3rem;
+}
+
+.x-small-font {
+  font-size: 1rem;
+}
+
+.small-font {
+  font-size: 1.5rem;
 }
 
 .medium-font {
@@ -1044,14 +1065,13 @@ a {
     /*padding: 50px;*/
   }
   .form-button {
-    padding: 10px 100px;
+    padding: 10px 125px;
   }
   .form-input {
     width: 90%;
   }
   .form-content {
     width: 100%;
-    padding-top: 3em;
   }
   .about-i {
     width: 100%;

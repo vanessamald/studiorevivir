@@ -1,13 +1,19 @@
 import React, { useState, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
 import Form from 'react-bootstrap/Form';
 import Navigation from '../Navigation';
 import SplitText from '../SplitText';
 import SplitText2 from '../SplitText2';
 
 function Contact() {
+    // scroll animation 
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+    });
+
     const [ about, setAbout ] = useState('hidden-a');
 
-    const contactText = 'Contact';
+    //const contactText = 'Contact';
 
     // set state for contact form open/close 
     const [ show, setShow] = useState('hidden-contact');
@@ -84,34 +90,14 @@ function Contact() {
     return (
     <div>
         <Navigation/>
-        <div className='contact-container flex space-between'>
-            
-                <div className='split-text-container split-text-container-alternate flex justify-center work-title'>
-                    <SplitText text='Inquire' fontColor='theme-text-color'/>
-                </div>
-            
-                
-            {/*}
-            <div>
-                {result && (
-                    <p className={`${result.success ? 'success' : 'error'}`}>
-                        {result.message}
-                    </p>
-                    )}
+        <div className='contact-container flex space-between' ref={ref}>
+            <div className='split-text-container split-text-container-alternate flex justify-center work-title'>
+                <SplitText text='Inquire' fontColor='theme-text-color'/>
             </div>
-                */}
+            <div className={`contact-form-container ${inView ? 'text-animation' : '' }`}>
             <Form onSubmit={submitForm} className='form-content'>
-                {/*}
-                <div className='close-btn-container flex flex-end'>
-                    <button className='close-btn' onClick={handleClose}>
-                        <div className='close-container'>
-                            <div className='close-line1'></div>
-                            <div className='close-line2'></div>
-                        </div>
-                    </button>
-                </div>
-                */}
-                <h2 className='font-classic uppercase'>Contact Info</h2>
+                
+                <h4 className='font-classic small-font contact-title'>Contact Info</h4>
                 <Form.Group className="form-group" controlId="name">
                     <Form.Label className='form-name'></Form.Label>
                     <Form.Control className='form-input'
@@ -132,19 +118,6 @@ function Contact() {
                     />
                 </Form.Group>
                 <div className='line-div'></div>
-                {/*}
-                <Form.Group className='form-group'>
-                    <Form.Label className='form-name'></Form.Label>
-                    <Form.Control className='form-input'
-                        onChange={(e) => setSubject(e.target.value)} 
-                        type="text"
-                        placeholder="Subject"
-                        required
-                    />
-                </Form.Group>
-                <div className='line-div'></div>
-                */}
-                
                 <Form.Group className='form-group'
                     controlId="message"
                     >
@@ -159,9 +132,9 @@ function Contact() {
                 </Form.Group>
                 <div className='line-div'></div>
                 <Form.Group 
-                    className='form-group dropdown font-classic uppercase flex-column'
+                    className='form-group dropdown flex-column'
                     controlId="dropdown">
-                    <h2 className='form-name'>How can we collaborate?</h2>
+                    <h4 className='font-classic small-font dropdown-title'>How can we collaborate?</h4>
                     <Form.Control as="select" value={option} onChange={(e) => setOption(e.target.value)} >
                         <option className='form-option' value="Website and content creation">Website and content creation</option>
                         <option className='form-option' value="Website">Website</option>
@@ -169,7 +142,7 @@ function Contact() {
                     </Form.Control>
                 </Form.Group>
                
-                <h2 className='font-classic uppercase'>Business Info</h2>
+                <h4 className='font-classic small-font contact-title'>Business Info</h4>
                 <Form.Group className='form-group'>
                     <Form.Label className='form-name'></Form.Label>
                     <Form.Control className='form-input'
@@ -210,6 +183,19 @@ function Contact() {
                 </button>
                 </div>
             </Form>
+            </div>
+                
+            {/*}
+            <div>
+                {result && (
+                    <p className={`${result.success ? 'success' : 'error'}`}>
+                        {result.message}
+                    </p>
+                    )}
+            </div>
+                */}
+
+            
             </div>
         </div> 
 
