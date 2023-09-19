@@ -4,6 +4,7 @@
   background-color: var(--body-bg-color);
   color: var(--font-color);
   /*cursor: none;*/
+  
 }
 
 body {
@@ -679,7 +680,7 @@ a {
 
 .work-hidden-content {
   padding: 3rem;
-  margin-bottom: 300px;
+ /* margin-bottom: 300px;*/
 }
 
 .work-hidden-text {
@@ -693,6 +694,7 @@ a {
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 100;
+  background-color: transparent;
 }
 
 .features-container {

@@ -28,7 +28,7 @@ function ImageZoom({ imageSrc, scrollY, alt }) {
                     transition: "transform 0.2s ease-out",
                     
                     //filter: 'grayscale(1)',
-                    transformOrigin: '0% 100%', 
+                    transformOrigin: '50% 100%', 
                     transform: `translate(0%, ${scrollPosition / -40 + '%'}) translate3d(0px, 0px, 0px) scale(${0.3 + scrollPosition / 1000}, ${0.3 + scrollPosition / 1000})`
                 }}
             >

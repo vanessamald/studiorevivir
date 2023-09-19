@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import useCursorPosition from '../useCursorPosition';
 import Navigation from '../Navigation';
 import ImageZoom from '../ImageZoom';
@@ -48,18 +49,7 @@ function Work() {
             features: [''],
             desktopImage: '',
             mobileImage: ''
-        },
-        {
-            id: 3,
-            title: 'Coming Soon',
-            subtitle: '',
-            subtitle2: '',
-            description: '',
-            features: [''],
-            desktopImage: '',
-            mobileImage: ''
-        }
-        
+        }  
     ]
 
     // handle view button click for each work
@@ -123,6 +113,11 @@ const ComponentToShow = ({ data }) => {
     const screenWidth = window.innerWidth;
     const imageSrc = screenWidth <= 768 ? data.mobileImage : data.desktopImage;
 
+    // animation trigger
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+    });
+
     return  <div 
                 className='work-hidden-container' 
                 onScroll={handleScroll} 
@@ -130,25 +125,25 @@ const ComponentToShow = ({ data }) => {
                     overflow: 'auto', // Create a scrollable area within the container to trigger onScroll in hidden container
                     height: ''}}
                 >
-                <div className='work-hidden-content flex' >
+                <div className='work-hidden-content flex' ref={ref}>
                     <div className='flex-column'>
                         <div className='work-title'>
                             <SplitText text={data.title} fontColor='theme-text-color'/>
                         </div>
                         <div>
-                            <h2 className='work-hidden-subtitle'>{data.subtitle}</h2>
-                            <h2 className='work-hidden-subtitle'>{data.subtitle2}</h2>
+                            <h2 className={`work-hidden-subtitle ${inView ? 'slide-in' : ''}`}>{data.subtitle}</h2>
+                            <h2 className={`work-hidden-subtitle ${inView ? 'slide-in-right' : ''}`}>{data.subtitle2}</h2>
                         </div> 
                     </div>
                     <div className='flex-column'>
-                        <p className='work-hidden-text'> 
+                        <p className={`work-hidden-text ${inView ? 'text-animation' : '' }`}> 
                             {data.description}
                         </p>
 
                         
                         <div className='features-container'>
-                        <h2>Key Features:</h2>
-                        <ul className='features-list'>
+                        <h2 className={`work-hidden-subtitle ${inView ? 'slide-in' : ''}`}>Key Features:</h2>
+                        <ul className={`features-list ${inView ? 'text-animation' : ''}`}>
                             {data.features.map(function(feature, id) {
                             //console.log(feature);
                                 return (
