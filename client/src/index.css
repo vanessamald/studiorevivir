@@ -901,7 +901,7 @@ a {
   text-transform: uppercase;
   /*color: var(--body-bg-color);*/
   background-color: transparent;
-  font-size: 6rem;
+  /*font-size: 6rem;*/
   opacity: 0;
   animation: split-text 2s forwards;
   letter-spacing: 3rem;
@@ -1007,7 +1007,6 @@ a {
 .slide-in-right {
   animation: slideInRight 3s backwards;
 }
-
 /* Animations End */
 
 @media only screen and (max-width: 600px) {
@@ -1100,13 +1099,13 @@ a {
     letter-spacing: 1.5rem;
   }
   .menu-link-text {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .services-landing-container {
     margin-top: 0;
   }
   .services-process-list {
-   
+    margin: 20px;
   }
 }
 
