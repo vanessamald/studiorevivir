@@ -11,24 +11,6 @@ function Contact() {
         triggerOnce: true,
     });
 
-    const [ about, setAbout ] = useState('hidden-a');
-
-    //const contactText = 'Contact';
-
-    // set state for contact form open/close 
-    const [ show, setShow] = useState('hidden-contact');
-    const [ show2, setShow2 ] = useState('hidden-form');
-
-    const handleClick = () => {
-        setShow('contact-show')
-        setShow2('contact-form-container')
-        console.log('HELLO CONTACT')
-    }
-    const handleClose = () => {
-        setShow('hidden-contact');
-        setShow('hidden-form');
-    }
-
     // contact form status
     const [ status, setStatus ] = useState('Submit');
 
@@ -95,6 +77,13 @@ function Contact() {
                 <SplitText text='Inquire' fontColor='theme-text-color'/>
             </div>
             <div className={`contact-form-container ${inView ? 'text-animation' : '' }`}>
+                <div>
+                {result && (
+                    <p className={`${result.success ? 'success' : 'error'}`}>
+                        {result.message}
+                    </p>
+                    )}
+                </div>
             <Form onSubmit={submitForm} className='form-content'>
                 
                 <h4 className='font-classic small-font contact-title'>Contact Info</h4>
@@ -184,21 +173,8 @@ function Contact() {
                 </div>
             </Form>
             </div>
-                
-            {/*}
-            <div>
-                {result && (
-                    <p className={`${result.success ? 'success' : 'error'}`}>
-                        {result.message}
-                    </p>
-                    )}
-            </div>
-                */}
-
-            
-            </div>
-        </div> 
-
+        </div>
+    </div> 
     )
 }
 
