@@ -63,12 +63,11 @@ function Work() {
         <div className='work-container' id='work'>
             <Navigation/>
             <div className=''>
-                    <div className='split-text-container flex align-center justify-center work-title'>
-                        <SplitText text='Archives' fontColor='theme-text-color'/>
-                    </div>
+                <div className='split-text-container flex align-center justify-center work-title'>
+                    <SplitText text='Archives' fontColor='theme-text-color'/>
+                </div>
             </div>
             <div className='flex-column work-content-container'>
-                
                 {workData.map((data) => (
                 <div 
                     key={data.id}
@@ -139,29 +138,22 @@ const ComponentToShow = ({ data }) => {
                         <p className={`work-hidden-text ${inView ? 'text-animation' : '' }`}> 
                             {data.description}
                         </p>
-
-                        
                         <div className='features-container'>
-                        <h2 className={`work-hidden-subtitle ${inView ? 'slide-in' : ''}`}>Key Features:</h2>
-                        <ul className={`features-list ${inView ? 'text-animation' : ''}`}>
-                            {data.features.map(function(feature, id) {
-                            //console.log(feature);
-                                return (
-                                    <li key={id}>{feature}</li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-
+                            <h2 className={`work-hidden-subtitle ${inView ? 'slide-in' : ''}`}>Key Features:</h2>
+                            <ul className={`features-list ${inView ? 'text-animation' : ''}`}>
+                                {data.features.map(function(feature, id) {
+                                    return (
+                                        <li key={id}>{feature}</li>
+                                    )
+                                })}
+                            </ul>
+                        </div>
                     </div> 
                 </div> 
-                
                 <div className='image-reveal-container'>
-                    <a href={data.link} target='_blank' style={{backgroundColor: 'transparent'}}><ImageZoom imageSrc={imageSrc} scrollY={scrollY} alt={data.alt}/></a>
-                    
-                </div>
-                
+                    <a href={data.link} target='_blank' style={{backgroundColor: 'transparent'}}><ImageZoom imageSrc={imageSrc} scrollY={scrollY} alt={data.alt}/></a>   
+                </div> 
             </div>;
-  };
+        };
 
 export default Work;
