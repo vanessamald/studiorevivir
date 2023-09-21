@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import About from '../About';
-import Contact from '../Contact';
-import Register from '../Register';
 import SplitText from '../SplitText';
 import SplitText2 from '../SplitText2';
 
@@ -11,15 +8,11 @@ function Navigation() {
     const [ toggle, setToggle ] = useState(false);
     const [ about, setAbout ] = useState('hidden-a');
 
-    // 
+    // handle navigation menu 
     const handleToggle = () => {
         if (!toggle) {
             setMenu('menu-container');
             setButton('close-menu-button')
-
-            if (typeof window != 'undefined' && window.document) {
-               //document.body.style.overflow = 'hidden'; 
-            }
         }
         if (toggle) {
             setMenu('hidden-menu');
